@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/home/travis/build/embulk/embulk/lib/embulk/column.rb</dd>
+    <dd class="r2 last">/Users/frsyuki/project/embulk/lib/embulk/column.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -375,7 +375,7 @@
 13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 4</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 4</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
@@ -448,7 +448,7 @@
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 3</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format'>format</span>
   <span class='ivar'>@format</span>
@@ -509,7 +509,7 @@
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 3</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
   <span class='ivar'>@index</span>
@@ -570,7 +570,7 @@
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 3</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -631,7 +631,7 @@
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 3</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='ivar'>@type</span>
@@ -675,7 +675,7 @@
 33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 24</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_column'>java_column</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_column'>java_column</span><span class='period'>.</span><span class='id identifier rubyid_getType'>getType</span><span class='rparen'>)</span>
@@ -722,7 +722,7 @@
 41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 35</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='symbol'>:timestamp</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_format'>format</span>
@@ -760,7 +760,7 @@
 21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/column.rb', line 15</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/column.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='symbol'>:timestamp</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_format'>format</span>
@@ -779,7 +779,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Mar 24 21:01:31 2015 by
+  Generated on Mon Apr 13 13:19:30 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
