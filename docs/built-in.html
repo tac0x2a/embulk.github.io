@@ -27,12 +27,12 @@
     <link rel="next" title="Release Notes" href="release.html" />
     <link rel="prev" title="Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html" /> 
   </head>
-  <body>
-      <div class="header"><h1 class="heading"><a href="index.html">
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
         <h2 class="heading"><span>Configuration</span></h2>
       </div>
-      <div class="topnav">
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
         «&#160;&#160;<a href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</a>
@@ -128,11 +128,11 @@
 <li><strong>filters:</strong> Filter plugins options (optional).</li>
 <li><strong>exec:</strong> Executor plugin options. An executor plugin control parallel processing (such as built-in thread executor, <a class="reference external" href="https://github.com/embulk/embulk-executor-mapreduce">Hadoop MapReduce executor</a>)</li>
 </ul>
-<p>In many cases, what you need to write is <strong>in:</strong>, <strong>out</strong>: and <strong>formatter</strong> sections only because <tt class="docutils literal"><span class="pre">guess</span></tt> command guesses <strong>parser</strong> and <strong>decoder</strong> options for you. See also the <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
+<p>In many cases, what you need to write is <strong>in:</strong>, <strong>out</strong>: and <strong>formatter</strong> sections only because <code class="docutils literal"><span class="pre">guess</span></code> command guesses <strong>parser</strong> and <strong>decoder</strong> options for you. See also the <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
 </div>
 <div class="section" id="local-file-input-plugin">
 <h2><a class="toc-backref" href="#id15">Local file input plugin</a><a class="headerlink" href="#local-file-input-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">file</span></tt> input plugin reads files from local file system.</p>
+<p>The <code class="docutils literal"><span class="pre">file</span></code> input plugin reads files from local file system.</p>
 <div class="section" id="options">
 <h3><a class="toc-backref" href="#id16">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -172,7 +172,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <tt class="docutils literal"><span class="pre">path_prefix</span></tt> option is required. If you have files as following, you may set <tt class="docutils literal"><span class="pre">path_prefix:</span> <span class="pre">/path/to/files/sample_</span></tt>:</p>
+<p>The <code class="docutils literal"><span class="pre">path_prefix</span></code> option is required. If you have files as following, you may set <code class="docutils literal"><span class="pre">path_prefix:</span> <span class="pre">/path/to/files/sample_</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>.
 `-- path
     `-- to
@@ -183,8 +183,8 @@
             |-- sample_04.csv   -&gt; read
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">last_path</span></tt> option is used to skip files older than or same with the file in dictionary order.
-For example, if you set <tt class="docutils literal"><span class="pre">last_path:</span> <span class="pre">/path/to/files/sample_02.csv</span></tt>, Embulk reads following files:</p>
+<p>The <code class="docutils literal"><span class="pre">last_path</span></code> option is used to skip files older than or same with the file in dictionary order.
+For example, if you set <code class="docutils literal"><span class="pre">last_path:</span> <span class="pre">/path/to/files/sample_02.csv</span></code>, Embulk reads following files:</p>
 <div class="highlight-python"><div class="highlight"><pre>.
 `-- path
     `-- to
@@ -211,7 +211,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </div>
 <div class="section" id="csv-parser-plugin">
 <h2><a class="toc-backref" href="#id18">CSV parser plugin</a><a class="headerlink" href="#csv-parser-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">csv</span></tt> parser plugin parses CSV and TSV files.</p>
+<p>The <code class="docutils literal"><span class="pre">csv</span></code> parser plugin parses CSV and TSV files.</p>
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id19">Options</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -231,58 +231,58 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 <tbody valign="top">
 <tr class="row-even"><td>delimiter</td>
 <td>string</td>
-<td>Delimiter character such as <tt class="docutils literal"><span class="pre">,</span></tt> for CSV, <tt class="docutils literal"><span class="pre">&quot;\t&quot;</span></tt> for TSV, <tt class="docutils literal"><span class="pre">&quot;|&quot;</span></tt> or any single-byte character</td>
-<td><tt class="docutils literal"><span class="pre">,</span></tt> by default</td>
+<td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code> or any single-byte character</td>
+<td><code class="docutils literal"><span class="pre">,</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>quote</td>
 <td>string</td>
 <td>The character surrounding a quoted value</td>
-<td><tt class="docutils literal"><span class="pre">\&quot;</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">\&quot;</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>escape</td>
 <td>string</td>
 <td>Escape character to escape a special character</td>
-<td><tt class="docutils literal"><span class="pre">\\</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">\\</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>skip_header_lines</td>
 <td>integer</td>
 <td>Skip this number of lines first. Set 1 if the file has header line.</td>
-<td><tt class="docutils literal"><span class="pre">0</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">0</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>null_string</td>
 <td>string</td>
-<td>If a value is this string, converts it to NULL. For example, set <tt class="docutils literal"><span class="pre">\N</span></tt> for CSV files created by mysqldump</td>
+<td>If a value is this string, converts it to NULL. For example, set <code class="docutils literal"><span class="pre">\N</span></code> for CSV files created by mysqldump</td>
 <td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>trim_if_not_quoted</td>
 <td>boolean</td>
 <td>If true, remove spaces of a value if the value is not surrounded by the quote character</td>
-<td><tt class="docutils literal"><span class="pre">false</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>allow_optional_columns</td>
 <td>boolean</td>
 <td>If true, set null to insufficient columns. Otherwise, skip the row in case of insufficient number of columns</td>
-<td><tt class="docutils literal"><span class="pre">false</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>max_quoted_size_limit</td>
 <td>integer</td>
 <td>Maximum number of bytes of a quoted value. If a value exceeds the limit, the row will be skipped</td>
-<td><tt class="docutils literal"><span class="pre">131072</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">131072</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>default_timezone</td>
 <td>string</td>
 <td>Time zone of timestamp columns if the value itself doesn&#8217;t include time zone description (eg. Asia/Tokyo)</td>
-<td><tt class="docutils literal"><span class="pre">UTC</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>newline</td>
 <td>enum</td>
 <td>Newline character (CRLF, LF or CR)</td>
-<td><tt class="docutils literal"><span class="pre">CRLF</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>charset</td>
 <td>enum</td>
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
-<td><tt class="docutils literal"><span class="pre">UTF-8</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>columns</td>
 <td>hash</td>
@@ -291,7 +291,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </tr>
 </tbody>
 </table>
-<p>The <tt class="docutils literal"><span class="pre">columns</span></tt> option declares the list of columns. This CSV parser plugin ignores the header line.</p>
+<p>The <code class="docutils literal"><span class="pre">columns</span></code> option declares the list of columns. This CSV parser plugin ignores the header line.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -343,7 +343,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </tr>
 </tbody>
 </table>
-<p>You can use <tt class="docutils literal"><span class="pre">guess</span></tt> to automatically generate the column settings. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
+<p>You can use <code class="docutils literal"><span class="pre">guess</span></code> to automatically generate the column settings. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
 </div>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id20">Example</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -370,7 +370,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </div>
 <div class="section" id="gzip-decoder-plugin">
 <h2><a class="toc-backref" href="#id21">Gzip decoder plugin</a><a class="headerlink" href="#gzip-decoder-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">gzip</span></tt> decoder plugin decompresses gzip files before input plugins read them.</p>
+<p>The <code class="docutils literal"><span class="pre">gzip</span></code> decoder plugin decompresses gzip files before input plugins read them.</p>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id22">Options</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>This plugin doesn&#8217;t have any options.</p>
@@ -387,7 +387,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </div>
 <div class="section" id="file-output-plugin">
 <h2><a class="toc-backref" href="#id24">File output plugin</a><a class="headerlink" href="#file-output-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">file</span></tt> output plugin writes records to local file system.</p>
+<p>The <code class="docutils literal"><span class="pre">file</span></code> output plugin writes records to local file system.</p>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id25">Options</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -413,7 +413,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 <tr class="row-odd"><td>sequence_format</td>
 <td>string</td>
 <td>Format of the sequence number of the output files</td>
-<td><tt class="docutils literal"><span class="pre">.%03d.%02d</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">.%03d.%02d</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>file_ext</td>
 <td>string</td>
@@ -422,7 +422,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </tr>
 </tbody>
 </table>
-<p>For example, if you set <tt class="docutils literal"><span class="pre">path_prefix:</span> <span class="pre">/path/to/output</span></tt>, <tt class="docutils literal"><span class="pre">sequence_format:</span> <span class="pre">&quot;.%03d.%02d&quot;</span></tt>, and <tt class="docutils literal"><span class="pre">file_ext:</span> <span class="pre">.csv</span></tt>, name of the output files will be as following:</p>
+<p>For example, if you set <code class="docutils literal"><span class="pre">path_prefix:</span> <span class="pre">/path/to/output</span></code>, <code class="docutils literal"><span class="pre">sequence_format:</span> <span class="pre">&quot;.%03d.%02d&quot;</span></code>, and <code class="docutils literal"><span class="pre">file_ext:</span> <span class="pre">.csv</span></code>, name of the output files will be as following:</p>
 <div class="highlight-python"><div class="highlight"><pre>.
 `-- path
     `-- to
@@ -433,7 +433,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
             |-- sample.04.000.csv
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">sequence_format</span></tt> formats task index and sequence number in a task.</p>
+<p><code class="docutils literal"><span class="pre">sequence_format</span></code> formats task index and sequence number in a task.</p>
 </div>
 <div class="section" id="id9">
 <h3><a class="toc-backref" href="#id26">Example</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
@@ -449,7 +449,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </div>
 <div class="section" id="csv-formatter-plugin">
 <h2><a class="toc-backref" href="#id27">CSV formatter plugin</a><a class="headerlink" href="#csv-formatter-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">csv</span></tt> formatter plugin formats records using CSV or TSV format.</p>
+<p>The <code class="docutils literal"><span class="pre">csv</span></code> formatter plugin formats records using CSV or TSV format.</p>
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id28">Options</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -469,8 +469,8 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 <tbody valign="top">
 <tr class="row-even"><td>delimiter</td>
 <td>string</td>
-<td>Delimiter character such as <tt class="docutils literal"><span class="pre">,</span></tt> for CSV, <tt class="docutils literal"><span class="pre">&quot;\t&quot;</span></tt> for TSV, <tt class="docutils literal"><span class="pre">&quot;|&quot;</span></tt> or any single-byte character</td>
-<td><tt class="docutils literal"><span class="pre">,</span></tt> by default</td>
+<td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code> or any single-byte character</td>
+<td><code class="docutils literal"><span class="pre">,</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>header_line</td>
 <td>boolean</td>
@@ -480,12 +480,12 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 <tr class="row-even"><td>newline</td>
 <td>enum</td>
 <td>Newline character (CRLF, LF or CR)</td>
-<td><tt class="docutils literal"><span class="pre">CRLF</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>charset</td>
 <td>enum</td>
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
-<td><tt class="docutils literal"><span class="pre">UTF-8</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
 </tr>
 </tbody>
 </table>
@@ -505,7 +505,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 </div>
 <div class="section" id="gzip-encoder-plugin">
 <h2><a class="toc-backref" href="#id30">Gzip encoder plugin</a><a class="headerlink" href="#gzip-encoder-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">gzip</span></tt> encoder plugin compresses output files using gzip.</p>
+<p>The <code class="docutils literal"><span class="pre">gzip</span></code> encoder plugin compresses output files using gzip.</p>
 <div class="section" id="id12">
 <h3><a class="toc-backref" href="#id31">Options</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -526,7 +526,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 <tr class="row-even"><td>level</td>
 <td>integer</td>
 <td>Compression level. From 0 (no compression) to 9 (best compression).</td>
-<td><tt class="docutils literal"><span class="pre">6</span></tt> by default</td>
+<td><code class="docutils literal"><span class="pre">6</span></code> by default</td>
 </tr>
 </tbody>
 </table>
@@ -546,7 +546,7 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 
 
       </div>
-      <div class="bottomnav">
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
         «&#160;&#160;<a href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</a>
@@ -558,9 +558,9 @@ For example, if you set <tt class="docutils literal"><span class="pre">last_path
 
       </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

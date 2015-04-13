@@ -28,12 +28,12 @@
     <link rel="next" title="Release 0.5.2" href="release-0.5.2.html" />
     <link rel="prev" title="Release 0.5.4" href="release-0.5.4.html" /> 
   </head>
-  <body>
-      <div class="header"><h1 class="heading"><a href="../index.html">
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.5.3</span></h2>
       </div>
-      <div class="topnav">
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.5.4.html">Release 0.5.4</a>
@@ -52,15 +52,15 @@
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">guess</span></tt> guesses boolean types (&#64;hata++)</li>
+<li><code class="docutils literal"><span class="pre">guess</span></code> guesses boolean types (&#64;hata++)</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">guess</span></tt> stops reading the file after first 32KB and ignores remaining data. Execution time of <tt class="docutils literal"><span class="pre">guess</span></tt> improves significantly especially when the first file is large.</li>
-<li><tt class="docutils literal"><span class="pre">guess</span></tt> ignores decoders when it reads sample data. This change fixes the problem where guess fails if config file includes <tt class="docutils literal"><span class="pre">decoder-gzip</span></tt> (&#64;hata++).</li>
-<li>Releases <tt class="docutils literal"><span class="pre">embulk-core-VERSION-tests.jar</span></tt> in addition to <tt class="docutils literal"><span class="pre">embulk-core-VERSION-sources.jar</span></tt>.</li>
+<li><code class="docutils literal"><span class="pre">guess</span></code> stops reading the file after first 32KB and ignores remaining data. Execution time of <code class="docutils literal"><span class="pre">guess</span></code> improves significantly especially when the first file is large.</li>
+<li><code class="docutils literal"><span class="pre">guess</span></code> ignores decoders when it reads sample data. This change fixes the problem where guess fails if config file includes <code class="docutils literal"><span class="pre">decoder-gzip</span></code> (&#64;hata++).</li>
+<li>Releases <code class="docutils literal"><span class="pre">embulk-core-VERSION-tests.jar</span></code> in addition to <code class="docutils literal"><span class="pre">embulk-core-VERSION-sources.jar</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -71,7 +71,7 @@
 
 
       </div>
-      <div class="bottomnav">
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.5.4.html">Release 0.5.4</a>
@@ -83,9 +83,9 @@
 
       </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>
