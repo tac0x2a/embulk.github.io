@@ -102,6 +102,26 @@
 <div class="clear"></div>
 
 
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="STATIC_MAPPING-constant" class="">STATIC_MAPPING =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='comment'># ISO-8859-1 means ASCII which is a subset of UTF-8 in most of cases
+</span>  <span class='comment'># due to lack of sample data set.
+</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ISO-8859-1</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+
+  <span class='comment'># Shift_JIS is used almost only by Windows that uses &quot;CP932&quot; in fact.
+</span>  <span class='comment'># And &quot;CP932&quot; called by Microsoft actually means &quot;MS932&quot; in Java.
+</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Shift_JIS</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MS932</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -173,16 +193,6 @@
       <pre class="lines">
 
 
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
 17
 18
 19
@@ -190,10 +200,17 @@
 21
 22
 23
-24</pre>
+24
+25
+26
+27
+28
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/guess/charset.rb', line 7</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/guess/charset.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
   <span class='comment'># ICU4J
@@ -204,11 +221,8 @@
     <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_best_match'>best_match</span><span class='period'>.</span><span class='id identifier rubyid_getName'>getName</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ISO-8859-1</span><span class='tstring_end'>&quot;</span></span>
-      <span class='comment'># ISO-8859-1 means ASCII which is a subset
-</span>      <span class='comment'># of UTF-8 in most of cases due to lack of
-</span>      <span class='comment'># sample data set
-</span>      <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_mapped_name'>mapped_name</span> <span class='op'>=</span> <span class='const'>STATIC_MAPPING</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_mapped_name'>mapped_name</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
   <span class='kw'>return</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>charset</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
@@ -223,7 +237,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Apr 13 22:26:18 2015 by
+  Generated on Tue Apr 14 04:20:35 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

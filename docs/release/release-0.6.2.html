@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.6.1 &mdash; Embulk 0.6 documentation</title>
+    <title>Release 0.6.2 &mdash; Embulk 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,39 +25,46 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.6 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.6.0" href="release-0.6.0.html" />
-    <link rel="prev" title="Release 0.6.2" href="release-0.6.2.html" /> 
+    <link rel="next" title="Release 0.6.1" href="release-0.6.1.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.6.1</span></h2>
+        <h2 class="heading"><span>Release 0.6.2</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.2.html">Release 0.6.2</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.0.html">Release 0.6.0</a>&#160;&#160;»
+        <a href="release-0.6.1.html">Release 0.6.1</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-6-1">
-<h1>Release 0.6.1<a class="headerlink" href="#release-0-6-1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-6-2">
+<h1>Release 0.6.2<a class="headerlink" href="#release-0-6-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> fixed guessing (&#64;bwtakacy++)</li>
+<li><code class="docutils literal"><span class="pre">guess-csv</span></code> guesses charset as <code class="docutils literal"><span class="pre">&quot;MS932&quot;</span></code> instead of <code class="docutils literal"><span class="pre">&quot;Shift_JIS&quot;</span></code> because practically almost all of documents encoded by <code class="docutils literal"><span class="pre">Shift_JIS</span></code> are created by Windows and <code class="docutils literal"><span class="pre">Shift_JIS</span></code> implemented by Microsoft means <code class="docutils literal"><span class="pre">MS932</span></code> in Java. (&#64;kosaki55tea++, &#64;nalsh++)</li>
+<li><code class="docutils literal"><span class="pre">parser-csv</span></code> recovers errors by invalid number formats and skips the row rather than making entire transaction failed (&#64;hito4t++)</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Changed download URL. We can use the consitent URL to download the latest jar.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-04-08</p>
+<p>2015-04-13</p>
 </div>
 </div>
 
@@ -66,11 +73,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.2.html">Release 0.6.2</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.0.html">Release 0.6.0</a>&#160;&#160;»
+        <a href="release-0.6.1.html">Release 0.6.1</a>&#160;&#160;»
         </p>
 
       </div>
