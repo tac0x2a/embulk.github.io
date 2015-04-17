@@ -19,6 +19,12 @@
       <div class="section">
         <h1>List of Plugins by Category</h1>
 
+        <ul class="simple">
+        <% categories.each do |category,gems| %>
+          <li><a class="reference internal" href="#<%= category.gsub(/[^a-zA-Z0-9]/, '-') %>"><%= category.capitalize %></a></li>
+        <% end %>
+        </ul>
+
         <% categories.each do |category,gems| %>
         <div class="section">
           <h2 id="<%= category.gsub(/[^a-zA-Z0-9]/, '-') %>"><%= category.upcase %></h2>
