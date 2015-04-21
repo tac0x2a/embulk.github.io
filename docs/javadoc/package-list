@@ -7,4 +7,5 @@ org.embulk.plugin
 org.embulk.spi
 org.embulk.spi.time
 org.embulk.spi.type
+org.embulk.spi.unit
 org.embulk.spi.util
