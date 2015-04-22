@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.6.3 &mdash; Embulk 0.6 documentation</title>
+    <title>Release 0.6.4 &mdash; Embulk 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,48 +25,36 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.6 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.6.2" href="release-0.6.2.html" />
-    <link rel="prev" title="Release 0.6.4" href="release-0.6.4.html" /> 
+    <link rel="next" title="Release 0.6.3" href="release-0.6.3.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.6.3</span></h2>
+        <h2 class="heading"><span>Release 0.6.4</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.4.html">Release 0.6.4</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.2.html">Release 0.6.2</a>&#160;&#160;»
+        <a href="release-0.6.3.html">Release 0.6.3</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-6-3">
-<h1>Release 0.6.3<a class="headerlink" href="#release-0-6-3" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="plugin-api">
-<h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="release-0-6-4">
+<h1>Release 0.6.4<a class="headerlink" href="#release-0-6-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">org.embulk.spi.unit.ByteSize</span></code> utility class. Plugins can use this class to allow units such as &#8216;KB&#8217; or &#8216;MB&#8217; in the configuration file.</li>
-</ul>
-</div>
-<div class="section" id="command-line">
-<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Added &#8216;-L, &#8211;load PATH&#8217; argument to load a plugin form a local directory.</li>
-</ul>
-</div>
-<div class="section" id="general-changes">
-<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Updated template generator for Java so that generated build.gradle file has <code class="docutils literal"><span class="pre">package</span></code> task to create gemspec file.</li>
-<li>PreviewExecutor and GuessExecutor unwrap ExecutionException. Error stacktrace becomes simple.</li>
-<li>EmbulkService creates JRuby runtime and its execution environment for each Injector instances.</li>
+<li><code class="docutils literal"><span class="pre">guess-csv</span></code> keeps existent configurations such as <code class="docutils literal"><span class="pre">null_string</span></code> if they are already set.</li>
+<li><code class="docutils literal"><span class="pre">guess-csv</span></code> skips line if a CSV file is broken rather than falling back to ad-hoc implementation which can&#8217;t deal with quoted values.</li>
+<li>Fixed a problem where <code class="docutils literal"><span class="pre">guess-csv</span></code> can&#8217;t handle quoted values (&#64;y-ken++)</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -80,11 +68,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.4.html">Release 0.6.4</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.2.html">Release 0.6.2</a>&#160;&#160;»
+        <a href="release-0.6.3.html">Release 0.6.3</a>&#160;&#160;»
         </p>
 
       </div>
