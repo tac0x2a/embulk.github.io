@@ -459,10 +459,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <h3><a class="toc-backref" href="#id28">Options</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="10%" />
-<col width="7%" />
-<col width="67%" />
-<col width="16%" />
+<col width="14%" />
+<col width="6%" />
+<col width="65%" />
+<col width="15%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">name</th>
@@ -477,20 +477,63 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code> or any single-byte character</td>
 <td><code class="docutils literal"><span class="pre">,</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>header_line</td>
+<tr class="row-odd"><td>quote</td>
+<td>string</td>
+<td>The character surrounding a quoted value</td>
+<td><code class="docutils literal"><span class="pre">\&quot;</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>quote_policy</td>
+<td>enum</td>
+<td>Policy for quote (ALL, MINIMAL, NONE) (see below)</td>
+<td><code class="docutils literal"><span class="pre">MINIMAL</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>escape</td>
+<td>string</td>
+<td>Escape character to escape a special character</td>
+<td><code class="docutils literal"><span class="pre">\\</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>header_line</td>
 <td>boolean</td>
 <td>If true, write the header line with column name at the first line</td>
-<td>&nbsp;</td>
+<td><code class="docutils literal"><span class="pre">true</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>newline</td>
+<tr class="row-odd"><td>newline</td>
 <td>enum</td>
 <td>Newline character (CRLF, LF or CR)</td>
 <td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>newline_in_field</td>
+<td>enum</td>
+<td>Newline character in each field (CRLF, LF, CR)</td>
+<td><code class="docutils literal"><span class="pre">LF</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>charset</td>
 <td>enum</td>
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
 <td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal"><span class="pre">quote_policy</span></code> option is used to determine field type to quote.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ALL</td>
+<td>Quote all fields</td>
+</tr>
+<tr class="row-odd"><td>MINIMAL</td>
+<td>Only quote those fields which contain delimiter, quote or any of the characters in lineterminator</td>
+</tr>
+<tr class="row-even"><td>NONE</td>
+<td>Never quote fields. When the delimiter occurs in field, escape with escape char</td>
 </tr>
 </tbody>
 </table>
@@ -502,8 +545,12 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
   <span class="l-Scalar-Plain">formatter</span><span class="p-Indicator">:</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">csv</span>
     <span class="l-Scalar-Plain">delimiter</span><span class="p-Indicator">:</span> <span class="s">&quot;\t&quot;</span>
-    <span class="l-Scalar-Plain">newline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">LF</span>
+    <span class="l-Scalar-Plain">newline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">CRLF</span>
+    <span class="l-Scalar-Plain">newline_in_field</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">LF</span>
     <span class="l-Scalar-Plain">charset</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">UTF-8</span>
+    <span class="l-Scalar-Plain">quote_policy</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">MINIMAL</span>
+    <span class="l-Scalar-Plain">quote</span><span class="p-Indicator">:</span> <span class="s">&#39;&quot;&#39;</span>
+    <span class="l-Scalar-Plain">escape</span><span class="p-Indicator">:</span> <span class="s">&#39;&quot;&#39;</span>
 </pre></div>
 </div>
 </div>
