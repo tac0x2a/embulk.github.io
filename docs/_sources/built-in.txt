@@ -294,9 +294,11 @@ Options
 +----------------------+---------+-------------------------------------------------------------------------------------------------------+------------------------+
 | quote\_policy        | enum    | Policy for quote (ALL, MINIMAL, NONE) (see below)                                                     | ``MINIMAL`` by default |
 +----------------------+---------+-------------------------------------------------------------------------------------------------------+------------------------+
-| escape               | string  | Escape character to escape a special character                                                        | ``\\`` by default      |
+| escape               | string  | Escape character to escape a quote character when quote\_policy is ALL or MINIMAL                     | ``\"`` by default      |
 +----------------------+---------+-------------------------------------------------------------------------------------------------------+------------------------+
 | header\_line         | boolean | If true, write the header line with column name at the first line                                     | ``true`` by default    |
++----------------------+---------+-------------------------------------------------------------------------------------------------------+------------------------+
+| null_string          | string  | Expression of NULL values                                                                             | empty by default       |
 +----------------------+---------+-------------------------------------------------------------------------------------------------------+------------------------+
 | newline              | enum    | Newline character (CRLF, LF or CR)                                                                    | ``CRLF`` by default    |
 +----------------------+---------+-------------------------------------------------------------------------------------------------------+------------------------+
@@ -326,13 +328,14 @@ Example
       ...
       formatter:
       - type: csv
-        delimiter: "\t"
+        delimiter: '\t'
         newline: CRLF
         newline_in_field: LF
         charset: UTF-8
         quote_policy: MINIMAL
         quote: '"'
-        escape: '"'
+        escape: '\\'
+        null_string: '\\N'
 
 Gzip encoder plugin
 ------------------
