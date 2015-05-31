@@ -259,37 +259,42 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td>If true, remove spaces of a value if the value is not surrounded by the quote character</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>allow_optional_columns</td>
+<tr class="row-even"><td>comment_line_marker</td>
+<td>string</td>
+<td>Skip a line if the line begins with this string</td>
+<td>null by default</td>
+</tr>
+<tr class="row-odd"><td>allow_optional_columns</td>
 <td>boolean</td>
 <td>If true, set null to insufficient columns. Otherwise, skip the row in case of insufficient number of columns</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>allow_extra_columns</td>
+<tr class="row-even"><td>allow_extra_columns</td>
 <td>boolean</td>
 <td>If true, ignore too many columns. Otherwise, skip the row in case of too many columns</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>max_quoted_size_limit</td>
+<tr class="row-odd"><td>max_quoted_size_limit</td>
 <td>integer</td>
 <td>Maximum number of bytes of a quoted value. If a value exceeds the limit, the row will be skipped</td>
 <td><code class="docutils literal"><span class="pre">131072</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>default_timezone</td>
+<tr class="row-even"><td>default_timezone</td>
 <td>string</td>
 <td>Time zone of timestamp columns if the value itself doesn&#8217;t include time zone description (eg. Asia/Tokyo)</td>
 <td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>newline</td>
+<tr class="row-odd"><td>newline</td>
 <td>enum</td>
 <td>Newline character (CRLF, LF or CR)</td>
 <td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>charset</td>
+<tr class="row-even"><td>charset</td>
 <td>enum</td>
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
 <td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>columns</td>
+<tr class="row-odd"><td>columns</td>
 <td>hash</td>
 <td>Columns (see below)</td>
 <td>required</td>
@@ -363,6 +368,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
     <span class="l-Scalar-Plain">escape</span><span class="p-Indicator">:</span> <span class="s">&#39;&#39;</span>
     <span class="l-Scalar-Plain">null_string</span><span class="p-Indicator">:</span> <span class="s">&#39;NULL&#39;</span>
     <span class="l-Scalar-Plain">skip_header_lines</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
+    <span class="l-Scalar-Plain">comment_line_marker</span><span class="p-Indicator">:</span> <span class="s">&#39;#&#39;</span>
     <span class="l-Scalar-Plain">columns</span><span class="p-Indicator">:</span>
     <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">id</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">long</span><span class="p-Indicator">}</span>
     <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">account</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">long</span><span class="p-Indicator">}</span>

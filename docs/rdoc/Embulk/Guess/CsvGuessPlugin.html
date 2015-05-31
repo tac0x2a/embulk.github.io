@@ -139,6 +139,14 @@
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\\N</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='comment'># MySQL LOAD, Hive STORED AS TEXTFILE
 </span><span class='rbracket'>]</span></pre></dd>
       
+        <dt id="COMMENT_LINE_MARKER_CANDIDATES-constant" class="">COMMENT_LINE_MARKER_CANDIDATES =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbracket'>]</span></pre></dd>
+      
         <dt id="MAX_SKIP_LINES-constant" class="">MAX_SKIP_LINES =
           
         </dt>
@@ -234,11 +242,6 @@
       <pre class="lines">
 
 
-30
-31
-32
-33
-34
 35
 36
 37
@@ -303,10 +306,20 @@
 96
 97
 98
-99</pre>
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/guess/csv.rb', line 30</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/guess/csv.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>csv</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>csv</span><span class='tstring_end'>&quot;</span></span>
@@ -337,8 +350,11 @@
 </span>  <span class='kw'>end</span>
 
   <span class='id identifier rubyid_sample_records'>sample_records</span> <span class='op'>=</span> <span class='id identifier rubyid_split_lines'>split_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='comma'>,</span> <span class='id identifier rubyid_delim'>delim</span><span class='rparen'>)</span>
+
   <span class='id identifier rubyid_skip_header_lines'>skip_header_lines</span> <span class='op'>=</span> <span class='id identifier rubyid_guess_skip_header_lines'>guess_skip_header_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_records'>sample_records</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sample_records'>sample_records</span> <span class='op'>=</span> <span class='id identifier rubyid_sample_records'>sample_records</span><span class='lbracket'>[</span><span class='id identifier rubyid_skip_header_lines'>skip_header_lines</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_comment_line_marker'>comment_line_marker</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_records'>sample_records</span> <span class='op'>=</span> <span class='id identifier rubyid_guess_comment_line_marker'>guess_comment_line_marker</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_records'>sample_records</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_first_types'>first_types</span> <span class='op'>=</span> <span class='const'>SchemaGuess</span><span class='period'>.</span><span class='id identifier rubyid_types_from_array_records'>types_from_array_records</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_records'>sample_records</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_other_types'>other_types</span> <span class='op'>=</span> <span class='const'>SchemaGuess</span><span class='period'>.</span><span class='id identifier rubyid_types_from_array_records'>types_from_array_records</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_records'>sample_records</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -356,6 +372,8 @@
     <span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>skip_header_lines</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_skip_header_lines'>skip_header_lines</span>
   <span class='kw'>end</span>
 
+  <span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>comment_line_marker</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_comment_line_marker'>comment_line_marker</span>  <span class='comment'># always set comment_line_marker even if it's null
+</span>
   <span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>allow_extra_columns</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>false</span>
   <span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>allow_optional_columns</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>false</span>
 
@@ -388,7 +406,7 @@
 </div>
 
     <div id="footer">
-  Generated on Wed May 27 00:39:42 2015 by
+  Generated on Sun May 31 05:55:20 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
