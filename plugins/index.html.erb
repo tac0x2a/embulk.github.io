@@ -52,7 +52,11 @@
                     </span>
                   </div>
                 </td>
-                <td style="min-width:9em"><a href="<%=h gem[:url] %>"><%=h gem[:name] %></a><pre class="install">$ embulk gem install <%=h gem[:gem_name] %></pre></td>
+                <td style="min-width:9em">
+                  <% if gem[:github_url] %><a href="<%=h gem[:github_url] %>"><%=h gem[:name] %></a>
+                  <% else %><%=h gem[:name] %><% end %>
+                  <pre class="install">$ embulk gem install <%=h gem[:gem_name] %></pre>
+                </td>
                 <td style="min-width:13em">
                   <% if gem[:avatar_url] %>
                   <a href="https://github.com/<%=e gem[:owner] %>"><%=h gem[:author] %>
