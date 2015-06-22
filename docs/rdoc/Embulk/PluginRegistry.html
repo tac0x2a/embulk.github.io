@@ -316,15 +316,15 @@
       <pre class="lines">
 
 
-6
 7
 8
 9
 10
-11</pre>
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 6</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_category'>category</span><span class='comma'>,</span> <span class='id identifier rubyid_search_prefix'>search_prefix</span><span class='rparen'>)</span>
   <span class='ivar'>@category</span> <span class='op'>=</span> <span class='id identifier rubyid_category'>category</span>
@@ -370,12 +370,12 @@
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 13</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_category'>category</span>
   <span class='ivar'>@category</span>
@@ -407,7 +407,6 @@
       <pre class="lines">
 
 
-20
 21
 22
 23
@@ -420,10 +419,11 @@
 30
 31
 32
-33</pre>
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 20</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
@@ -459,13 +459,13 @@
       <pre class="lines">
 
 
-15
 16
 17
-18</pre>
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 15</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register'>register</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
@@ -491,13 +491,13 @@
       <pre class="lines">
 
 
-77
 78
 79
-80</pre>
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 77</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_and_show'>require_and_show</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require'>require</span> <span class='id identifier rubyid_name'>name</span>
@@ -523,7 +523,6 @@
       <pre class="lines">
 
 
-35
 36
 37
 38
@@ -563,10 +562,11 @@
 72
 73
 74
-75</pre>
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 35</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@search_prefix</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type'>type</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -629,7 +629,6 @@
       <pre class="lines">
 
 
-82
 83
 84
 85
@@ -640,11 +639,10 @@
 90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 82</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin_registry.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_loaded_gems'>show_loaded_gems</span>
-  <span class='comment'># TODO use logger
-</span>  <span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_loaded_specs'>loaded_specs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span><span class='id identifier rubyid_spec'>spec</span><span class='op'>|</span>
+  <span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_loaded_specs'>loaded_specs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span><span class='id identifier rubyid_spec'>spec</span><span class='op'>|</span>
     <span class='kw'>if</span> <span class='op'>!</span><span class='ivar'>@loaded_gems</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^embulk</span><span class='regexp_end'>/</span></span>
       <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Loaded plugin </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
       <span class='ivar'>@loaded_gems</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
@@ -661,7 +659,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Jun 22 22:29:08 2015 by
+  Generated on Mon Jun 22 22:30:21 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
