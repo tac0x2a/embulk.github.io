@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.6.12 &mdash; Embulk 0.6 documentation</title>
+    <title>Release 0.6.13 &mdash; Embulk 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,58 +25,53 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.6 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.6.11" href="release-0.6.11.html" />
-    <link rel="prev" title="Release 0.6.13" href="release-0.6.13.html" /> 
+    <link rel="next" title="Release 0.6.12" href="release-0.6.12.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.6.12</span></h2>
+        <h2 class="heading"><span>Release 0.6.13</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.13.html">Release 0.6.13</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.11.html">Release 0.6.11</a>&#160;&#160;»
+        <a href="release-0.6.12.html">Release 0.6.12</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-6-12">
-<h1>Release 0.6.12<a class="headerlink" href="#release-0-6-12" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-6-13">
+<h1>Release 0.6.13<a class="headerlink" href="#release-0-6-13" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Plugins can use both <code class="docutils literal"><span class="pre">config[:key]</span></code> (<code class="docutils literal"><span class="pre">task[:key]</span></code>) and <code class="docutils literal"><span class="pre">config['key']</span></code> (<code class="docutils literal"><span class="pre">task['key']</span></code>).</li>
-<li>Added <code class="docutils literal"><span class="pre">Embulk.logger</span></code> for Ruby plugins</li>
+<li>Aded spi.util.DynamicPageBuilder utility class. This is a wrapper of PageBuilder which converts types automatically.</li>
+<li><code class="docutils literal"><span class="pre">page_builder</span></code> used by Ruby plugins are now backed by DynamicPageBuilder. This means that Ruby plugins don&#8217;t need type conversion code such as to_i or to_s any more.</li>
 </ul>
 </div>
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin does not raise exceptions when a file has only 1 line</li>
-<li><code class="docutils literal"><span class="pre">parser-csv</span></code> shows number of lines using 1-origin indexing rather than 0-origin</li>
+<li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guesses <code class="docutils literal"><span class="pre">trim_if_not_quoted</span></code> option. This works well if a CSV file includes integers with extra spaces (such as CSV files exported by Excel).</li>
+<li>Fixed a problem where <code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guessed type of a column as &#8220;string&#8221; if it includes non-empty null_string.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Guessing skips files smaller than 40 bytes so that guessing works when there is an empty file at the beginning.</li>
-<li>Uses ANSI color for log messages</li>
-<li>Uses logback instead of log4j for logging backend</li>
-<li>Added <code class="docutils literal"><span class="pre">spi.Exec.isPreview()</span></code> as an alias of <code class="docutils literal"><span class="pre">spi.Exec.session().isPreview()</span></code></li>
-<li>Plugin template for Ruby uses Xxx instead of XxxInputPlugin for the class name so that class name matches with file name.</li>
-<li>When parsing timestamp fails, exception message includes the original text (&#64;yyamano++)</li>
+<li>&#8220;-b&#8221; option installs bundler automatically if it is not installed rather shows &#8220;no such file to load &#8211; bundler&#8221; error message.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-06-22</p>
+<p>2015-06-25</p>
 </div>
 </div>
 
@@ -85,11 +80,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.13.html">Release 0.6.13</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.11.html">Release 0.6.11</a>&#160;&#160;»
+        <a href="release-0.6.12.html">Release 0.6.12</a>&#160;&#160;»
         </p>
 
       </div>
