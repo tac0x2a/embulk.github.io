@@ -337,7 +337,11 @@
 127
 128
 129
-130</pre>
+130
+131
+132
+133
+134</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/guess/csv.rb', line 35</span>
@@ -345,13 +349,17 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>csv</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>csv</span><span class='tstring_end'>&quot;</span></span>
 
-  <span class='id identifier rubyid_delim'>delim</span> <span class='op'>=</span> <span class='id identifier rubyid_guess_delimiter'>guess_delimiter</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
-  <span class='kw'>unless</span> <span class='id identifier rubyid_delim'>delim</span>
-    <span class='comment'># not CSV file
-</span>    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_parser_config'>parser_config</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_parser_config'>parser_config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>csv</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_parser_config'>parser_config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delimiter</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_delim'>delim</span> <span class='op'>=</span> <span class='id identifier rubyid_parser_config'>parser_config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delimiter</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_delim'>delim</span> <span class='op'>=</span> <span class='id identifier rubyid_guess_delimiter'>guess_delimiter</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_delim'>delim</span>
+      <span class='comment'># not CSV file
+</span>      <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_parser_config'>parser_config</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='id identifier rubyid_parser_guessed'>parser_guessed</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_parser_config'>parser_config</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>csv</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delimiter</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_delim'>delim</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 
   <span class='kw'>unless</span> <span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>quote</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -448,7 +456,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Jun 29 07:11:38 2015 by
+  Generated on Mon Jun 29 07:11:58 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
