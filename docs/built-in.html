@@ -523,6 +523,16 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
 <td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
 </tr>
+<tr class="row-odd"><td>default_timezone</td>
+<td>string</td>
+<td>Time zone of timestamp columns. This can be overwritten for each column using <code class="docutils literal"><span class="pre">column_options</span></code></td>
+<td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>column_options</td>
+<td>hash</td>
+<td>See bellow</td>
+<td>optional</td>
+</tr>
 </tbody>
 </table>
 <p>The <code class="docutils literal"><span class="pre">quote_policy</span></code> option is used to determine field type to quote.</p>
@@ -548,6 +558,34 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
+<p>The <code class="docutils literal"><span class="pre">column_options</span></code> option is a map whose keys are name of columns, and values are configuration with following parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="5%" />
+<col width="59%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">type</th>
+<th class="head">description</th>
+<th class="head">required?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>timezone</td>
+<td>string</td>
+<td>Time zone if type of this column is timestamp. If not set, <code class="docutils literal"><span class="pre">default\_timezone</span></code> is used.</td>
+<td>optional</td>
+</tr>
+<tr class="row-odd"><td>format</td>
+<td>string</td>
+<td>Timestamp format if type of this column is timestamp.</td>
+<td><code class="docutils literal"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S.%6N</span> <span class="pre">%z</span></code> by default</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="id11">
 <h3><a class="toc-backref" href="#id29">Example</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
@@ -563,6 +601,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
     <span class="l-Scalar-Plain">quote</span><span class="p-Indicator">:</span> <span class="s">&#39;&quot;&#39;</span>
     <span class="l-Scalar-Plain">escape</span><span class="p-Indicator">:</span> <span class="s">&#39;\\&#39;</span>
     <span class="l-Scalar-Plain">null_string</span><span class="p-Indicator">:</span> <span class="s">&#39;\\N&#39;</span>
+    <span class="l-Scalar-Plain">default_timezone</span><span class="p-Indicator">:</span> <span class="s">&#39;UTC&#39;</span>
+    <span class="l-Scalar-Plain">column_options</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">mycol1</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span><span class="nv">format</span><span class="p-Indicator">:</span> <span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M:%S&#39;</span><span class="p-Indicator">}</span>
+      <span class="l-Scalar-Plain">mycol2</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span><span class="nv">format</span><span class="p-Indicator">:</span> <span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M:%S&#39;</span><span class="p-Indicator">,</span> <span class="nv">timezone</span><span class="p-Indicator">:</span> <span class="s">&#39;America/Los_Angeles&#39;</span><span class="p-Indicator">}</span>
 </pre></div>
 </div>
 </div>
