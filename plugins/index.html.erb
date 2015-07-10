@@ -62,8 +62,9 @@
                   <a href="https://github.com/<%=e gem[:owner] %>"><%=h gem[:author] %>
                   <img src="<%=h gem[:avatar_url] %>" height=32 width=32></img></a>
                   <% else %>
+                  <%=h gem[:author] %>
+                  <% end %>
                 </td>
-                <% end %>
                 <td><%=h gem[:info] %></td>
                 <td style="width:3em"><%=h gem[:downloads] %></td>
               </tr>
