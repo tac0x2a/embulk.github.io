@@ -98,7 +98,7 @@ chmod +x ~/.embulk/bin/embulk
 echo 'export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;' &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 
-<p>Next step: <a href="#running-example">Running example</a></p>
+<p>Next step: <a href="#running-example">Running example in 4 commands</a></p>
 
 <h3 id="label-Windows">Windows</h3>
 
@@ -111,7 +111,7 @@ PowerShell.exe:</p>
 
 <pre class="code ruby"><code class="ruby">PowerShell -Command &quot;&amp; {Invoke-WebRequest http://dl.embulk.org/embulk-latest.jar -OutFile embulk.bat}&quot;</code></pre>
 
-<p>Next step: <a href="#running-example">Running example</a></p>
+<p>Next step: <a href="#running-example">Running example in 4 commands</a></p>
 
 <h3 id="label-Running+example">Running example</h3>
 
@@ -188,6 +188,16 @@ work.</p>
 embulk guess  -b ./embulk_bundle ...
 embulk run    -b ./embulk_bundle ...</code></pre>
 
+<h2 id="label-Use+cases">Use cases</h2>
+<ul><li>
+<p><a
+href="http://www.embulk.org/docs/recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled
+bulk data loading to Elasticsearch + Kibana 4 from CSV files</a></p>
+</li></ul>
+
+<p>For further details, visit <a href="http://www.embulk.org/docs/">Embulk
+documentation</a>.</p>
+
 <h2 id="label-Embulk+Development">Embulk Development</h2>
 
 <h3 id="label-Build">Build</h3>
@@ -253,7 +263,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Jul 16 05:57:11 2015 by
+  Generated on Thu Jul 16 19:47:39 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
