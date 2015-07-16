@@ -64,54 +64,32 @@
     <div id="content"><div id='filecontents'>
 <h1 id="label-What%27s+Embulk%3F">What's Embulk?</h1>
 
-<p>Embulk is a plugin-based parallel bulk data loader that helps <strong>data
-transfer</strong> between various <strong>storages</strong>,
-<strong>databases</strong>, <strong>NoSQL</strong> and <strong>cloud
-services</strong>.</p>
+<p>Embulk is a parallel bulk data loader that <strong>helps data transfer
+between various storages, databases, NoSQL and cloud services</strong>.</p>
 
-<p>You can release plugins to share your efforts of data cleaning, error
-handling, transaction control, and retrying. Packaging efforts into plugins
-<strong>brings OSS-style development to the data scripts</strong> which
-<strong>was tend to be one-time adhoc scripts</strong>.</p>
-
-<p><a
-href="http://www.slideshare.net/frsyuki/embuk-making-data-integration-works-relaxed">Embulk,
-an open-source plugin-based parallel bulk data loader</a> at Slideshare</p>
+<p><strong>Embulk supports plugins</strong> to add functions. You can <a
+href="http://www.embulk.org/plugins/">share the plugins</a> to keep your
+custom scripts readable, maintainable, and reusable.</p>
 
 <p><a
 href="http://www.slideshare.net/frsyuki/embuk-making-data-integration-works-relaxed/12"><img
-src="https://gist.githubusercontent.com/frsyuki/f322a77ee2766a508ba9/raw/e8539b6b4fda1b3357e8c79d3966aa8148dbdbd3/embulk-overview.png"></a></p>
+src="https://gist.githubusercontent.com/frsyuki/f322a77ee2766a508ba9/raw/e8539b6b4fda1b3357e8c79d3966aa8148dbdbd3/embulk-overview.png"></a>
+<a
+href="http://www.slideshare.net/frsyuki/embuk-making-data-integration-works-relaxed">Embulk,
+an open-source plugin-based parallel bulk data loader</a> at Slideshare</p>
 
 <h1 id="label-Document">Document</h1>
-<ul><li>
-<p><a href="#quick-start">Quick Start</a></p>
-</li><li>
-<p><a href="#using-plugins">Using plugins</a></p>
-</li><li>
-<p><a href="#using-plugin-bundle">Using plugin bundle</a></p>
-</li><li>
-<p><a href="#releasing-plugins-to-rubygems">Releasing plugins to RubyGems</a></p>
-</li><li>
-<p><a href="#resuming-a-failed-transaction">Resuming a failed transaction</a></p>
-</li><li>
-<p><a href="#embulk-development">Embulk Development</a></p>
-</li><li>
-<p><a href="#build">Build</a></p>
-</li><li>
-<p><a href="#release">Release</a></p>
-</li></ul>
+
+<p>Embulk documents: <a
+href="http://www.embulk.org/docs">www.embulk.org/docs</a>/</p>
 
 <h2 id="label-Quick+Start">Quick Start</h2>
 
-<p>The single-file package is the simplest way to try Embulk. You can download
-the latest embulk-VERSION.jar from <a
-href="https://bintray.com/embulk/maven/embulk/view#files">the releases
-page</a> and run it with java.</p>
-
 <h3 id="label-Linux+%26+Mac+%26+BSD">Linux &amp; Mac &amp; BSD</h3>
 
-<p>Embulk is a Java application. Please make sure that you installed <a
-href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>.</p>
+<p>Embulk is a Java application. Please make sure that <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>
+is installed.</p>
 
 <p>Following 4 commands install embulk to your home directory:</p>
 
@@ -120,23 +98,25 @@ chmod +x ~/.embulk/bin/embulk
 echo 'export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;' &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 
-<p>Next step: <a href="#trying-the-example">Trying the example</a></p>
+<p>Next step: <a href="#running-example">Running example</a></p>
 
 <h3 id="label-Windows">Windows</h3>
 
-<p>Embulk is a Java application. Please make sure that you installed <a
-href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>.</p>
+<p>Embulk is a Java application. Please make sure that <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>
+is installed.</p>
 
-<p>You can assume the jar file is a .bat file.</p>
+<p>You can download <code>embulk.bat</code> using this command on cmd.exe or
+PowerShell.exe:</p>
 
 <pre class="code ruby"><code class="ruby">PowerShell -Command &quot;&amp; {Invoke-WebRequest http://dl.embulk.org/embulk-latest.jar -OutFile embulk.bat}&quot;</code></pre>
 
-<p>Next step: <a href="#trying-the-example">Trying the example</a></p>
+<p>Next step: <a href="#running-example">Running example</a></p>
 
-<h3 id="label-Trying+the+example">Trying the example</h3>
+<h3 id="label-Running+example">Running example</h3>
 
-<p>Let's load a CSV file, for example. <code>embulk example</code> subcommand
-generates a csv file and config file for you.</p>
+<p><code>embulk example</code> command generates a sample CSV file so that you
+can try embulk quickly:</p>
 
 <pre class="code ruby"><code class="ruby">embulk example ./try1
 embulk guess   ./try1/example.yml -o config.yml
@@ -166,7 +146,8 @@ plugin. It executes an external command to output the records.</p>
 can use those plugins with following configuration file:</p>
 
 <pre class="code ruby"><code class="ruby">in:
-  # ...
+  type: file
+  path_prefix: &quot;./try1/csv/sample_&quot;
 out:
   type: command
   command: &quot;cat - &gt; task.$INDEX.$SEQID.csv.gz&quot;
@@ -174,27 +155,6 @@ out:
     - {type: gzip}
   formatter:
     type: csv</code></pre>
-
-<h3 id="label-Using+plugin+bundle">Using plugin bundle</h3>
-
-<p><code>embulk bundle</code> subcommand creates (or updates if already
-exists) a private (isolated) bundle of a plugins. You can use the bundle
-using <code>-b &lt;bundle_dir&gt;</code> option. <code>embulk bundle</code>
-also generates some example plugins to &lt;bundle_dir&gt;/embulk/*.rb
-directory.</p>
-
-<p>See the generated &lt;bundle_dir&gt;/Gemfile file how to plugin bundles
-work.</p>
-
-<pre class="code ruby"><code class="ruby">embulk bundle ./embulk_bundle
-embulk guess  -b ./embulk_bundle ...
-embulk run    -b ./embulk_bundle ...</code></pre>
-
-<h3 id="label-Releasing+plugins+to+RubyGems">Releasing plugins to RubyGems</h3>
-
-<p>TODO: documents</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span><span class='op'>-</span><span class='id identifier rubyid_plugin'>plugin</span><span class='op'>-</span><span class='id identifier rubyid_xyz'>xyz</span></code></pre>
 
 <h3 id="label-Resuming+a+failed+transaction">Resuming a failed transaction</h3>
 
@@ -212,6 +172,21 @@ You can retry the transaction using exactly same command:</p>
 cleanup</code> subcommand to delete intermediate data:</p>
 
 <pre class="code ruby"><code class="ruby">embulk cleanup config.yml -r resume-state.yml</code></pre>
+
+<h3 id="label-Using+plugin+bundle">Using plugin bundle</h3>
+
+<p><code>embulk bundle</code> subcommand creates (or updates if already
+exists) a private (isolated) bundle of a plugins. You can use the bundle
+using <code>-b &lt;bundle_dir&gt;</code> option. <code>embulk bundle</code>
+also generates some example plugins to &lt;bundle_dir&gt;/embulk/*.rb
+directory.</p>
+
+<p>See the generated &lt;bundle_dir&gt;/Gemfile file how to plugin bundles
+work.</p>
+
+<pre class="code ruby"><code class="ruby">embulk bundle ./embulk_bundle
+embulk guess  -b ./embulk_bundle ...
+embulk run    -b ./embulk_bundle ...</code></pre>
 
 <h2 id="label-Embulk+Development">Embulk Development</h2>
 
@@ -278,7 +253,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Jul  9 00:15:15 2015 by
+  Generated on Thu Jul 16 05:57:11 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
