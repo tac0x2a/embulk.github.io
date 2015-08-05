@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.6.20 &mdash; Embulk 0.6 documentation</title>
+    <title>Release 0.6.21 &mdash; Embulk 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,46 +25,47 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.6 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.6.19" href="release-0.6.19.html" />
-    <link rel="prev" title="Release 0.6.21" href="release-0.6.21.html" /> 
+    <link rel="next" title="Release 0.6.20" href="release-0.6.20.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.6.20</span></h2>
+        <h2 class="heading"><span>Release 0.6.21</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.21.html">Release 0.6.21</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.19.html">Release 0.6.19</a>&#160;&#160;»
+        <a href="release-0.6.20.html">Release 0.6.20</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-6-20">
-<h1>Release 0.6.20<a class="headerlink" href="#release-0-6-20" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="command-line-interface">
-<h2>Command line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="release-0-6-21">
+<h1>Release 0.6.21<a class="headerlink" href="#release-0-6-21" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">-X</span> <span class="pre">key=value</span></code> argument to set system config. This argument is intended to overwrite performance parameters such as number of threads (<code class="docutils literal"><span class="pre">max_threads</span></code>) or page buffer size (<code class="docutils literal"><span class="pre">page_size</span></code>).</li>
+<li>Added <code class="docutils literal"><span class="pre">filter-rename</span></code> plugin. We can rename name of columns. This plugin has no impact on performance.</li>
+<li><code class="docutils literal"><span class="pre">parser-csv</span></code> plugin accepts <code class="docutils literal"><span class="pre">null</span></code> to <code class="docutils literal"><span class="pre">quote</span></code> and <code class="docutils literal"><span class="pre">escape</span></code> options to disable quoting or escaping. This is useful if a file includes <code class="docutils literal"><span class="pre">&quot;</span></code> in a non-quoted value.</li>
+<li><code class="docutils literal"><span class="pre">parser-csv</span></code> shows warning if empty string is set to <code class="docutils literal"><span class="pre">quote</span></code> or <code class="docutils literal"><span class="pre">escape</span></code> options. Behavior is kept backward-compatible but it will be rejected in the future.</li>
 </ul>
 </div>
-<div class="section" id="general-changes">
-<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="java-plugin-api">
+<h2>Java Plugin API<a class="headerlink" href="#java-plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Change default size of page buffer from 8KB to 32KB.</li>
-<li>Size of a page buffer is configurable by system config (&#64;sonots++). On command line, <code class="docutils literal"><span class="pre">embulk</span></code> command accepts <code class="docutils literal"><span class="pre">-X</span> <span class="pre">page_size=N[unit]</span></code> argument (e.g. <code class="docutils literal"><span class="pre">-X</span> <span class="pre">page_size=512KB</span></code>).</li>
+<li>Added <code class="docutils literal"><span class="pre">config.DataSource.has</span></code> method to check whether it contains a key or not.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-08-03</p>
+<p>2015-08-05</p>
 </div>
 </div>
 
@@ -73,11 +74,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.21.html">Release 0.6.21</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.19.html">Release 0.6.19</a>&#160;&#160;»
+        <a href="release-0.6.20.html">Release 0.6.20</a>&#160;&#160;»
         </p>
 
       </div>
