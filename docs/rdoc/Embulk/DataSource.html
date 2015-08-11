@@ -378,13 +378,13 @@
       <pre class="lines">
 
 
-176
-177
-178
-179</pre>
+196
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 176</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_data_source_impl'>java_data_source_impl</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_json'>json</span> <span class='op'>=</span> <span class='id identifier rubyid_java_data_source_impl'>java_data_source_impl</span><span class='period'>.</span><span class='id identifier rubyid_toString'>toString</span>
@@ -410,12 +410,12 @@
       <pre class="lines">
 
 
-181
-182
-183</pre>
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 181</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 201</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_ruby_hash'>from_ruby_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
@@ -446,12 +446,12 @@
       <pre class="lines">
 
 
-190
-191
-192</pre>
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 190</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 210</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_config'>load_config</span><span class='lparen'>(</span><span class='id identifier rubyid_task_type'>task_type</span><span class='rparen'>)</span>
   <span class='const'>Java</span><span class='op'>::</span><span class='const'>Injected</span><span class='op'>::</span><span class='const'>ModelManager</span><span class='period'>.</span><span class='id identifier rubyid_readObjectWithConfigSerDe'>readObjectWithConfigSerDe</span><span class='lparen'>(</span><span class='id identifier rubyid_task_type'>task_type</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rparen'>)</span>
@@ -476,12 +476,12 @@
       <pre class="lines">
 
 
-194
-195
-196</pre>
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 194</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 214</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_task'>load_task</span><span class='lparen'>(</span><span class='id identifier rubyid_task_type'>task_type</span><span class='rparen'>)</span>
   <span class='const'>Java</span><span class='op'>::</span><span class='const'>Injected</span><span class='op'>::</span><span class='const'>ModelManager</span><span class='period'>.</span><span class='id identifier rubyid_readObject'>readObject</span><span class='lparen'>(</span><span class='id identifier rubyid_task_type'>task_type</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rparen'>)</span>
@@ -540,7 +540,27 @@
 170
 171
 172
-173</pre>
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 139</span>
@@ -551,31 +571,51 @@
     <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span>
       <span class='kw'>case</span> <span class='id identifier rubyid_type'>type</span>
       <span class='kw'>when</span> <span class='symbol'>:integer</span>
-        <span class='const'>Integer</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='kw'>begin</span>
+          <span class='const'>Integer</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+          <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='kw'>end</span>
       <span class='kw'>when</span> <span class='symbol'>:float</span>
-        <span class='const'>Float</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='kw'>begin</span>
+          <span class='const'>Float</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+          <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='kw'>end</span>
       <span class='kw'>when</span> <span class='symbol'>:string</span>
-        <span class='const'>String</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+        <span class='kw'>begin</span>
+          <span class='const'>String</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+        <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+          <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='kw'>end</span>
       <span class='kw'>when</span> <span class='symbol'>:bool</span>
-        <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_v'>v</span>  <span class='comment'># TODO validation
-</span>      <span class='kw'>when</span> <span class='symbol'>:hash</span>
-        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid value for :hash</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+        <span class='kw'>begin</span>
+          <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_v'>v</span>  <span class='comment'># TODO validation
+</span>        <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+          <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='kw'>end</span>
+      <span class='kw'>when</span> <span class='symbol'>:hash</span>
+        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid value for :hash</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
         <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
       <span class='kw'>when</span> <span class='symbol'>:array</span>
-        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid value for :array</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid value for :array</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
         <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
       <span class='kw'>else</span>
         <span class='kw'>unless</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:load</span><span class='rparen'>)</span>
           <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown type </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
         <span class='kw'>end</span>
-        <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='kw'>begin</span>
+          <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+          <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='kw'>end</span>
       <span class='kw'>end</span>
 
   <span class='kw'>elsif</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:default</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:default</span><span class='rbracket'>]</span>
 
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Required field </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='rbrace'>}</span><span class='tstring_content'> is not set</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Required field </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='rbrace'>}</span><span class='tstring_content'> is not set</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 
   <span class='kw'>return</span> <span class='id identifier rubyid_value'>value</span>
@@ -600,13 +640,13 @@
       <pre class="lines">
 
 
-185
-186
-187
-188</pre>
+205
+206
+207
+208</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 185</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='id identifier rubyid_json'>json</span> <span class='op'>=</span> <span class='id identifier rubyid_to_json'>to_json</span>
@@ -622,7 +662,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sat Aug  8 05:31:35 2015 by
+  Generated on Tue Aug 11 07:00:36 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
