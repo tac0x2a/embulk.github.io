@@ -2,6 +2,7 @@ org.embulk
 org.embulk.command
 org.embulk.config
 org.embulk.exec
+org.embulk.guice
 org.embulk.jruby
 org.embulk.plugin
 org.embulk.spi

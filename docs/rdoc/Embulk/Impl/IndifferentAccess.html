@@ -83,7 +83,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/home/travis/build/embulk/embulk/lib/embulk/data_source.rb</dd>
+    <dd class="r2 last">lib/embulk/data_source.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -511,7 +511,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='comment'>#Hashie::Extensions::Dash::IndifferentAccess::ClassMethods.tap do |extension|
@@ -579,7 +579,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_inject!'>inject!</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='rparen'>)</span>
@@ -610,7 +610,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inject!'>inject!</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_hash'>hash</span><span class='semicolon'>;</span> <span class='kw'>self</span><span class='semicolon'>;</span> <span class='kw'>end</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:include</span><span class='comma'>,</span> <span class='const'>IndifferentAccess</span>
@@ -650,7 +650,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_convert!'>convert!</span>
   <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='op'>|</span>
@@ -683,7 +683,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_convert_key'>convert_key</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -735,7 +735,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_access?'>indifferent_access?</span>
   <span class='kw'>true</span>
@@ -766,7 +766,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_default'>indifferent_default</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='lbracket'>[</span><span class='id identifier rubyid_convert_key'>convert_key</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
@@ -797,7 +797,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_delete'>indifferent_delete</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_regular_delete'>regular_delete</span> <span class='id identifier rubyid_convert_key'>convert_key</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
@@ -827,7 +827,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_fetch'>indifferent_fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_regular_fetch'>regular_fetch</span> <span class='id identifier rubyid_convert_key'>convert_key</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
@@ -879,7 +879,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_key?'>indifferent_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_regular_key?'>regular_key?</span> <span class='id identifier rubyid_convert_key'>convert_key</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
@@ -911,7 +911,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_replace'>indifferent_replace</span><span class='lparen'>(</span><span class='id identifier rubyid_other_hash'>other_hash</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>-</span> <span class='id identifier rubyid_other_hash'>other_hash</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -946,7 +946,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_update'>indifferent_update</span><span class='lparen'>(</span><span class='id identifier rubyid_other_hash'>other_hash</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_regular_update'>regular_update</span><span class='lparen'>(</span><span class='id identifier rubyid_other_hash'>other_hash</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_hash_with_indifference?'>hash_with_indifference?</span><span class='lparen'>(</span><span class='id identifier rubyid_other_hash'>other_hash</span><span class='rparen'>)</span>
@@ -985,7 +985,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_value'>indifferent_value</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_hash_lacking_indifference?'>hash_lacking_indifference?</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -1021,7 +1021,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_values_at'>indifferent_values_at</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_indices'>indices</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='kw'>self</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
@@ -1051,7 +1051,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/data_source.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/data_source.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_indifferent_writer'>indifferent_writer</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_regular_writer'>regular_writer</span> <span class='id identifier rubyid_convert_key'>convert_key</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_indifferent_value'>indifferent_value</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -1066,7 +1066,7 @@ href="https://github.com/intridea/hashie/blob/da232547c29673a0d7a79c7bf2670f1ea7
 </div>
 
     <div id="footer">
-  Generated on Tue Aug 11 07:00:30 2015 by
+  Generated on Tue Aug 11 09:05:58 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
