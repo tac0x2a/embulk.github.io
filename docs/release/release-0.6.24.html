@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.6.23 &mdash; Embulk 0.6 documentation</title>
+    <title>Release 0.6.24 &mdash; Embulk 0.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,45 +25,40 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.6 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.6.22" href="release-0.6.22.html" />
-    <link rel="prev" title="Release 0.6.24" href="release-0.6.24.html" /> 
+    <link rel="next" title="Release 0.6.23" href="release-0.6.23.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.6 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.6.23</span></h2>
+        <h2 class="heading"><span>Release 0.6.24</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.24.html">Release 0.6.24</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.22.html">Release 0.6.22</a>&#160;&#160;»
+        <a href="release-0.6.23.html">Release 0.6.23</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-6-23">
-<h1>Release 0.6.23<a class="headerlink" href="#release-0-6-23" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-6-24">
+<h1>Release 0.6.24<a class="headerlink" href="#release-0-6-24" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed <code class="docutils literal"><span class="pre">LoadError:</span> <span class="pre">no</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">to</span> <span class="pre">load</span> <span class="pre">--</span> <span class="pre">liquid</span></code> which happens when embulk is loaded by bundler.</li>
-</ul>
-</div>
-<div class="section" id="ruby-plugin-api">
-<h2>Ruby Plugin API<a class="headerlink" href="#ruby-plugin-api" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">Embulk::ConfigError</span></code> extending <code class="docutils literal"><span class="pre">org.embulk.config.ConfigException</span></code> is reverted because of <code class="docutils literal"><span class="pre">exception</span> <span class="pre">class/object</span> <span class="pre">expected</span></code> error.</li>
+<li>Fixed error at <code class="docutils literal"><span class="pre">TempFileSpace</span></code> by replacing <code class="docutils literal"><span class="pre">:</span></code> in directory name to <code class="docutils literal"><span class="pre">-</span></code> (&#64;hito4t++)</li>
+<li>Run test with &#8216;-Xmx1024m&#8217; to run test on AppVeyor (&#64;cosmo0920++)</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-08-13</p>
+<p>2015-08-15</p>
 </div>
 </div>
 
@@ -72,11 +67,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.6.24.html">Release 0.6.24</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.6.22.html">Release 0.6.22</a>&#160;&#160;»
+        <a href="release-0.6.23.html">Release 0.6.23</a>&#160;&#160;»
         </p>
 
       </div>
