@@ -217,10 +217,10 @@ Findbug&#39;s report at
 <code>${project}/build/reports/findbug/main.html</code> # FIXME coverage
 information is not included somehow</p>
 
-<p>You can use <code>classpath</code> task to use <code>./bin/embulk</code>
-for development:</p>
+<p>You can use <code>classpath</code> task to use <code>bundle exec
+./bin/embulk</code> for development:</p>
 
-<pre class="code ruby"><code class="ruby">./gradlew classpath  # -x test: skip test
+<pre class="code ruby"><code class="ruby">./gradlew -t classpath  # -x test: skip test
 ./bin/embulk</code></pre>
 
 <p>To deploy artifacts to your local maven repository at ~/.m2/repository/:</p>
@@ -270,7 +270,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Tue Aug 18 05:55:02 2015 by
+  Generated on Tue Aug 18 22:14:55 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
