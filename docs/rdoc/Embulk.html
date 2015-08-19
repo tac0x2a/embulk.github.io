@@ -1432,7 +1432,9 @@ ENV.delete &#39;GEM_PATH&#39;
 118
 119
 120
-121</pre>
+121
+122
+123</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_new_plugin.rb', line 2</span>
@@ -1543,7 +1545,9 @@ ENV.delete &#39;GEM_PATH&#39;
       <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Next steps:</span><span class='tstring_end'>&quot;</span></span>
       <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
       <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  $ cd </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_full_project_name'>full_project_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  $ rake</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  $ bundle install                      # install one using rbenv &amp; rbenv-build</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  $ bundle exec rake                    # build gem to be released</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  $ bundle exec embulk run config.yml   # you can run plugin using this command</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>when</span> <span class='symbol'>:java</span>
       <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Next steps:</span><span class='tstring_end'>&quot;</span></span>
       <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -2439,7 +2443,7 @@ examples:
 </div>
 
     <div id="footer">
-  Generated on Wed Aug 19 04:32:54 2015 by
+  Generated on Wed Aug 19 04:44:43 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
