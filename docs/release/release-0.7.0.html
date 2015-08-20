@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.7.0 &mdash; Embulk 0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.7 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="next" title="Release 0.6.26" href="release-0.6.26.html" />
+    <link rel="prev" title="Release 0.7.1" href="release-0.7.1.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.7 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.7.0</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.7.1.html">Release 0.7.1</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.6.26.html">Release 0.6.26</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-7-0">
+<h1>Release 0.7.0<a class="headerlink" href="#release-0-7-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Upraded JRuby version to 9.0.0.0. Ruby scripting is compatible with Ruby 2.2 syntax.</li>
+<li>Added <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">migrate</span> <span class="pre">&lt;plugin</span> <span class="pre">directory&gt;</span></code> subcommand. This command modifies plugin code to use the latest Embulk API.</li>
+<li>Enambed Liquid template engine. If configuration file name ends with <code class="docutils literal"><span class="pre">.yml.liquid</span></code>, embulk embeds environment variables using Liquid template engine.</li>
+<li>Embulk gem package for JRuby doesn&#8217;t include JRuby itself any more. Size of a gem package is reduced from 38MB to 7.6MB.</li>
+<li>Embulk gem is also released for CRuby. This enables us to install <code class="docutils literal"><span class="pre">embulk</span></code> command using <code class="docutils literal"><span class="pre">gem</span> <span class="pre">install</span> <span class="pre">embulk</span></code>.</li>
+<li><strong>IMPORTANT</strong>: <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span></code> command runs bundler. To create a new plugin bundle, use <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span> <span class="pre">new</span> <span class="pre">&lt;directory&gt;</span></code> command. To update gems, use <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span></code> command at the directory. Instructions are written at generated Gemfile file.</li>
+</ul>
+</div>
+<div class="section" id="ruby-plugin-api">
+<h2>Ruby Plugin API<a class="headerlink" href="#ruby-plugin-api" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Added experimental <code class="docutils literal"><span class="pre">Embulk.setup</span></code> and <code class="docutils literal"><span class="pre">Embulk::Runner</span></code>.</p>
+<p>This enables ruby scripts to run embulk easily. This is also good for test code. For example, you can use this code:</p>
+</li>
+</ul>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;embulk&#39;</span>
+<span class="no">Embulk</span><span class="o">.</span><span class="n">setup</span>
+<span class="no">Embulk</span><span class="o">::</span><span class="no">Runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="no">YAML</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;config.yml&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">embulk</span> <span class="pre">new</span></code> generates .ruby-version file with jruby-9.0.0.0 for ruby-based plugins.</p>
+<p>This makes plugin development easy as following:</p>
+</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> 1. Create plugin template
+<span class="gp">$</span> embulk new ruby-parser awesome
+<span class="gp">$</span> <span class="nb">cd </span>embulk-parser-awesome
+<span class="gp">#</span> or upgrade existent plugin: embulk migrate embulk-parser-awesome
+
+<span class="gp">#</span> 2. Install dependency gems including embulk itself at vendor/bundle directory
+<span class="gp">$</span> bundle install --path vendor/bundle
+
+<span class="gp">#</span> 3. Create an example configuration file
+<span class="gp">$</span> vi config.yml
+
+<span class="gp">#</span> 4. You can run embulk without building <span class="p">&amp;</span> installing gem
+<span class="gp">$</span> bundle <span class="nb">exec </span>embulk run config.yml
+</pre></div>
+</div>
+<ul class="simple">
+<li>Constants defined at <code class="docutils literal"><span class="pre">Embulk::Java</span></code> are deprecated. They&#8217;re still kept for backward compatibility but will be removed at a future release.</li>
+<li>Added <code class="docutils literal"><span class="pre">Embulk::Java::Config</span></code> and <code class="docutils literal"><span class="pre">Embulk::SPI</span></code> namespaces to access Java classes.</li>
+</ul>
+</div>
+<div class="section" id="java-plugin-api">
+<h2>Java Plugin API<a class="headerlink" href="#java-plugin-api" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>IMPORTANT</strong>: Renamed CommitReport class to TaskReport. Binary backward compatibility is kept so that old plugins built with embulk 0.6.x can run with embulk 0.7.0. But this backward compatibility code will be removed at future release.</p>
+<p>To upgrade your plugin code, you can use <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">migrate</span> <span class="pre">&lt;plugin</span> <span class="pre">directory&gt;</span></code> command.</p>
+</li>
+<li><p class="first">Upgraded gradle version to 2.6. This version supports <code class="docutils literal"><span class="pre">./gradlew</span> <span class="pre">-t</span> <span class="pre">&lt;task&gt;</span></code> command that watches changes of files and rebuild continuously.</p>
+<p>This makes plugin development easy as following:</p>
+</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> 1. Create plugin template
+<span class="gp">$</span> embulk new java-input awesome
+<span class="gp">$</span> <span class="nb">cd </span>embulk-input-awesome
+<span class="gp">#</span> or upgrade existent plugin: embulk migrate embulk-input-awesome
+
+<span class="gp">#</span> 2. Build code continously
+<span class="gp">$</span> ./gradlew -t package
+
+<span class="gp">#</span> 3. Create an example configuration file
+<span class="gp">$</span> vi config.yml
+
+<span class="gp">#</span> 4. Run embulk with -L option
+<span class="gp">$</span> embulk -L . run config.yml
+</pre></div>
+</div>
+<ul class="simple">
+<li>Added <code class="docutils literal"><span class="pre">EmbulkEmbed.Bootstrap</span></code> class to build <code class="docutils literal"><span class="pre">EmbulkEmbed</span></code> instance.</li>
+<li>Added <code class="docutils literal"><span class="pre">ConfigLoader.fromJsonString(String)</span></code> and <code class="docutils literal"><span class="pre">ConfigLoader.fromYamlString(String)</span></code> methods.</li>
+<li>Added guess, preview, and run methods at <code class="docutils literal"><span class="pre">EmbulkEmbed</span></code> don&#8217;t need ExecSession instance any more.</li>
+<li>EmbulkService is now deprecated. Replacement is EmbulkEmbed.</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2015-08-18</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.7.1.html">Release 0.7.1</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.6.26.html">Release 0.6.26</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
