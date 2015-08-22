@@ -663,6 +663,7 @@
       <pre class="lines">
 
 
+23
 24
 25
 26
@@ -671,11 +672,10 @@
 29
 30
 31
-32
-33</pre>
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/column.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/column.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_column'>java_column</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_column'>java_column</span><span class='period'>.</span><span class='id identifier rubyid_getType'>getType</span><span class='rparen'>)</span>
@@ -713,16 +713,16 @@
       <pre class="lines">
 
 
+34
 35
 36
 37
 38
 39
-40
-41</pre>
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/column.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/column.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='symbol'>:timestamp</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_format'>format</span>
@@ -779,7 +779,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sat Aug 22 20:59:11 2015 by
+  Generated on Sat Aug 22 21:06:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
