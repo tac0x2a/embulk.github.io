@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.7.2 &mdash; Embulk 0.7 documentation</title>
+    <title>Release 0.7.3 &mdash; Embulk 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,52 +25,48 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.7 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.7.1" href="release-0.7.1.html" />
-    <link rel="prev" title="Release 0.7.3" href="release-0.7.3.html" /> 
+    <link rel="next" title="Release 0.7.2" href="release-0.7.2.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.7 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.7.2</span></h2>
+        <h2 class="heading"><span>Release 0.7.3</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.7.3.html">Release 0.7.3</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.7.1.html">Release 0.7.1</a>&#160;&#160;»
+        <a href="release-0.7.2.html">Release 0.7.2</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-7-2">
-<h1>Release 0.7.2<a class="headerlink" href="#release-0-7-2" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="built-in-plugins">
-<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">stop_on_invalid_record</span></code> option to <code class="docutils literal"><span class="pre">parser-csv</span></code> plugin. This option stops bulkloading if it finds a broken record such as invalid timestamp or invalid integer format rathar than skipping it.</li>
-</ul>
-</div>
-<div class="section" id="ruby-plugin-api">
-<h2>Ruby Plugin API<a class="headerlink" href="#ruby-plugin-api" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">Embulk::Exec.preview?</span></code> which returns true if plugins are running in preview.</li>
-<li>Fixed <code class="docutils literal"><span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">cast</span> <span class="pre">to</span> <span class="pre">org.jruby.RubyException</span></code> when ConfigException is raised.</li>
-</ul>
-</div>
+  <div class="section" id="release-0-7-3">
+<h1>Release 0.7.3<a class="headerlink" href="#release-0-7-3" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">selfupdate</span></code> subcommand (&#64;cosmo0920++)</li>
+<li><code class="docutils literal"><span class="pre">embulk</span> <span class="pre">selfupdate</span></code> command gets optoinal <code class="docutils literal"><span class="pre">&lt;version&gt;</span></code> argument to upgrade or downgrade to specific version (&#64;cosmo0920++).</li>
+<li><code class="docutils literal"><span class="pre">embulk</span> <span class="pre">migrate</span></code> command assumes that source code file encoding is UTF-8. This fixes encoding exception on Windows environment.</li>
+</ul>
+</div>
+<div class="section" id="java-plugin-api">
+<h2>Java Plugin API<a class="headerlink" href="#java-plugin-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed <code class="docutils literal"><span class="pre">Embulk::Exec.preview?</span></code>.</li>
+<li>Fixed <code class="docutils literal"><span class="pre">raise</span> <span class="pre">ConfigException</span></code>.</li>
+<li>added missing <code class="docutils literal"><span class="pre">PluginLoadError</span></code> class.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-08-20</p>
+<p>2015-08-23</p>
 </div>
 </div>
 
@@ -79,11 +75,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.7.3.html">Release 0.7.3</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.7.1.html">Release 0.7.1</a>&#160;&#160;»
+        <a href="release-0.7.2.html">Release 0.7.2</a>&#160;&#160;»
         </p>
 
       </div>
