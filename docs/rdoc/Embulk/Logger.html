@@ -429,7 +429,7 @@
       <span class='ivar'>@logger</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span>
     <span class='kw'>elsif</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>Logger</span><span class='rparen'>)</span>
       <span class='ivar'>@logger</span> <span class='op'>=</span> <span class='const'>StandardLoggerAdapter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span>
-    <span class='kw'>elsif</span> <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_java?'>java?</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_slf4j'>slf4j</span><span class='period'>.</span><span class='const'>Logger</span> <span class='kw'>rescue</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_slf4j'>slf4j</span><span class='period'>.</span><span class='const'>Logger</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='const'>RUBY_PLATFORM</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>java</span><span class='regexp_end'>/i</span></span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_slf4j'>slf4j</span><span class='period'>.</span><span class='const'>Logger</span> <span class='kw'>rescue</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_slf4j'>slf4j</span><span class='period'>.</span><span class='const'>Logger</span><span class='rparen'>)</span>
       <span class='ivar'>@logger</span> <span class='op'>=</span> <span class='const'>Slf4jAdapter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
       <span class='ivar'>@logger</span> <span class='op'>=</span> <span class='const'>StandardLoggerAdapter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
@@ -825,7 +825,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Aug 30 03:56:02 2015 by
+  Generated on Sun Aug 30 04:40:29 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
