@@ -653,19 +653,19 @@ type: stdout
       <pre class="lines">
 
 
-286
-287
-288
 289
 290
 291
 292
 293
 294
-295</pre>
+295
+296
+297
+298</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_run.rb', line 286</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_run.rb', line 289</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_default_gem_home'>default_gem_home</span>
   <span class='kw'>if</span> <span class='const'>RUBY_PLATFORM</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>java</span><span class='regexp_end'>/i</span></span>
@@ -1857,7 +1857,10 @@ ENV.delete &#39;GEM_PATH&#39;
 281
 282
 283
-284</pre>
+284
+285
+286
+287</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_run.rb', line 4</span>
@@ -1902,6 +1905,9 @@ ENV.delete &#39;GEM_PATH&#39;
   <span class='id identifier rubyid_java_embed_ops'>java_embed_ops</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_separator'>separator</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_separator'>separator</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Other options:</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-l</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--log PATH</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Output log messages to a file (default: -)</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:system_config</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:log_path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+    <span class='kw'>end</span>
     <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-l</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--log-level LEVEL</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Log level (error, warn, info, debug or trace)</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_level'>level</span><span class='op'>|</span>
       <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:system_config</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:log_level</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_level'>level</span>
     <span class='kw'>end</span>
@@ -2409,7 +2415,7 @@ examples:
 </div>
 
     <div id="footer">
-  Generated on Fri Aug 28 09:09:33 2015 by
+  Generated on Sun Aug 30 03:45:01 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
