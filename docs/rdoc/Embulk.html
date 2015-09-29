@@ -1914,7 +1914,7 @@ ENV.delete &#39;GEM_PATH&#39;
       <span class='kw'>elsif</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Gemfile</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
         <span class='id identifier rubyid_bundle_path'>bundle_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span>
       <span class='kw'>else</span>
-        <span class='id identifier rubyid_system_exit'>system_exit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; already exists. You already ran &#39;embulk bundle new&#39;. Please remove it, or run \&quot;cd </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot; and \&quot;embulk bundle\&quot; instead</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_system_exit'>system_exit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gemfile_path'>gemfile_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; already exists. You already ran &#39;embulk bundle new&#39;. Please remove it, or run \&quot;cd </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gemfile_path'>gemfile_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot; and \&quot;embulk bundle\&quot; instead</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>end</span>
 
       <span class='id identifier rubyid_run_bundler'>run_bundler</span><span class='lparen'>(</span><span class='id identifier rubyid_argv'>argv</span><span class='rparen'>)</span>
@@ -2337,7 +2337,7 @@ examples:
 </div>
 
     <div id="footer">
-  Generated on Tue Sep 29 04:39:04 2015 by
+  Generated on Tue Sep 29 16:52:06 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
