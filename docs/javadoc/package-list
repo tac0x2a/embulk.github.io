@@ -5,7 +5,6 @@ org.embulk.exec
 org.embulk.guice
 org.embulk.jruby
 org.embulk.plugin
-org.embulk.plugin.compat
 org.embulk.spi
 org.embulk.spi.time
 org.embulk.spi.type

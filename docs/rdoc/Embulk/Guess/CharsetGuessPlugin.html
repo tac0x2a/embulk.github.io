@@ -207,32 +207,14 @@
 28
 29
 30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40</pre>
+31</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/guess/charset.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
   <span class='comment'># ICU4J
-</span>  <span class='kw'>begin</span>
-    <span class='id identifier rubyid_detector_class'>detector_class</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span>
-  <span class='kw'>rescue</span> <span class='const'>NameError</span>
-    <span class='comment'># icu4j is removed from embulk.gem package explicitly at embulk.gemspec
-</span>    <span class='comment'># if gem is packaged for JRuby to reduce binary size. Instead, if it&#39;s
-</span>    <span class='comment'># packaged for JRuby, embulk.gemspec adds rjack-icu to its dependency.
-</span>    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rjack-icu</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_detector_class'>detector_class</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span>
-  <span class='kw'>end</span>
-  <span class='id identifier rubyid_detector'>detector</span> <span class='op'>=</span> <span class='id identifier rubyid_detector_class'>detector_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+</span>  <span class='id identifier rubyid_detector'>detector</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_detector'>detector</span><span class='period'>.</span><span class='id identifier rubyid_setText'>setText</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='period'>.</span><span class='id identifier rubyid_to_java_bytes'>to_java_bytes</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_best_match'>best_match</span> <span class='op'>=</span> <span class='id identifier rubyid_detector'>detector</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_best_match'>best_match</span><span class='period'>.</span><span class='id identifier rubyid_getConfidence'>getConfidence</span> <span class='op'>&lt;</span> <span class='int'>50</span>
@@ -255,9 +237,9 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Sep 29 16:52:15 2015 by
+  Generated on Thu Oct  1 01:21:15 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.6 (ruby-2.2.2).
+  0.8.7.6 (ruby-1.9.3).
 </div>
 
   </body>
