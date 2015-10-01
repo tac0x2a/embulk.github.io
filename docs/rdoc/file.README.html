@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>
   File: README
   
@@ -62,7 +62,7 @@
     <iframe id="search_frame"></iframe>
 
     <div id="content"><div id='filecontents'>
-<h1 id="label-What%27s+Embulk%3F">What's Embulk?</h1>
+<h1 id="label-What%27s+Embulk%3F">What&#39;s Embulk?</h1>
 
 <p>Embulk is a parallel bulk data loader that <strong>helps data transfer
 between various storages, databases, NoSQL and cloud services</strong>.</p>
@@ -95,7 +95,7 @@ is installed.</p>
 
 <pre class="code ruby"><code class="ruby">curl --create-dirs -o ~/.embulk/bin/embulk -L &quot;http://dl.embulk.org/embulk-latest.jar&quot;
 chmod +x ~/.embulk/bin/embulk
-echo 'export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;' &gt;&gt; ~/.bashrc
+echo &#39;export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 
 <p>Next step: <a href="#running-example">Running example in 4 commands</a></p>
@@ -175,7 +175,7 @@ cleanup</code> subcommand to delete intermediate data:</p>
 
 <h3 id="label-Using+plugin+bundle">Using plugin bundle</h3>
 
-<p><code>embulk bundle</code> subcommand creates (or updates if already
+<p><code>embulk bundle new</code> subcommand creates (or updates if already
 exists) a private (isolated) bundle of a plugins. You can use the bundle
 using <code>-b &lt;bundle_dir&gt;</code> option. <code>embulk bundle</code>
 also generates some example plugins to &lt;bundle_dir&gt;/embulk/*.rb
@@ -184,7 +184,7 @@ directory.</p>
 <p>See the generated &lt;bundle_dir&gt;/Gemfile file how to plugin bundles
 work.</p>
 
-<pre class="code ruby"><code class="ruby">embulk bundle ./embulk_bundle
+<pre class="code ruby"><code class="ruby">embulk bundle new ./embulk_bundle
 embulk guess  -b ./embulk_bundle ...
 embulk run    -b ./embulk_bundle ...</code></pre>
 
@@ -211,15 +211,16 @@ documentation</a>.</p>
 <pre class="code ruby"><code class="ruby">./gradlew cli  # creates pkg/embulk-VERSION.jar
 ./gradlew gem  # creates pkg/embulk-VERSION.gem</code></pre>
 
-<p>You can see JaCoCo's test coverage report at
+<p>You can see JaCoCo&#39;s test coverage report at
 <code>${project}/build/reports/tests/index.html</code> You can see
-Findbug's report at <code>${project}/build/reports/findbug/main.html</code>
-# FIXME coverage information is not included somehow</p>
+Findbug&#39;s report at
+<code>${project}/build/reports/findbug/main.html</code> # FIXME coverage
+information is not included somehow</p>
 
-<p>You can use <code>classpath</code> task to use <code>./bin/embulk</code>
-for development:</p>
+<p>You can use <code>classpath</code> task to use <code>bundle exec
+./bin/embulk</code> for development:</p>
 
-<pre class="code ruby"><code class="ruby">./gradlew classpath  # -x test: skip test
+<pre class="code ruby"><code class="ruby">./gradlew -t classpath  # -x test: skip test
 ./bin/embulk</code></pre>
 
 <p>To deploy artifacts to your local maven repository at ~/.m2/repository/:</p>
@@ -242,8 +243,8 @@ generation.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_brew'>brew</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_python'>python</span>
 <span class='id identifier rubyid_pip'>pip</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_sphinx'>sphinx</span>
-<span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_yard'>yard</span><span class='period'>
-</span><span class='op'>./</span><span class='id identifier rubyid_gradlew'>gradlew</span> <span class='id identifier rubyid_site'>site</span>
+<span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_yard'>yard</span>
+<span class='period'>.</span><span class='op'>/</span><span class='id identifier rubyid_gradlew'>gradlew</span> <span class='id identifier rubyid_site'>site</span>
 <span class='comment'># documents are: embulk-docs/build/html</span></code></pre>
 
 <h3 id="label-Release">Release</h3>
@@ -269,9 +270,9 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Oct  1 01:21:07 2015 by
+  Generated on Thu Oct  1 01:27:27 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.6 (ruby-1.9.3).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>
