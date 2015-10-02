@@ -1318,9 +1318,9 @@ ENV.delete &#39;GEM_PATH&#39;
     <span class='comment'>#
 </span>    <span class='comment'># Generate gemspec
 </span>    <span class='comment'>#
-</span>    <span class='id identifier rubyid_author'>author</span> <span class='op'>=</span> <span class='backtick'>`</span><span class='tstring_content'>git config user.name</span><span class='tstring_end'>`</span></span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+</span>    <span class='id identifier rubyid_author'>author</span> <span class='op'>=</span> <span class='backtick'>`</span><span class='tstring_content'>git config user.name</span><span class='tstring_end'>`</span></span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span> <span class='kw'>rescue</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_author'>author</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>YOUR_NAME</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_author'>author</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-    <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='backtick'>`</span><span class='tstring_content'>git config user.email</span><span class='tstring_end'>`</span></span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+    <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='backtick'>`</span><span class='tstring_content'>git config user.email</span><span class='tstring_end'>`</span></span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span> <span class='kw'>rescue</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>YOUR_NAME</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_email'>email</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
 
     <span class='comment'># variables used in erb templates
@@ -2339,7 +2339,7 @@ examples:
 </div>
 
     <div id="footer">
-  Generated on Fri Oct  2 04:52:14 2015 by
+  Generated on Fri Oct  2 04:53:05 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
