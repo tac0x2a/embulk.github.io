@@ -269,7 +269,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <tr class="row-odd"><td>quote</td>
 <td>string</td>
 <td>The character surrounding a quoted value. Setting <code class="docutils literal"><span class="pre">null</span></code> disables quoting.</td>
-<td><code class="docutils literal"><span class="pre">\&quot;</span></code> by default</td>
+<td><code class="docutils literal"><span class="pre">&quot;</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>escape</td>
 <td>string</td>
@@ -502,10 +502,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <h3><a class="toc-backref" href="#id31">Options</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="14%" />
-<col width="6%" />
-<col width="65%" />
-<col width="15%" />
+<col width="13%" />
+<col width="5%" />
+<col width="62%" />
+<col width="19%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">name</th>
@@ -523,7 +523,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <tr class="row-odd"><td>quote</td>
 <td>string</td>
 <td>The character surrounding a quoted value</td>
-<td><code class="docutils literal"><span class="pre">\&quot;</span></code> by default</td>
+<td><code class="docutils literal"><span class="pre">&quot;</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>quote_policy</td>
 <td>enum</td>
@@ -532,8 +532,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 <tr class="row-odd"><td>escape</td>
 <td>string</td>
-<td>Escape character to escape a quote character when quote_policy is ALL or MINIMAL</td>
-<td><code class="docutils literal"><span class="pre">\&quot;</span></code> by default</td>
+<td>Escape character to escape quote character</td>
+<td>same with quote default (*1)</td>
 </tr>
 <tr class="row-even"><td>header_line</td>
 <td>boolean</td>
@@ -572,6 +572,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
+<p>(*1): if quote_policy is NONE, <code class="docutils literal"><span class="pre">quote</span></code> option is ignored, and default <code class="docutils literal"><span class="pre">escape</span></code> is <code class="docutils literal"><span class="pre">\</span></code>.</p>
 <p>The <code class="docutils literal"><span class="pre">quote_policy</span></code> option is used to determine field type to quote.</p>
 <table border="1" class="docutils">
 <colgroup>
