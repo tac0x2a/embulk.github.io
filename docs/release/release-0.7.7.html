@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.7.6 &mdash; Embulk 0.7 documentation</title>
+    <title>Release 0.7.7 &mdash; Embulk 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,45 +25,40 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.7 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.7.5" href="release-0.7.5.html" />
-    <link rel="prev" title="Release 0.7.7" href="release-0.7.7.html" /> 
+    <link rel="next" title="Release 0.7.6" href="release-0.7.6.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.7 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.7.6</span></h2>
+        <h2 class="heading"><span>Release 0.7.7</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.7.7.html">Release 0.7.7</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.7.5.html">Release 0.7.5</a>&#160;&#160;»
+        <a href="release-0.7.6.html">Release 0.7.6</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-7-6">
-<h1>Release 0.7.6<a class="headerlink" href="#release-0-7-6" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-7-7">
+<h1>Release 0.7.7<a class="headerlink" href="#release-0-7-7" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>On Cygwin/Windows environment, embulk command returns exit code 1 correctly if a transaction fails (&#64;hishidama++)</li>
-</ul>
-</div>
-<div class="section" id="built-in-plugins">
-<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">formatter-csv</span></code>: fixed a problem where a <code class="docutils literal"><span class="pre">&quot;</span></code> character is escaped when <code class="docutils literal"><span class="pre">quote_plicy:</span> <span class="pre">NONE</span></code> is set. The fixed behavior is that, if <code class="docutils literal"><span class="pre">quote_plicy:</span> <span class="pre">NONE</span></code> is set, <code class="docutils literal"><span class="pre">quote</span></code> option (which means <code class="docutils literal"><span class="pre">&quot;</span></code> character) is completely ignored, and only newline and delimiter are escaped ([#327] &#64;sonots++).</li>
+<li>Configuration file can use <code class="docutils literal"><span class="pre">{%</span> <span class="pre">include</span> <span class="pre">'path'</span> <span class="pre">%}</span></code> tag to include another file. This is very useful to organize a complex configuration from multiple files. See documents for details.</li>
+<li>Fixed compatibility with mapreduce executor. Failure message includes appropriate cause instead of IllegalStateException.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-10-27</p>
+<p>2015-10-28</p>
 </div>
 </div>
 
@@ -72,11 +67,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.7.7.html">Release 0.7.7</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.7.5.html">Release 0.7.5</a>&#160;&#160;»
+        <a href="release-0.7.6.html">Release 0.7.6</a>&#160;&#160;»
         </p>
 
       </div>
