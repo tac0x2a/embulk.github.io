@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.7.7 &mdash; Embulk 0.7 documentation</title>
+    <title>Release 0.7.8 &mdash; Embulk 0.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,40 +25,41 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.7 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.7.6" href="release-0.7.6.html" />
-    <link rel="prev" title="Release 0.7.8" href="release-0.7.8.html" /> 
+    <link rel="next" title="Release 0.7.7" href="release-0.7.7.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.7 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.7.7</span></h2>
+        <h2 class="heading"><span>Release 0.7.8</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.7.8.html">Release 0.7.8</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.7.6.html">Release 0.7.6</a>&#160;&#160;»
+        <a href="release-0.7.7.html">Release 0.7.7</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-7-7">
-<h1>Release 0.7.7<a class="headerlink" href="#release-0-7-7" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-7-8">
+<h1>Release 0.7.8<a class="headerlink" href="#release-0-7-8" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Configuration file can use <code class="docutils literal"><span class="pre">{%</span> <span class="pre">include</span> <span class="pre">'path'</span> <span class="pre">%}</span></code> tag to include another file. This is very useful to organize a complex configuration from multiple files. See documents for details.</li>
-<li>Fixed compatibility with mapreduce executor. Failure message includes appropriate cause instead of IllegalStateException.</li>
+<li>Added &#8220;mkbundle&#8221; subcommand. Its help messae shows how to use plugin blundes with examples.</li>
+<li>When a transaction throws an exception and cleanup code (close() method) also throws an exception, the exception of transaction was hidden. Now the exception of transaction is the primary error and exception of cleanup code is also included as a suppressed exception.</li>
+<li>CSV parser plugin doesn&#8217;t show lines twice with &#8220;Unexpected extra character&#8221; error.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-10-28</p>
+<p>2015-11-08</p>
 </div>
 </div>
 
@@ -67,11 +68,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.7.8.html">Release 0.7.8</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.7.6.html">Release 0.7.6</a>&#160;&#160;»
+        <a href="release-0.7.7.html">Release 0.7.7</a>&#160;&#160;»
         </p>
 
       </div>
