@@ -1888,7 +1888,7 @@ ENV.delete &#39;GEM_PATH&#39;
   <span class='kw'>when</span> <span class='symbol'>:cleanup</span>
     <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: cleanup &lt;config.yml&gt;</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_separator'>separator</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Options:</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-r</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--resume-state PATH</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Path to a file to write or read resume state</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-r</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--resume-state PATH</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Path to a file to cleanup resume state</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
       <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:resume_state_path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
     <span class='kw'>end</span>
     <span class='id identifier rubyid_plugin_load_ops'>plugin_load_ops</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
@@ -2371,7 +2371,7 @@ examples:
 </div>
 
     <div id="footer">
-  Generated on Tue Dec  1 21:42:11 2015 by
+  Generated on Fri Dec 11 01:42:38 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
