@@ -338,13 +338,13 @@
       <pre class="lines">
 
 
-86
-87
-88
-89</pre>
+98
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='ivar'>@path</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
@@ -388,12 +388,12 @@
       <pre class="lines">
 
 
-91
-92
-93</pre>
+103
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_path'>path</span>
   <span class='ivar'>@path</span>
@@ -425,12 +425,12 @@
       <pre class="lines">
 
 
-144
-145
-146</pre>
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_data'>data</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='ivar'>@path</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -455,25 +455,25 @@
       <pre class="lines">
 
 
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
 139
 140
 141
-142</pre>
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_insert_line'>insert_line</span><span class='lparen'>(</span><span class='id identifier rubyid_glob'>glob</span><span class='comma'>,</span> <span class='id identifier rubyid_pattern'>pattern</span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ms'>ms</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='ivar'>@path</span><span class='comma'>,</span> <span class='id identifier rubyid_glob'>glob</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>
@@ -511,16 +511,16 @@
       <pre class="lines">
 
 
-97
-98
-99
-100
-101
-102
-103</pre>
+109
+110
+111
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_glob'>glob</span><span class='comma'>,</span> <span class='id identifier rubyid_pattern'>pattern</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ms'>ms</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='ivar'>@path</span><span class='comma'>,</span> <span class='id identifier rubyid_glob'>glob</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>
@@ -549,12 +549,12 @@
       <pre class="lines">
 
 
-93
-94
-95</pre>
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modified_files'>modified_files</span>
   <span class='ivar'>@modified_files</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
@@ -579,18 +579,6 @@
       <pre class="lines">
 
 
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
 117
 118
 119
@@ -599,10 +587,22 @@
 122
 123
 124
-125</pre>
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_glob'>glob</span><span class='comma'>,</span> <span class='id identifier rubyid_pattern'>pattern</span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ms'>ms</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='ivar'>@path</span><span class='comma'>,</span> <span class='id identifier rubyid_glob'>glob</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>
@@ -645,12 +645,12 @@
       <pre class="lines">
 
 
-148
-149
-150</pre>
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_migrate_plugin.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='ivar'>@path</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
@@ -665,7 +665,7 @@
 </div>
 
     <div id="footer">
-  Generated on Wed Jan  6 21:13:51 2016 by
+  Generated on Wed Jan 13 02:14:33 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
