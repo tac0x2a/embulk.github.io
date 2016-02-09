@@ -408,13 +408,7 @@
 76
 77
 78
-79
-80
-81
-82
-83
-84
-85</pre>
+79</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 6</span>
@@ -435,7 +429,6 @@
   <span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span>
     <span class='id identifier rubyid_idx'>idx</span> <span class='op'>=</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span>
     <span class='id identifier rubyid_column_script'>column_script</span> <span class='op'>=</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>value_api = ::Embulk::Java::SPI::Json::RubyValueApi\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&lt;&lt;</span>
       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>if reader.isNull(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>)\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&lt;&lt;</span>
       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; nil\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&lt;&lt;</span>
       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>else\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&lt;&lt;</span>
@@ -450,8 +443,6 @@
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; reader.getString(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>when</span> <span class='symbol'>:timestamp</span>
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; reader.getTimestamp(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>).getRubyTime(JRuby.runtime)</span><span class='tstring_end'>&quot;</span></span>
-      <span class='kw'>when</span> <span class='symbol'>:json</span>
-        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; MessagePack.unpack(value_api.toMessagePack(JRuby.runtime, reader.getJson(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>)))</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>else</span>
         <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown type </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>end</span> <span class='op'>&lt;&lt;</span>
@@ -464,7 +455,6 @@
 
   <span class='id identifier rubyid_record_writer_script'>record_writer_script</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lambda do |builder,record|\n</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_record_writer_script'>record_writer_script</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java_timestamp_class = ::Embulk::Java::Timestamp\n</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_record_writer_script'>record_writer_script</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>value_api = ::Embulk::Java::SPI::Json::RubyValueApi\n</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span>
     <span class='id identifier rubyid_idx'>idx</span> <span class='op'>=</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span>
     <span class='id identifier rubyid_column_script'>column_script</span> <span class='op'>=</span>
@@ -482,8 +472,6 @@
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>builder.setString(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>, record[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>])</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>when</span> <span class='symbol'>:timestamp</span>
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>builder.setTimestamp(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>, java_timestamp_class.fromRubyTime(record[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>]))</span><span class='tstring_end'>&quot;</span></span>
-      <span class='kw'>when</span> <span class='symbol'>:json</span>
-        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>builder.setJson(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>, value_api.fromMessagePack(MessagePack.pack(record[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>])))</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>else</span>
         <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown type </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>end</span> <span class='op'>&lt;&lt;</span>
@@ -537,12 +525,12 @@
       <pre class="lines">
 
 
-87
-88
-89</pre>
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_names'>names</span>
   <span class='ivar'>@names</span>
@@ -580,12 +568,12 @@
       <pre class="lines">
 
 
-87
-88
-89</pre>
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_types'>types</span>
   <span class='ivar'>@types</span>
@@ -617,12 +605,12 @@
       <pre class="lines">
 
 
-97
-98
-99</pre>
+91
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_schema'>java_schema</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='period'>.</span><span class='id identifier rubyid_getColumns'>getColumns</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span> <span class='const'>Column</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_column'>column</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -653,12 +641,12 @@
       <pre class="lines">
 
 
-89
-90
-91</pre>
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read_record'>read_record</span><span class='lparen'>(</span><span class='id identifier rubyid_page_reader'>page_reader</span><span class='rparen'>)</span>
   <span class='ivar'>@record_reader</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_page_reader'>page_reader</span><span class='rparen'>)</span>
@@ -683,13 +671,13 @@
       <pre class="lines">
 
 
-101
-102
-103
-104</pre>
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span> <span class='rbrace'>}</span>
@@ -715,12 +703,12 @@
       <pre class="lines">
 
 
-93
-94
-95</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 87</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_record'>write_record</span><span class='lparen'>(</span><span class='id identifier rubyid_page_builder'>page_builder</span><span class='comma'>,</span> <span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
   <span class='ivar'>@record_writer</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_page_builder'>page_builder</span><span class='comma'>,</span> <span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
@@ -735,7 +723,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Feb  9 01:00:52 2016 by
+  Generated on Tue Feb  9 01:45:20 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
