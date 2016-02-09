@@ -469,8 +469,6 @@
       <pre class="lines">
 
 
-78
-79
 80
 81
 82
@@ -485,18 +483,24 @@
 91
 92
 93
-94</pre>
+94
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/plugin_registry.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin_registry.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_and_show'>require_and_show</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_spec'>spec</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require'>require</span> <span class='id identifier rubyid_path'>path</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_spec'>spec</span>
-    <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_spec'>spec</span> <span class='op'>=</span> <span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_loaded_specs'>loaded_specs</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span><span class='id identifier rubyid_spec'>spec</span><span class='op'>|</span>
-      <span class='comment'>#spec.files.include?(path)
-</span>      <span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_contains_requirable_file?'>contains_requirable_file?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
-    <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_spec'>spec</span> <span class='op'>=</span> <span class='const'>Kernel</span><span class='op'>::</span><span class='const'>RUBYGEMS_ACTIVATION_MONITOR</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>  <span class='comment'># this lock is added as a workaround of https://github.com/jruby/jruby/issues/3652
+</span>      <span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_loaded_specs'>loaded_specs</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span><span class='id identifier rubyid_spec'>spec</span><span class='op'>|</span>
+        <span class='comment'>#spec.files.include?(path)
+</span>        <span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_contains_requirable_file?'>contains_requirable_file?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_spec'>spec</span>
     <span class='kw'>unless</span> <span class='ivar'>@loaded_gems</span><span class='lbracket'>[</span><span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
@@ -567,7 +571,9 @@
 73
 74
 75
-76</pre>
+76
+77
+78</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/plugin_registry.rb', line 36</span>
@@ -597,8 +603,10 @@
 
   <span class='comment'># search gems
 </span>  <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>Gem</span><span class='op'>::</span><span class='const'>Specification</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>::</span><span class='const'>Gem</span><span class='op'>::</span><span class='const'>Specification</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:find_all</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_specs'>specs</span> <span class='op'>=</span> <span class='const'>Gem</span><span class='op'>::</span><span class='const'>Specification</span><span class='period'>.</span><span class='id identifier rubyid_find_all'>find_all</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_spec'>spec</span><span class='op'>|</span>
-      <span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_contains_requirable_file?'>contains_requirable_file?</span> <span class='id identifier rubyid_name'>name</span>
+    <span class='id identifier rubyid_specs'>specs</span> <span class='op'>=</span> <span class='const'>Kernel</span><span class='op'>::</span><span class='const'>RUBYGEMS_ACTIVATION_MONITOR</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>  <span class='comment'># this lock is added as a workaround of https://github.com/jruby/jruby/issues/3652
+</span>      <span class='const'>Gem</span><span class='op'>::</span><span class='const'>Specification</span><span class='period'>.</span><span class='id identifier rubyid_find_all'>find_all</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_spec'>spec</span><span class='op'>|</span>
+        <span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_contains_requirable_file?'>contains_requirable_file?</span> <span class='id identifier rubyid_name'>name</span>
+      <span class='kw'>end</span>
     <span class='kw'>end</span>
 
     <span class='comment'># prefer newer version
@@ -623,7 +631,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Feb  2 04:32:59 2016 by
+  Generated on Tue Feb  9 01:00:54 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
