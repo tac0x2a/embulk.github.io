@@ -119,7 +119,7 @@ PowerShell.exe:</p>
 can try embulk quickly:</p>
 
 <pre class="code ruby"><code class="ruby">embulk example ./try1
-embulk guess   ./try1/example.yml -o config.yml
+embulk guess   ./try1/seed.yml -o config.yml
 embulk preview config.yml
 embulk run     config.yml</code></pre>
 
@@ -186,7 +186,7 @@ use the bundle, add <code>-b &lt;bundle_dir&gt;</code> option to
 <p>See the generated &lt;bundle_dir&gt;/Gemfile file how to plugin bundles
 work.</p>
 
-<pre class="code ruby"><code class="ruby">embulk mkbundle ./embulk_bundle
+<pre class="code ruby"><code class="ruby">embulk mkbundle ./embulk_bundle  # please edit ./embulk_bundle/Gemfile to add plugins. Detailed usage is written in the Gemfile
 embulk guess -b ./embulk_bundle ...
 embulk run   -b ./embulk_bundle ...</code></pre>
 
@@ -279,7 +279,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Tue Feb  9 01:45:11 2016 by
+  Generated on Tue Feb  9 01:47:47 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>

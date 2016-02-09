@@ -353,13 +353,15 @@
 10
 11
 12
-13</pre>
+13
+14</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_java_page_output'>java_page_output</span><span class='rparen'>)</span>
-  <span class='comment'># TODO get task as an argument
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>msgpack</span><span class='tstring_end'>&#39;</span></span>  <span class='comment'># used at DynamicPageBuilder.set(Value)
+</span>  <span class='comment'># TODO get task as an argument
 </span>  <span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>SPI</span><span class='op'>::</span><span class='const'>Exec</span><span class='period'>.</span><span class='id identifier rubyid_newConfigSource'>newConfigSource</span><span class='period'>.</span><span class='id identifier rubyid_load_config'>load_config</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>DynamicPageBuilder</span><span class='op'>::</span><span class='const'>BuilderTask</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
   <span class='ivar'>@page_builder</span> <span class='op'>=</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>DynamicPageBuilder</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='comma'>,</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>Injected</span><span class='op'>::</span><span class='const'>BufferAllocator</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='comma'>,</span> <span class='id identifier rubyid_java_page_output'>java_page_output</span><span class='rparen'>)</span>
   <span class='ivar'>@schema</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span>
@@ -391,7 +393,6 @@
       <pre class="lines">
 
 
-26
 27
 28
 29
@@ -400,10 +401,11 @@
 32
 33
 34
-35</pre>
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_index_or_column'>index_or_column</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_index_or_column'>index_or_column</span>
@@ -435,7 +437,6 @@
       <pre class="lines">
 
 
-15
 16
 17
 18
@@ -444,10 +445,11 @@
 21
 22
 23
-24</pre>
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='int'>0</span>
@@ -479,12 +481,12 @@
       <pre class="lines">
 
 
-59
 60
-61</pre>
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add!'>add!</span>
   <span class='ivar'>@page_builder</span><span class='period'>.</span><span class='id identifier rubyid_add_record'>add_record</span>
@@ -509,12 +511,12 @@
       <pre class="lines">
 
 
-71
 72
-73</pre>
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span>
   <span class='ivar'>@page_builder</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
@@ -539,7 +541,6 @@
       <pre class="lines">
 
 
-37
 38
 39
 40
@@ -548,10 +549,11 @@
 43
 44
 45
-46</pre>
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_column'>column</span><span class='lparen'>(</span><span class='id identifier rubyid_index_or_column'>index_or_column</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_index_or_column'>index_or_column</span>
@@ -583,7 +585,6 @@
       <pre class="lines">
 
 
-48
 49
 50
 51
@@ -592,10 +593,11 @@
 54
 55
 56
-57</pre>
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_column_or_skip'>column_or_skip</span><span class='lparen'>(</span><span class='id identifier rubyid_index_or_column'>index_or_column</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_index_or_column'>index_or_column</span>
@@ -627,12 +629,12 @@
       <pre class="lines">
 
 
-67
 68
-69</pre>
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_finish'>finish</span>
   <span class='ivar'>@page_builder</span><span class='period'>.</span><span class='id identifier rubyid_finish'>finish</span>
@@ -657,12 +659,12 @@
       <pre class="lines">
 
 
-63
 64
-65</pre>
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/page_builder.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_flush'>flush</span>
   <span class='ivar'>@page_builder</span><span class='period'>.</span><span class='id identifier rubyid_flush'>flush</span>
@@ -677,7 +679,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Feb  9 01:45:22 2016 by
+  Generated on Tue Feb  9 01:47:54 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
