@@ -67,7 +67,7 @@
 <p>This enables ruby scripts to run embulk easily. This is also good for test code. For example, you can use this code:</p>
 </li>
 </ul>
-<div class="highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;embulk&#39;</span>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="nb">require</span> <span class="s1">&#39;embulk&#39;</span>
 <span class="no">Embulk</span><span class="o">.</span><span class="n">setup</span>
 <span class="no">Embulk</span><span class="o">::</span><span class="no">Runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="no">YAML</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;config.yml&quot;</span><span class="p">))</span>
 </pre></div>
@@ -77,7 +77,7 @@
 <p>This makes plugin development easy as following:</p>
 </li>
 </ul>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> 1. Create plugin template
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> 1. Create plugin template
 <span class="gp">$</span> embulk new ruby-parser awesome
 <span class="gp">$</span> <span class="nb">cd</span> embulk-parser-awesome
 <span class="gp">#</span> or upgrade existent plugin: embulk migrate embulk-parser-awesome
@@ -107,7 +107,7 @@
 <p>This makes plugin development easy as following:</p>
 </li>
 </ul>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> 1. Create plugin template
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> 1. Create plugin template
 <span class="gp">$</span> embulk new java-input awesome
 <span class="gp">$</span> <span class="nb">cd</span> embulk-input-awesome
 <span class="gp">#</span> or upgrade existent plugin: embulk migrate embulk-input-awesome
