@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.8.3 &mdash; Embulk 0.8 documentation</title>
+    <title>Release 0.8.4 &mdash; Embulk 0.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,42 +25,47 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.8 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.8.2" href="release-0.8.2.html" />
-    <link rel="prev" title="Release 0.8.4" href="release-0.8.4.html" /> 
+    <link rel="next" title="Release 0.8.3" href="release-0.8.3.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.8.3</span></h2>
+        <h2 class="heading"><span>Release 0.8.4</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.4.html">Release 0.8.4</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.2.html">Release 0.8.2</a>&#160;&#160;»
+        <a href="release-0.8.3.html">Release 0.8.3</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-8-3">
-<h1>Release 0.8.3<a class="headerlink" href="#release-0-8-3" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-8-4">
+<h1>Release 0.8.4<a class="headerlink" href="#release-0-8-4" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed unexpected error when <code class="docutils literal"><span class="pre">-c</span></code> option is set and file doesn&#8217;t exist yet (&#64;hiroyuki-sato++)</li>
-<li>Added a workaround for <a class="reference external" href="https://github.com/jruby/jruby/issues/3652">https://github.com/jruby/jruby/issues/3652</a></li>
-<li>Adds thread ID to thread name so that stacktrace shown by SIGQUIT can distinguish multiple threads running the same stage (transaction, guess, preview).</li>
-<li>Embulk::Guess::SchemaGuess returns <code class="docutils literal"><span class="pre">&quot;json&quot;</span></code> type if a given value is a Hash or Array.</li>
+<li>Added <code class="docutils literal"><span class="pre">bzip2</span></code> encoder plugin, decoder plugin, and guess plugin.</li>
+<li>Fixed PageBuilder to close underlaying output plugin.</li>
+<li>Embulk::Runner accepts .yaml as well as .yml</li>
+</ul>
+</div>
+<div class="section" id="java-api">
+<h2>Java API<a class="headerlink" href="#java-api" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added JsonParser.Stream API for parser plugins to parse a stream of json objects.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2016-02-08</p>
+<p>2016-02-16</p>
 </div>
 </div>
 
@@ -69,11 +74,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.4.html">Release 0.8.4</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.2.html">Release 0.8.2</a>&#160;&#160;»
+        <a href="release-0.8.3.html">Release 0.8.3</a>&#160;&#160;»
         </p>
 
       </div>
