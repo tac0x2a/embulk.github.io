@@ -138,28 +138,6 @@
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#new_json_parser-instance_method" title="#new_json_parser (instance method)">- (Object) <strong>new_json_parser</strong>(buffer) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
     </ul>
   
 
@@ -232,50 +210,12 @@
 </table>
 </div>
     
-      <div class="method_details ">
-  <h3 class="signature " id="new_json_parser-instance_method">
-  
-    - (<tt>Object</tt>) <strong>new_json_parser</strong>(buffer) 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-29
-30
-31
-32
-33
-34
-35</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess/json.rb', line 29</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_new_json_parser'>new_json_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_buffer'>buffer</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_input_streams'>input_streams</span> <span class='op'>=</span> <span class='const'>Lists</span><span class='op'>::</span><span class='id identifier rubyid_newArrayList'>newArrayList</span><span class='lparen'>(</span><span class='const'>ByteArrayInputStream</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_buffer'>buffer</span><span class='period'>.</span><span class='id identifier rubyid_to_java_bytes'>to_java_bytes</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_iterator_provider'>iterator_provider</span> <span class='op'>=</span> <span class='const'>InputStreamFileInput</span><span class='op'>::</span><span class='const'>IteratorProvider</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_input_streams'>input_streams</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>FileInputInputStream</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>InputStreamFileInput</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>SPI</span><span class='op'>::</span><span class='const'>Exec</span><span class='period'>.</span><span class='id identifier rubyid_getBufferAllocator'>getBufferAllocator</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_iterator_provider'>iterator_provider</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_nextFile'>nextFile</span>
-  <span class='const'>JsonParser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Thu Feb 18 20:55:32 2016 by
+  Generated on Thu Feb 18 21:18:01 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
