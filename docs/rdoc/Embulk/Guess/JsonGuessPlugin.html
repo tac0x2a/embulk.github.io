@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Embulk::Guess::JsonGuessPlugin
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!Embulk/Guess/JsonGuessPlugin.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (J)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Embulk.html" title="Embulk (module)">Embulk</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Guess.html" title="Embulk::Guess (module)">Guess</a></span></span>
+     &raquo; 
+    <span class="title">JsonGuessPlugin</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Embulk::Guess::JsonGuessPlugin
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../GuessPlugin.html" title="Embulk::GuessPlugin (class)">Embulk::GuessPlugin</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="../GuessPlugin.html" title="Embulk::GuessPlugin (class)">Embulk::GuessPlugin</a></span></li>
+          
+            <li class="next">Embulk::Guess::JsonGuessPlugin</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/embulk/guess/json.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#guess-instance_method" title="#guess (instance method)">- (Object) <strong>guess</strong>(config, sample_buffer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_json_parser-instance_method" title="#new_json_parser (instance method)">- (Object) <strong>new_json_parser</strong>(buffer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../GuessPlugin.html" title="Embulk::GuessPlugin (class)">Embulk::GuessPlugin</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../GuessPlugin.html#from_java-class_method" title="Embulk::GuessPlugin.from_java (method)">from_java</a></span>, <span class='object_link'><a href="../GuessPlugin.html#new_java-class_method" title="Embulk::GuessPlugin.new_java (method)">new_java</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>guess</strong>(config, sample_buffer) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess/json.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>json</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>json</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='comment'># Use org.embulk.spi.json.JsonParser to respond to multi-line Json
+</span>  <span class='id identifier rubyid_json_parser'>json_parser</span> <span class='op'>=</span> <span class='id identifier rubyid_new_json_parser'>new_json_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='kw'>while</span> <span class='id identifier rubyid_json_parser'>json_parser</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
+    <span class='kw'>end</span>
+  <span class='kw'>rescue</span> <span class='const'>JsonParseException</span>
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>return</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>json</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_json_parser-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_json_parser</strong>(buffer) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess/json.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_json_parser'>new_json_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_buffer'>buffer</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_input_streams'>input_streams</span> <span class='op'>=</span> <span class='const'>Lists</span><span class='op'>::</span><span class='id identifier rubyid_newArrayList'>newArrayList</span><span class='lparen'>(</span><span class='const'>ByteArrayInputStream</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_buffer'>buffer</span><span class='period'>.</span><span class='id identifier rubyid_to_java_bytes'>to_java_bytes</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_iterator_provider'>iterator_provider</span> <span class='op'>=</span> <span class='const'>InputStreamFileInput</span><span class='op'>::</span><span class='const'>IteratorProvider</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_input_streams'>input_streams</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>FileInputInputStream</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>InputStreamFileInput</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>SPI</span><span class='op'>::</span><span class='const'>Exec</span><span class='period'>.</span><span class='id identifier rubyid_getBufferAllocator'>getBufferAllocator</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_iterator_provider'>iterator_provider</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_nextFile'>nextFile</span>
+  <span class='const'>JsonParser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 18 20:55:32 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>
