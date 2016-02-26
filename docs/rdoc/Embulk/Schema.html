@@ -335,7 +335,6 @@
       <pre class="lines">
 
 
-6
 7
 8
 9
@@ -414,10 +413,11 @@
 82
 83
 84
-85</pre>
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='id identifier rubyid_columns'>columns</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='period'>.</span><span class='id identifier rubyid_with_index'>with_index</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span><span class='id identifier rubyid_index'>index</span><span class='op'>|</span>
@@ -537,12 +537,12 @@
       <pre class="lines">
 
 
-87
 88
-89</pre>
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_names'>names</span>
   <span class='ivar'>@names</span>
@@ -580,12 +580,12 @@
       <pre class="lines">
 
 
-87
 88
-89</pre>
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_types'>types</span>
   <span class='ivar'>@types</span>
@@ -617,12 +617,12 @@
       <pre class="lines">
 
 
-97
 98
-99</pre>
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_schema'>java_schema</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='period'>.</span><span class='id identifier rubyid_getColumns'>getColumns</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span> <span class='const'>Column</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_column'>column</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -653,12 +653,12 @@
       <pre class="lines">
 
 
-89
 90
-91</pre>
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read_record'>read_record</span><span class='lparen'>(</span><span class='id identifier rubyid_page_reader'>page_reader</span><span class='rparen'>)</span>
   <span class='ivar'>@record_reader</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_page_reader'>page_reader</span><span class='rparen'>)</span>
@@ -683,13 +683,13 @@
       <pre class="lines">
 
 
-101
 102
 103
-104</pre>
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span> <span class='rbrace'>}</span>
@@ -715,12 +715,12 @@
       <pre class="lines">
 
 
-93
 94
-95</pre>
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/schema.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_record'>write_record</span><span class='lparen'>(</span><span class='id identifier rubyid_page_builder'>page_builder</span><span class='comma'>,</span> <span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
   <span class='ivar'>@record_writer</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_page_builder'>page_builder</span><span class='comma'>,</span> <span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
@@ -735,9 +735,9 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Feb 18 22:24:29 2016 by
+  Generated on Fri Feb 26 20:32:50 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.6 (ruby-2.2.2).
+  0.8.7.6 (ruby-2.2.3).
 </div>
 
   </body>
