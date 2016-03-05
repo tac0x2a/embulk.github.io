@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.8.6 &mdash; Embulk 0.8 documentation</title>
+    <title>Release 0.8.7 &mdash; Embulk 0.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,40 +25,42 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.8 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.8.5" href="release-0.8.5.html" />
-    <link rel="prev" title="Release 0.8.7" href="release-0.8.7.html" /> 
+    <link rel="next" title="Release 0.8.6" href="release-0.8.6.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.8.6</span></h2>
+        <h2 class="heading"><span>Release 0.8.7</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.7.html">Release 0.8.7</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.5.html">Release 0.8.5</a>&#160;&#160;»
+        <a href="release-0.8.6.html">Release 0.8.6</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-8-6">
-<h1>Release 0.8.6<a class="headerlink" href="#release-0-8-6" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-8-7">
+<h1>Release 0.8.7<a class="headerlink" href="#release-0-8-7" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Upgraded JRuby from 9.0.4.0 to 9.0.5.0. See <a class="reference external" href="http://jruby.org/2016/01/26/jruby-9-0-5-0.html">JRuby 9.0.5.0 release notes</a> for details.</li>
-<li>Upgraded msgpack-java from 0.8.1 to 0.8.3. See <a class="reference external" href="https://github.com/msgpack/msgpack-java/blob/develop/RELEASE_NOTES.md">MessagePack Java release notes</a> for details.</li>
+<li>LineDecoder skips UTF-8 BOM appropriately.</li>
+<li>Timestamp guess uses <code class="docutils literal"><span class="pre">%z</span></code> instead of <code class="docutils literal"><span class="pre">%Z</span></code>. Parsing behavior doesn&#8217;t change but formatting behavior changes if output plugins use guessed configuration to format timestamp (this is unlikely because guessed configuration is most likely used by input plugins to parse timestamp).</li>
+<li>Fix uninitialized constant MessagePack (&#64;sonots++)</li>
+<li>Fixed a possible busy loop at TaskDeserializer.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2016-02-24</p>
+<p>2016-03-04</p>
 </div>
 </div>
 
@@ -67,11 +69,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.7.html">Release 0.8.7</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.5.html">Release 0.8.5</a>&#160;&#160;»
+        <a href="release-0.8.6.html">Release 0.8.6</a>&#160;&#160;»
         </p>
 
       </div>
