@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.8.8 &mdash; Embulk 0.8 documentation</title>
+    <title>Release 0.8.9 &mdash; Embulk 0.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,44 +25,40 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.8 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.8.7" href="release-0.8.7.html" />
-    <link rel="prev" title="Release 0.8.9" href="release-0.8.9.html" /> 
+    <link rel="next" title="Release 0.8.8" href="release-0.8.8.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.8.8</span></h2>
+        <h2 class="heading"><span>Release 0.8.9</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.9.html">Release 0.8.9</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.7.html">Release 0.8.7</a>&#160;&#160;»
+        <a href="release-0.8.8.html">Release 0.8.8</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-8-8">
-<h1>Release 0.8.8<a class="headerlink" href="#release-0-8-8" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-8-9">
+<h1>Release 0.8.9<a class="headerlink" href="#release-0-8-9" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Upgraded joda-time from 2.8.1 to 2.9.2. This upgrade includes a fix to handle JDK 8u60.<ul>
-<li>joda-time 2.9.0 release note <a class="reference external" href="http://www.joda.org/joda-time/upgradeto290.html">http://www.joda.org/joda-time/upgradeto290.html</a></li>
-<li>joda-time #288 <a class="reference external" href="https://github.com/JodaOrg/joda-time/issues/288">https://github.com/JodaOrg/joda-time/issues/288</a></li>
-<li>joda-time #291 <a class="reference external" href="https://github.com/JodaOrg/joda-time/issues/291">https://github.com/JodaOrg/joda-time/issues/291</a></li>
-</ul>
-</li>
+<li>Added <code class="docutils literal"><span class="pre">date:</span></code> option to timestamp parser. If format doesn&#8217;t include date part, date option is used as the default date. For example, parsing text &#8220;02:46:29&#8221; with <code class="docutils literal"><span class="pre">format:</span> <span class="pre">%H:%M:%S</span></code> and <code class="docutils literal"><span class="pre">date:</span> <span class="pre">2016-02-03</span></code> options returns &#8220;2016-02-03 02:46:29&#8221;.</li>
+<li>Upgraded msgpack-core version from 0.8.6 to 0.8.7. Release notes of msgpack-java: <a class="reference external" href="https://github.com/msgpack/msgpack-java/blob/develop/RELEASE_NOTES.md">https://github.com/msgpack/msgpack-java/blob/develop/RELEASE_NOTES.md</a></li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2016-03-14</p>
+<p>2016-05-12</p>
 </div>
 </div>
 
@@ -71,11 +67,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.9.html">Release 0.8.9</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.7.html">Release 0.8.7</a>&#160;&#160;»
+        <a href="release-0.8.8.html">Release 0.8.8</a>&#160;&#160;»
         </p>
 
       </div>
