@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.8.10 &mdash; Embulk 0.8 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.8 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="next" title="Release 0.8.9" href="release-0.8.9.html" />
+    <link rel="prev" title="Release 0.8.11" href="release-0.8.11.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.8 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.8.10</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.8.11.html">Release 0.8.11</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.8.9.html">Release 0.8.9</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-8-10">
+<h1>Release 0.8.10<a class="headerlink" href="#release-0-8-10" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed &#8216;IllegalArgumentException: Self-suppression not permitted&#8217; error (&#64;hata++) [#446]</li>
+<li>Fixed preview not to read the entire file when the parser doesn&#8217;t produce records. Now preview reads first 32KB.</li>
+<li>Updated JRuby from 9.0.4.0 to 9.1.2.0. Release notes:<ul>
+<li><a class="reference external" href="http://jruby.org/2016/01/26/jruby-9-0-5-0.html">http://jruby.org/2016/01/26/jruby-9-0-5-0.html</a></li>
+<li><a class="reference external" href="http://jruby.org/2016/05/03/jruby-9-1-0-0.html">http://jruby.org/2016/05/03/jruby-9-1-0-0.html</a></li>
+<li><a class="reference external" href="http://jruby.org/2016/05/19/jruby-9-1-1-0.html">http://jruby.org/2016/05/19/jruby-9-1-1-0.html</a></li>
+<li><a class="reference external" href="http://jruby.org/2016/05/27/jruby-9-1-2-0.html">http://jruby.org/2016/05/27/jruby-9-1-2-0.html</a></li>
+</ul>
+</li>
+<li>Updated msgpack-java from 0.8.7 to 0.8.8. Release notes<ul>
+<li><a class="reference external" href="https://github.com/msgpack/msgpack-java/blob/0.8.8/RELEASE_NOTES.md">https://github.com/msgpack/msgpack-java/blob/0.8.8/RELEASE_NOTES.md</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">csv</span></code> parser plugin supports delimiters longer than 1 character.</li>
+<li><code class="docutils literal"><span class="pre">csv</span></code> parser doesn&#8217;t convert non-quoted empty string into NULL any more when null_string is set. Default behavior is not changed (convert non-quoted empty string into NULL).</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2016-07-21</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.8.11.html">Release 0.8.11</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.8.9.html">Release 0.8.9</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
+    </div>
+  </body>
+</html>

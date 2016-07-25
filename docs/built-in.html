@@ -300,8 +300,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <colgroup>
 <col width="16%" />
 <col width="6%" />
-<col width="64%" />
-<col width="14%" />
+<col width="63%" />
+<col width="15%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">name</th>
@@ -313,7 +313,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <tbody valign="top">
 <tr class="row-even"><td>delimiter</td>
 <td>string</td>
-<td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code> or any single-byte character</td>
+<td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code></td>
 <td><code class="docutils literal"><span class="pre">,</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>quote</td>
@@ -371,17 +371,22 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td>Time zone of timestamp columns if the value itself doesn&#8217;t include time zone description (eg. Asia/Tokyo)</td>
 <td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>newline</td>
+<tr class="row-even"><td>default_date</td>
+<td>string</td>
+<td>Set date part if the format doesn’t include date part.</td>
+<td><code class="docutils literal"><span class="pre">1970-01-01</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>newline</td>
 <td>enum</td>
 <td>Newline character (CRLF, LF or CR)</td>
 <td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>charset</td>
+<tr class="row-even"><td>charset</td>
 <td>enum</td>
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
 <td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>columns</td>
+<tr class="row-odd"><td>columns</td>
 <td>hash</td>
 <td>Columns (see below)</td>
 <td>required</td>
@@ -391,8 +396,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <p>The <code class="docutils literal"><span class="pre">columns</span></code> option declares the list of columns. This CSV parser plugin ignores the header line.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col width="15%" />
+<col width="85%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">name</th>
@@ -408,6 +413,9 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 <tr class="row-even"><td>format</td>
 <td>Format of the timestamp if type is timestamp</td>
+</tr>
+<tr class="row-odd"><td>date</td>
+<td>Set date part if the format doesn’t include date part</td>
 </tr>
 </tbody>
 </table>
@@ -983,7 +991,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
     </div>
   </body>
 </html>

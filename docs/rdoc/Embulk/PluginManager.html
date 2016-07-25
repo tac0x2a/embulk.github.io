@@ -1,12 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Class: Embulk::PluginManager
   
-    &mdash; Documentation by YARD 0.8.7.6
+    &mdash; Documentation by YARD 0.9.5
   
 </title>
 
@@ -15,9 +15,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "Embulk::PluginManager";
   relpath = '../';
-  framesUrl = "../frames.html#!Embulk/PluginManager.html";
 </script>
 
 
@@ -28,51 +27,50 @@
 
   </head>
   <body>
-    <div id="header">
-      <div id="menu">
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
   
     <a href="../_index.html">Index (P)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../Embulk.html" title="Embulk (module)">Embulk</a></span></span>
      &raquo; 
     <span class="title">PluginManager</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
+      <iframe id="search_frame" src="../class_list.html"></iframe>
 
-    <div id="content"><h1>Class: Embulk::PluginManager
+      <div id="content"><h1>Class: Embulk::PluginManager
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -83,21 +81,25 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
+
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/embulk/plugin.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/embulk/plugin.rb</dd>
+  </dl>
+  
+</div>
 
 
 
@@ -109,7 +111,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -117,7 +119,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_guess-instance_method" title="#get_guess (instance method)">- (Object) <strong>get_guess</strong>(type) </a>
+      <a href="#get_guess-instance_method" title="#get_guess (instance method)">#<strong>get_guess</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -142,7 +144,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (PluginManager) <strong>initialize</strong> </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>  &#x21d2; PluginManager </a>
     
 
     
@@ -168,7 +170,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_decoder-instance_method" title="#new_java_decoder (instance method)">- (Object) <strong>new_java_decoder</strong>(type) </a>
+      <a href="#new_java_decoder-instance_method" title="#new_java_decoder (instance method)">#<strong>new_java_decoder</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -190,7 +192,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_encoder-instance_method" title="#new_java_encoder (instance method)">- (Object) <strong>new_java_encoder</strong>(type) </a>
+      <a href="#new_java_encoder-instance_method" title="#new_java_encoder (instance method)">#<strong>new_java_encoder</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -212,7 +214,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_executor-instance_method" title="#new_java_executor (instance method)">- (Object) <strong>new_java_executor</strong>(type) </a>
+      <a href="#new_java_executor-instance_method" title="#new_java_executor (instance method)">#<strong>new_java_executor</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -234,7 +236,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_filter-instance_method" title="#new_java_filter (instance method)">- (Object) <strong>new_java_filter</strong>(type) </a>
+      <a href="#new_java_filter-instance_method" title="#new_java_filter (instance method)">#<strong>new_java_filter</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -256,7 +258,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_formatter-instance_method" title="#new_java_formatter (instance method)">- (Object) <strong>new_java_formatter</strong>(type) </a>
+      <a href="#new_java_formatter-instance_method" title="#new_java_formatter (instance method)">#<strong>new_java_formatter</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -278,7 +280,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_guess-instance_method" title="#new_java_guess (instance method)">- (Object) <strong>new_java_guess</strong>(type) </a>
+      <a href="#new_java_guess-instance_method" title="#new_java_guess (instance method)">#<strong>new_java_guess</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -300,7 +302,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_input-instance_method" title="#new_java_input (instance method)">- (Object) <strong>new_java_input</strong>(type) </a>
+      <a href="#new_java_input-instance_method" title="#new_java_input (instance method)">#<strong>new_java_input</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -322,7 +324,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_output-instance_method" title="#new_java_output (instance method)">- (Object) <strong>new_java_output</strong>(type) </a>
+      <a href="#new_java_output-instance_method" title="#new_java_output (instance method)">#<strong>new_java_output</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -344,7 +346,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_java_parser-instance_method" title="#new_java_parser (instance method)">- (Object) <strong>new_java_parser</strong>(type) </a>
+      <a href="#new_java_parser-instance_method" title="#new_java_parser (instance method)">#<strong>new_java_parser</strong>(type)  &#x21d2; Object </a>
     
 
     
@@ -366,7 +368,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_filter-instance_method" title="#register_filter (instance method)">- (Object) <strong>register_filter</strong>(type, klass) </a>
+      <a href="#register_filter-instance_method" title="#register_filter (instance method)">#<strong>register_filter</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -388,7 +390,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_formatter-instance_method" title="#register_formatter (instance method)">- (Object) <strong>register_formatter</strong>(type, klass) </a>
+      <a href="#register_formatter-instance_method" title="#register_formatter (instance method)">#<strong>register_formatter</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -410,7 +412,7 @@ get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_guess-instance_method" title="#register_guess (instance method)">- (Object) <strong>register_guess</strong>(type, klass) </a>
+      <a href="#register_guess-instance_method" title="#register_guess (instance method)">#<strong>register_guess</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -436,7 +438,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_input-instance_method" title="#register_input (instance method)">- (Object) <strong>register_input</strong>(type, klass) </a>
+      <a href="#register_input-instance_method" title="#register_input (instance method)">#<strong>register_input</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -458,7 +460,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_decoder-instance_method" title="#register_java_decoder (instance method)">- (Object) <strong>register_java_decoder</strong>(type, klass) </a>
+      <a href="#register_java_decoder-instance_method" title="#register_java_decoder (instance method)">#<strong>register_java_decoder</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -480,7 +482,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_encoder-instance_method" title="#register_java_encoder (instance method)">- (Object) <strong>register_java_encoder</strong>(type, klass) </a>
+      <a href="#register_java_encoder-instance_method" title="#register_java_encoder (instance method)">#<strong>register_java_encoder</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -502,7 +504,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_executor-instance_method" title="#register_java_executor (instance method)">- (Object) <strong>register_java_executor</strong>(type, klass) </a>
+      <a href="#register_java_executor-instance_method" title="#register_java_executor (instance method)">#<strong>register_java_executor</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -524,7 +526,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_filter-instance_method" title="#register_java_filter (instance method)">- (Object) <strong>register_java_filter</strong>(type, klass) </a>
+      <a href="#register_java_filter-instance_method" title="#register_java_filter (instance method)">#<strong>register_java_filter</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -546,7 +548,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_formatter-instance_method" title="#register_java_formatter (instance method)">- (Object) <strong>register_java_formatter</strong>(type, klass) </a>
+      <a href="#register_java_formatter-instance_method" title="#register_java_formatter (instance method)">#<strong>register_java_formatter</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -568,7 +570,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_guess-instance_method" title="#register_java_guess (instance method)">- (Object) <strong>register_java_guess</strong>(type, klass) </a>
+      <a href="#register_java_guess-instance_method" title="#register_java_guess (instance method)">#<strong>register_java_guess</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -590,7 +592,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_input-instance_method" title="#register_java_input (instance method)">- (Object) <strong>register_java_input</strong>(type, klass) </a>
+      <a href="#register_java_input-instance_method" title="#register_java_input (instance method)">#<strong>register_java_input</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -612,7 +614,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_output-instance_method" title="#register_java_output (instance method)">- (Object) <strong>register_java_output</strong>(type, klass) </a>
+      <a href="#register_java_output-instance_method" title="#register_java_output (instance method)">#<strong>register_java_output</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -634,7 +636,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_java_parser-instance_method" title="#register_java_parser (instance method)">- (Object) <strong>register_java_parser</strong>(type, klass) </a>
+      <a href="#register_java_parser-instance_method" title="#register_java_parser (instance method)">#<strong>register_java_parser</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -656,7 +658,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_output-instance_method" title="#register_output (instance method)">- (Object) <strong>register_output</strong>(type, klass) </a>
+      <a href="#register_output-instance_method" title="#register_output (instance method)">#<strong>register_output</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -678,7 +680,7 @@ EncoderPlugin) end.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_parser-instance_method" title="#register_parser (instance method)">- (Object) <strong>register_parser</strong>(type, klass) </a>
+      <a href="#register_parser-instance_method" title="#register_parser (instance method)">#<strong>register_parser</strong>(type, klass)  &#x21d2; Object </a>
     
 
     
@@ -706,7 +708,7 @@ EncoderPlugin) end.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Embulk::PluginManager (class)">PluginManager</a></span></tt>) <strong>initialize</strong> 
+    #<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Embulk::PluginManager (class)">PluginManager</a></span></tt> 
   
 
   
@@ -760,7 +762,7 @@ EncoderPlugin) end.</p>
       <div class="method_details first">
   <h3 class="signature first" id="get_guess-instance_method">
   
-    - (<tt>Object</tt>) <strong>get_guess</strong>(type) 
+    #<strong>get_guess</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -807,7 +809,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_decoder-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_decoder</strong>(type) 
+    #<strong>new_java_decoder</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -837,7 +839,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_encoder-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_encoder</strong>(type) 
+    #<strong>new_java_encoder</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -867,7 +869,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_executor-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_executor</strong>(type) 
+    #<strong>new_java_executor</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -897,7 +899,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_filter-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_filter</strong>(type) 
+    #<strong>new_java_filter</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -927,7 +929,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_formatter-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_formatter</strong>(type) 
+    #<strong>new_java_formatter</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -957,7 +959,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_guess-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_guess</strong>(type) 
+    #<strong>new_java_guess</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -987,7 +989,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_input-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_input</strong>(type) 
+    #<strong>new_java_input</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1017,7 +1019,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_output-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_output</strong>(type) 
+    #<strong>new_java_output</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1047,7 +1049,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="new_java_parser-instance_method">
   
-    - (<tt>Object</tt>) <strong>new_java_parser</strong>(type) 
+    #<strong>new_java_parser</strong>(type)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1077,7 +1079,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_filter-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_filter</strong>(type, klass) 
+    #<strong>register_filter</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1107,7 +1109,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_formatter-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_formatter</strong>(type, klass) 
+    #<strong>register_formatter</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1137,7 +1139,7 @@ get_encoder(type)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_guess-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_guess</strong>(type, klass) 
+    #<strong>register_guess</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1185,7 +1187,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_input-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_input</strong>(type, klass) 
+    #<strong>register_input</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1215,7 +1217,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_decoder-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_decoder</strong>(type, klass) 
+    #<strong>register_java_decoder</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1247,7 +1249,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_encoder-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_encoder</strong>(type, klass) 
+    #<strong>register_java_encoder</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1279,7 +1281,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_executor-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_executor</strong>(type, klass) 
+    #<strong>register_java_executor</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1311,7 +1313,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_filter-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_filter</strong>(type, klass) 
+    #<strong>register_java_filter</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1343,7 +1345,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_formatter-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_formatter</strong>(type, klass) 
+    #<strong>register_java_formatter</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1375,7 +1377,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_guess-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_guess</strong>(type, klass) 
+    #<strong>register_java_guess</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1407,7 +1409,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_input-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_input</strong>(type, klass) 
+    #<strong>register_java_input</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1441,7 +1443,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_output-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_output</strong>(type, klass) 
+    #<strong>register_java_output</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1475,7 +1477,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_java_parser-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_java_parser</strong>(type, klass) 
+    #<strong>register_java_parser</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1507,7 +1509,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_output-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_output</strong>(type, klass) 
+    #<strong>register_output</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1539,7 +1541,7 @@ register_encoder(type, klass)</p>
       <div class="method_details ">
   <h3 class="signature " id="register_parser-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_parser</strong>(type, klass) 
+    #<strong>register_parser</strong>(type, klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1570,11 +1572,12 @@ register_encoder(type, klass)</p>
 
 </div>
 
-    <div id="footer">
-  Generated on Thu May 12 21:59:41 2016 by
+      <div id="footer">
+  Generated on Mon Jul 25 23:46:17 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.6 (ruby-2.2.3).
+  0.9.5 (ruby-2.2.2).
 </div>
 
+    </div>
   </body>
 </html>
