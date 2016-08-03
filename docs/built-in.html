@@ -448,6 +448,44 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
+<p>The <code class="docutils literal"><span class="pre">null_string</span></code> option converts certain values to NULL. Values will be converted as following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="21%" />
+<col width="22%" />
+<col width="13%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">non-quoted empty string</th>
+<th class="head">quoted empty string (&#8220;&#8221;)</th>
+<th class="head">non-quoted \N</th>
+<th class="head">quoted \N (&#8220;\N&#8221;)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">null_string:</span> <span class="pre">&quot;&quot;</span></code></td>
+<td>NULL</td>
+<td>NULL</td>
+<td><code class="docutils literal"><span class="pre">\N</span></code></td>
+<td><code class="docutils literal"><span class="pre">\N</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">null_string:</span> <span class="pre">\N</span></code></td>
+<td>(empty string)</td>
+<td>(empty string)</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">null_string:</span> <span class="pre">null</span></code> (default)</td>
+<td>NULL</td>
+<td>(empty string)</td>
+<td><code class="docutils literal"><span class="pre">\N</span></code></td>
+<td><code class="docutils literal"><span class="pre">\N</span></code></td>
+</tr>
+</tbody>
+</table>
 <p>You can use <code class="docutils literal"><span class="pre">guess</span></code> to automatically generate the column settings. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
 </div>
 <div class="section" id="id5">
