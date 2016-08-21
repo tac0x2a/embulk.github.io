@@ -53,8 +53,7 @@
                   </div>
                 </td>
                 <td style="min-width:9em">
-                  <% if gem[:github_url] %><a href="<%=h gem[:github_url] %>"><%=h gem[:name] %></a>
-                  <% else %><%=h gem[:name] %><% end %>
+                  <a href="<%=h gem[:url] %>"><%=h gem[:name] %></a>
                   <pre class="install">$ embulk gem install <%=h gem[:gem_name] %></pre>
                 </td>
                 <td style="min-width:13em">
