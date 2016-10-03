@@ -743,20 +743,20 @@
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'>ruby_adapter_class</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_base_class'>ruby_base_class</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_module'>ruby_module</span><span class='rparen'>)</span>
   <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_base_class'>ruby_base_class</span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_const_set'>const_set</span><span class='lparen'>(</span><span class='symbol'>:JAVA_CLASS</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_const_set'>const_set</span><span class='lparen'>(</span><span class='symbol'>:PLUGIN_JAVA_CLASS</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 
     <span class='id identifier rubyid_include'>include</span> <span class='id identifier rubyid_ruby_module'>ruby_module</span>
     <span class='id identifier rubyid_extend'>extend</span> <span class='id identifier rubyid_ruby_module'>ruby_module</span><span class='op'>::</span><span class='const'>ClassMethods</span>
 
-    <span class='kw'>unless</span> <span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:java_object</span><span class='rparen'>)</span>
-      <span class='kw'>def</span> <span class='id identifier rubyid_java_object'>java_object</span>
-        <span class='ivar'>@java_object</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:plugin_java_object</span><span class='rparen'>)</span>
+      <span class='kw'>def</span> <span class='id identifier rubyid_plugin_java_object'>plugin_java_object</span>
+        <span class='ivar'>@plugin_java_object</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
 
-    <span class='kw'>unless</span> <span class='lparen'>(</span><span class='kw'>class</span><span class='op'>&lt;&lt;</span><span class='kw'>self</span><span class='semicolon'>;</span><span class='kw'>self</span><span class='semicolon'>;</span><span class='kw'>end</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:java_class</span><span class='rparen'>)</span>
-      <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span>
-        <span class='kw'>self</span><span class='op'>::</span><span class='const'>JAVA_CLASS</span>
+    <span class='kw'>unless</span> <span class='lparen'>(</span><span class='kw'>class</span><span class='op'>&lt;&lt;</span><span class='kw'>self</span><span class='semicolon'>;</span><span class='kw'>self</span><span class='semicolon'>;</span><span class='kw'>end</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:plugin_java_class</span><span class='rparen'>)</span>
+      <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_plugin_java_class'>plugin_java_class</span>
+        <span class='kw'>self</span><span class='op'>::</span><span class='const'>PLUGIN_JAVA_CLASS</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
 
@@ -767,7 +767,7 @@
 </span>    <span class='comment'>#      ruby_module::ClassMethods includes other modules.
 </span>    <span class='kw'>unless</span> <span class='id identifier rubyid_ruby_module'>ruby_module</span><span class='op'>::</span><span class='const'>ClassMethods</span><span class='period'>.</span><span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:new_java</span><span class='rparen'>)</span>
       <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
-        <span class='const'>Java</span><span class='period'>.</span><span class='id identifier rubyid_injector'>injector</span><span class='period'>.</span><span class='id identifier rubyid_getInstance'>getInstance</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+        <span class='const'>Java</span><span class='period'>.</span><span class='id identifier rubyid_injector'>injector</span><span class='period'>.</span><span class='id identifier rubyid_getInstance'>getInstance</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin_java_class'>plugin_java_class</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
@@ -782,7 +782,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 16 20:13:35 2016 by
+  Generated on Mon Oct  3 22:13:00 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
