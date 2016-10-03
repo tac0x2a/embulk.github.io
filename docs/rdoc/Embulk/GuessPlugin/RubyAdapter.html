@@ -169,7 +169,7 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample'>sample</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_config'>java_config</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
   <span class='id identifier rubyid_java_sample'>java_sample</span> <span class='op'>=</span> <span class='id identifier rubyid_sample'>sample</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
-  <span class='id identifier rubyid_java_config_diff'>java_config_diff</span> <span class='op'>=</span> <span class='id identifier rubyid_plugin_java_object'>plugin_java_object</span><span class='period'>.</span><span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='comma'>,</span> <span class='id identifier rubyid_java_sample'>java_sample</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_java_config_diff'>java_config_diff</span> <span class='op'>=</span> <span class='id identifier rubyid_java_object'>java_object</span><span class='period'>.</span><span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='comma'>,</span> <span class='id identifier rubyid_java_sample'>java_sample</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config_diff'>java_config_diff</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -182,7 +182,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct  3 22:12:51 2016 by
+  Generated on Mon Oct  3 22:13:29 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
