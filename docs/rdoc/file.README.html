@@ -267,7 +267,7 @@ generation.</p>
 <pre class="code ruby"><code class="ruby">./gradlew set_version -Pto=$VERSION</code></pre>
 
 <pre class="code ruby"><code class="ruby">./gradlew releaseCheck
-./gradlew release
+./gradlew clean cli gem &amp;&amp; ./gradlew release
 git commit -am v$VERSION
 git tag v$VERSION</code></pre>
 
@@ -277,7 +277,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Oct 22 01:12:27 2016 by
+  Generated on Wed Nov  2 21:31:56 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
