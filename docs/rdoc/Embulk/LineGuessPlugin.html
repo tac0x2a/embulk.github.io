@@ -234,7 +234,9 @@
 117
 118
 119
-120</pre>
+120
+121
+122</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 87</span>
@@ -268,8 +270,10 @@
     <span class='kw'>while</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='id identifier rubyid_decoder'>decoder</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span>
       <span class='id identifier rubyid_sample_lines'>sample_lines</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_line'>line</span>
     <span class='kw'>end</span>
-    <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span> <span class='kw'>unless</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>  <span class='comment'># last line can be partial
-</span>  <span class='kw'>end</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_sample'>sample</span><span class='period'>.</span><span class='id identifier rubyid_end_with?'>end_with?</span><span class='lparen'>(</span><span class='id identifier rubyid_parser_task'>parser_task</span><span class='period'>.</span><span class='id identifier rubyid_getNewline'>getNewline</span><span class='period'>.</span><span class='id identifier rubyid_getString'>getString</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span> <span class='kw'>if</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='comment'># last line is partial
+</span>    <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
   <span class='kw'>return</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span><span class='semicolon'>;</span>
 <span class='kw'>end</span></pre>
@@ -315,12 +319,12 @@
       <pre class="lines">
 
 
-122
-123
-124</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LineGuessPlugin#guess_lines(config, sample_lines) must be implemented</span><span class='tstring_end'>&quot;</span></span>
@@ -335,7 +339,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Jan 23 08:45:31 2017 by
+  Generated on Mon Jan 23 09:17:02 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
