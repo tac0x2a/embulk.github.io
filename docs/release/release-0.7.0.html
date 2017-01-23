@@ -78,18 +78,18 @@
 <p>This makes plugin development easy as following:</p>
 </li>
 </ul>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> 1. Create plugin template
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="m">1</span>. Create plugin template
 <span class="gp">$</span> embulk new ruby-parser awesome
 <span class="gp">$</span> <span class="nb">cd</span> embulk-parser-awesome
 <span class="gp">#</span> or upgrade existent plugin: embulk migrate embulk-parser-awesome
 
-<span class="gp">#</span> 2. Install dependency gems including embulk itself at vendor/bundle directory
+<span class="gp">#</span> <span class="m">2</span>. Install dependency gems including embulk itself at vendor/bundle directory
 <span class="gp">$</span> bundle install --path vendor/bundle
 
-<span class="gp">#</span> 3. Create an example configuration file
+<span class="gp">#</span> <span class="m">3</span>. Create an example configuration file
 <span class="gp">$</span> vi config.yml
 
-<span class="gp">#</span> 4. You can run embulk without building <span class="p">&amp;</span> installing gem
+<span class="gp">#</span> <span class="m">4</span>. You can run embulk without building <span class="p">&amp;</span> installing gem
 <span class="gp">$</span> bundle <span class="nb">exec</span> embulk run config.yml
 </pre></div>
 </div>
@@ -108,18 +108,18 @@
 <p>This makes plugin development easy as following:</p>
 </li>
 </ul>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> 1. Create plugin template
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="m">1</span>. Create plugin template
 <span class="gp">$</span> embulk new java-input awesome
 <span class="gp">$</span> <span class="nb">cd</span> embulk-input-awesome
 <span class="gp">#</span> or upgrade existent plugin: embulk migrate embulk-input-awesome
 
-<span class="gp">#</span> 2. Build code continously
+<span class="gp">#</span> <span class="m">2</span>. Build code continously
 <span class="gp">$</span> ./gradlew -t package
 
-<span class="gp">#</span> 3. Create an example configuration file
+<span class="gp">#</span> <span class="m">3</span>. Create an example configuration file
 <span class="gp">$</span> vi config.yml
 
-<span class="gp">#</span> 4. Run embulk with -L option
+<span class="gp">#</span> <span class="m">4</span>. Run embulk with -L option
 <span class="gp">$</span> embulk -L . run config.yml
 </pre></div>
 </div>
@@ -152,7 +152,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.2.
     </div>
   </body>
 </html>
