@@ -420,8 +420,8 @@
   <span class='kw'>else</span>
     <span class='id identifier rubyid_delim'>delim</span> <span class='op'>=</span> <span class='id identifier rubyid_guess_delimiter'>guess_delimiter</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
     <span class='kw'>unless</span> <span class='id identifier rubyid_delim'>delim</span>
-      <span class='comment'># not CSV file
-</span>      <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+      <span class='comment'># assuming single column CSV
+</span>      <span class='id identifier rubyid_delim'>delim</span> <span class='op'>=</span> <span class='const'>DELIMITER_CANDIDATES</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
@@ -598,7 +598,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Jan 27 01:36:40 2017 by
+  Generated on Fri Jan 27 07:57:12 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
