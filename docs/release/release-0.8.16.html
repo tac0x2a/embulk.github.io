@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.8.15 &#8212; Embulk 0.8 documentation</title>
+    <title>Release 0.8.16 &#8212; Embulk 0.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,44 +26,61 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Release 0.8.14" href="release-0.8.14.html" />
-    <link rel="prev" title="Release 0.8.16" href="release-0.8.16.html" /> 
+    <link rel="next" title="Release 0.8.15" href="release-0.8.15.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.8.15</span></h2>
+        <h2 class="heading"><span>Release 0.8.16</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.16.html">Release 0.8.16</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.14.html">Release 0.8.14</a>&#160;&#160;»
+        <a href="release-0.8.15.html">Release 0.8.15</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-8-15">
-<h1>Release 0.8.15<a class="headerlink" href="#release-0-8-15" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-8-16">
+<h1>Release 0.8.16<a class="headerlink" href="#release-0-8-16" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added several rules option to rename filter plugin. [#494]<ul>
-<li><a class="reference external" href="http://www.embulk.org/docs/built-in.html#rename-filter-plugin">http://www.embulk.org/docs/built-in.html#rename-filter-plugin</a></li>
+<li>Added remove_columns filter plugin [#530]<ul>
+<li><a class="reference external" href="http://www.embulk.org/docs/built-in.html#remove_columns-filter-plugin">http://www.embulk.org/docs/built-in.html#remove_columns-filter-plugin</a></li>
 </ul>
 </li>
-<li>Introduced SkipTransactionException to stop Embulk before the transaction starts. [#498]</li>
-<li>Added embulk-test package, which is an utility library to be used from the test cases of Java-based input plugins. [#503]</li>
+<li>Supported timestamp format &#8220;%Q&#8221;. (&#64;hiroyuki-sato) [#468, #531]</li>
+<li>Improved csv guess plugin:<ul>
+<li>Added semicolon as delimiter suggest candidate in csv guess plugin. [#527]</li>
+<li>Enabled suggesting for a few rows [#533]</li>
+<li>Enabled suggesting for a single column [#540]</li>
+</ul>
+</li>
+<li>Changed and removed limitation of minimum 40 bytes size limit of guessing. [#518]</li>
+<li>Refactored and introduced TestingEmbulk#{Input,Parser,Output}Builder to embulk-test. [#513, #514, #526]</li>
+<li>Fixed PageBuilder to avoid NullPointerException. [#535]</li>
+<li>Fixed ResumableInputStream to avoid NullPointerException. [#472]</li>
+<li>Fixed TaskValidationException to inherit ConfigException. [#520]</li>
+<li>Fixed build.gradle to use Task.doLast instead of Task.leftShift. [#536]</li>
+<li>Fixed build failure on AppVeyor by FileNotFoundException. [#537]</li>
+<li>Added updateJRuby task to make it easy to upgrade version of JRuby. [#538]</li>
+<li>Upgraded gradle v3.2.1. [#528]<ul>
+<li>Release notes: <a class="reference external" href="https://docs.gradle.org/3.2.1/release-notes">https://docs.gradle.org/3.2.1/release-notes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2016-11-04</p>
+<p>2017-01-27</p>
 </div>
 </div>
 
@@ -72,11 +89,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.16.html">Release 0.8.16</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.14.html">Release 0.8.14</a>&#160;&#160;»
+        <a href="release-0.8.15.html">Release 0.8.15</a>&#160;&#160;»
         </p>
 
       </div>
