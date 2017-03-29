@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files &#8212; Embulk 0.8 documentation</title>
+    <title>Scheduled bulk data loading to Elasticsearch + Kibana 5 from CSV files &#8212; Embulk 0.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -32,7 +32,7 @@
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
-        <h2 class="heading"><span>Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</span></h2>
+        <h2 class="heading"><span>Scheduled bulk data loading to Elasticsearch + Kibana 5 from CSV files</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
@@ -48,11 +48,11 @@
       <div class="content">
         
         
-  <div class="section" id="scheduled-bulk-data-loading-to-elasticsearch-kibana-4-from-csv-files">
-<h1>Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files<a class="headerlink" href="#scheduled-bulk-data-loading-to-elasticsearch-kibana-4-from-csv-files" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scheduled-bulk-data-loading-to-elasticsearch-kibana-5-from-csv-files">
+<h1>Scheduled bulk data loading to Elasticsearch + Kibana 5 from CSV files<a class="headerlink" href="#scheduled-bulk-data-loading-to-elasticsearch-kibana-5-from-csv-files" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#setup-elasticsearch-and-kibana-4" id="id1">Setup Elasticsearch and Kibana 4</a><ul>
+<li><a class="reference internal" href="#setup-elasticsearch-and-kibana-5" id="id1">Setup Elasticsearch and Kibana 5</a><ul>
 <li><a class="reference internal" href="#step-1-download-and-start-elasticsearch" id="id2">Step 1. Download and start Elasticsearch.</a></li>
 <li><a class="reference internal" href="#step-2-download-and-unzip-kibana" id="id3">Step 2. Download and unzip Kibana:</a></li>
 </ul>
@@ -72,30 +72,30 @@
 <li>Visualize the data with Kibana interactively.</li>
 <li>Schedule the data loading every hour using cron.</li>
 </ul>
-<p>This guide assumes you are using Ubuntu 12.04 Precise or Mac OS X.</p>
-<div class="section" id="setup-elasticsearch-and-kibana-4">
-<h2><a class="toc-backref" href="#id1">Setup Elasticsearch and Kibana 4</a><a class="headerlink" href="#setup-elasticsearch-and-kibana-4" title="Permalink to this headline">¶</a></h2>
+<p>This guide assumes you are using Ubuntu 16.10 Precise or macOS.</p>
+<div class="section" id="setup-elasticsearch-and-kibana-5">
+<h2><a class="toc-backref" href="#id1">Setup Elasticsearch and Kibana 5</a><a class="headerlink" href="#setup-elasticsearch-and-kibana-5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-download-and-start-elasticsearch">
 <h3><a class="toc-backref" href="#id2">Step 1. Download and start Elasticsearch.</a><a class="headerlink" href="#step-1-download-and-start-elasticsearch" title="Permalink to this headline">¶</a></h3>
-<p>You can find releases from the <a class="reference external" href="http://www.elasticsearch.org/download/">Elasticsearch website</a>.
+<p>You can find releases from the <a class="reference external" href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch website</a>.
 For the smallest setup, you can unzip the package and run <cite>./bin/elasticsearch</cite> command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/zip/elasticsearch/2.2.0/elasticsearch-2.2.0.zip
-<span class="gp">$</span> unzip elasticsearch-2.2.0.zip
-<span class="gp">$</span> <span class="nb">cd</span> elasticsearch-2.2.0
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.3.0.zip
+<span class="gp">$</span> unzip elasticsearch-5.3.0.zip
+<span class="gp">$</span> <span class="nb">cd</span> elasticsearch-5.3.0
 <span class="gp">$</span> ./bin/elasticsearch
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-2-download-and-unzip-kibana">
 <h3><a class="toc-backref" href="#id3">Step 2. Download and unzip Kibana:</a><a class="headerlink" href="#step-2-download-and-unzip-kibana" title="Permalink to this headline">¶</a></h3>
-<p>You can find releases from the <a class="reference external" href="http://www.elasticsearch.org/overview/kibana/installation/">Kibana website</a>. Open a new console and run following commands:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://download.elastic.co/kibana/kibana/kibana-4.4.0-linux-x64.tar.gz
-<span class="gp">$</span> tar zxvf kibana-4.4.0-linux-x64.tar.gz
-<span class="gp">$</span> <span class="nb">cd</span> kibana-4.4.0-linux-x64
+<p>You can find releases from the <a class="reference external" href="https://www.elastic.co/downloads/kibana">Kibana website</a>. Open a new console and run following commands:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://artifacts.elastic.co/downloads/kibana/kibana-5.3.0-linux-x86_64.tar.gz
+<span class="gp">$</span> tar zxvf kibana-5.3.0-linux-x86_64.tar.gz
+<span class="gp">$</span> <span class="nb">cd</span> kibana-5.3.0-linux-x86_64
 <span class="gp">$</span> ./bin/kibana
 </pre></div>
 </div>
-<p>Note: If you&#8217;re using Mac OS X, <a class="reference external" href="https://download.elastic.co/kibana/kibana/kibana-4.4.0-darwin-x64.tar.gz">https://download.elastic.co/kibana/kibana/kibana-4.4.0-darwin-x64.tar.gz</a> is the URL to download.</p>
+<p>Note: If you&#8217;re using macOS, <a class="reference external" href="https://artifacts.elastic.co/downloads/kibana/kibana-5.3.0-darwin-x86_64.tar.gz">https://artifacts.elastic.co/downloads/kibana/kibana-5.3.0-darwin-x86_64.tar.gz</a> is the URL to download.</p>
 <p>Now Elasticsearch and Kibana started. Open <a class="reference external" href="http://localhost:5601/">http://localhost:5601/</a> using your browser to see the Kibana&#8217;s graphical interface.</p>
 </div>
 </div>
@@ -103,9 +103,11 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 <h2><a class="toc-backref" href="#id4">Setup Embulk</a><a class="headerlink" href="#setup-embulk" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-download-embulk-binary">
 <h3><a class="toc-backref" href="#id5">Step 1. Download Embulk binary:</a><a class="headerlink" href="#step-1-download-embulk-binary" title="Permalink to this headline">¶</a></h3>
-<p>You can find the latest embulk binary from the <a class="reference external" href="https://bintray.com/embulk/maven/embulk/view#files">releases</a>. Because Embulk is a single executable binary, you can simply download it to /usr/local/bin directory and set executable flag as following:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo wget http://dl.embulk.org/embulk-latest.jar -O /usr/local/bin/embulk
-<span class="gp">$</span> sudo chmod +x /usr/local/bin/embulk
+<p>You can find the latest embulk binary from the <a class="reference external" href="https://bintray.com/embulk/maven/embulk/view#files">releases</a>. Because Embulk is a single executable binary, you can simply download it to ~/.embulk/bin directory and set executable flag as following:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> curl --create-dirs -o ~/.embulk/bin/embulk -L <span class="s2">&quot;https://dl.embulk.org/embulk-latest.jar&quot;</span>
+<span class="gp">$</span> chmod +x ~/.embulk/bin/embulk
+<span class="gp">$</span> <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc
+<span class="gp">$</span> <span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 </div>
