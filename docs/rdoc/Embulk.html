@@ -80,14 +80,26 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk.rb<span class="defines">,<br />
-  lib/embulk/exec.rb,<br /> lib/embulk/page.rb,<br /> lib/embulk/error.rb,<br /> lib/embulk/buffer.rb,<br /> lib/embulk/column.rb,<br /> lib/embulk/logger.rb,<br /> lib/embulk/plugin.rb,<br /> lib/embulk/runner.rb,<br /> lib/embulk/schema.rb,<br /> lib/embulk/version.rb,<br /> lib/embulk/guess/csv.rb,<br /> lib/embulk/file_input.rb,<br /> lib/embulk/guess/gzip.rb,<br /> lib/embulk/guess/json.rb,<br /> lib/embulk/data_source.rb,<br /> lib/embulk/file_output.rb,<br /> lib/embulk/java_plugin.rb,<br /> lib/embulk/guess/bzip2.rb,<br /> lib/embulk/guess_plugin.rb,<br /> lib/embulk/input_plugin.rb,<br /> lib/embulk/page_builder.rb,<br /> lib/embulk/filter_plugin.rb,<br /> lib/embulk/output_plugin.rb,<br /> lib/embulk/parser_plugin.rb,<br /> lib/embulk/guess/charset.rb,<br /> lib/embulk/guess/newline.rb,<br /> lib/embulk/decoder_plugin.rb,<br /> lib/embulk/encoder_plugin.rb,<br /> lib/embulk/java/bootstrap.rb,<br /> lib/embulk/executor_plugin.rb,<br /> lib/embulk/plugin_registry.rb,<br /> lib/embulk/formatter_plugin.rb,<br /> lib/embulk/java/time_helper.rb,<br /> lib/embulk/file_input_plugin.rb,<br /> lib/embulk/data/package_data.rb,<br /> lib/embulk/file_output_plugin.rb,<br /> lib/embulk/command/embulk_run.rb,<br /> lib/embulk/guess/csv_all_strings.rb,<br /> lib/embulk/command/embulk_example.rb,<br /> lib/embulk/command/embulk_new_plugin.rb,<br /> lib/embulk/command/embulk_selfupdate.rb,<br /> lib/embulk/command/embulk_generate_bin.rb,<br /> lib/embulk/command/embulk_migrate_plugin.rb,<br /> lib/embulk/data/bundle/embulk/input/example.rb,<br /> lib/embulk/data/bundle/embulk/filter/example.rb,<br /> lib/embulk/data/bundle/embulk/output/example.rb</span>
+    <dd>lib/embulk/version.rb<span class="defines">,<br />
+  lib/embulk.rb,<br /> lib/embulk/exec.rb,<br /> lib/embulk/page.rb,<br /> lib/embulk/error.rb,<br /> lib/embulk/buffer.rb,<br /> lib/embulk/column.rb,<br /> lib/embulk/logger.rb,<br /> lib/embulk/plugin.rb,<br /> lib/embulk/runner.rb,<br /> lib/embulk/schema.rb,<br /> lib/embulk/guess/csv.rb,<br /> lib/embulk/file_input.rb,<br /> lib/embulk/guess/gzip.rb,<br /> lib/embulk/guess/json.rb,<br /> lib/embulk/data_source.rb,<br /> lib/embulk/file_output.rb,<br /> lib/embulk/java_plugin.rb,<br /> lib/embulk/guess/bzip2.rb,<br /> lib/embulk/guess_plugin.rb,<br /> lib/embulk/input_plugin.rb,<br /> lib/embulk/page_builder.rb,<br /> lib/embulk/filter_plugin.rb,<br /> lib/embulk/output_plugin.rb,<br /> lib/embulk/parser_plugin.rb,<br /> lib/embulk/guess/charset.rb,<br /> lib/embulk/guess/newline.rb,<br /> lib/embulk/decoder_plugin.rb,<br /> lib/embulk/encoder_plugin.rb,<br /> lib/embulk/java/bootstrap.rb,<br /> lib/embulk/executor_plugin.rb,<br /> lib/embulk/plugin_registry.rb,<br /> lib/embulk/formatter_plugin.rb,<br /> lib/embulk/java/time_helper.rb,<br /> lib/embulk/file_input_plugin.rb,<br /> lib/embulk/data/package_data.rb,<br /> lib/embulk/file_output_plugin.rb,<br /> lib/embulk/command/embulk_run.rb,<br /> lib/embulk/guess/csv_all_strings.rb,<br /> lib/embulk/command/embulk_example.rb,<br /> lib/embulk/command/embulk_new_plugin.rb,<br /> lib/embulk/command/embulk_selfupdate.rb,<br /> lib/embulk/command/embulk_generate_bin.rb,<br /> lib/embulk/command/embulk_migrate_plugin.rb,<br /> lib/embulk/data/bundle/embulk/input/example.rb,<br /> lib/embulk/data/bundle/embulk/filter/example.rb,<br /> lib/embulk/data/bundle/embulk/output/example.rb</span>
 </dd>
   </dl>
   
 </div>
 
-<h2>Defined Under Namespace</h2>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p><a href="#562">TODO(v2)</a>: Remove this file. <a
+href="https://github.com/embulk/embulk/issues/562">github.com/embulk/embulk/issues/562</a></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
 <p class="children">
   
     
@@ -103,10 +115,15 @@
   <h2>Constant Summary</h2>
   <dl class="constants">
     
-      <dt id="VERSION-constant" class="">VERSION =
+      <dt id="VERSION_INTERNAL-constant" class="">VERSION_INTERNAL =
         
       </dt>
       <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0.8.18</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="DEPRECATED_MESSAGE-constant" class="">DEPRECATED_MESSAGE =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Embulk::VERSION in (J)Ruby is deprecated. Use org.embulk.EmbulkVersion::VERSION instead. If this message is from a plugin, please tell this to the author of the plugin!</span><span class='tstring_end'>&#39;</span></span></pre></dd>
     
       <dt id="logger-classvariable" class="">@@logger =
         <div class="docstring">
@@ -123,6 +140,11 @@
 </div>
       </dt>
       <dd><pre class="code"><span class='const'>Logger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>STDOUT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="warned-classvariable" class="">@@warned =
+        
+      </dt>
+      <dd><pre class="code"><span class='kw'>false</span></pre></dd>
     
   </dl>
 
@@ -144,6 +166,28 @@
   <span class="summary_signature">
     
       <a href="#b-class_method" title="b (class method)">.<strong>b</strong>(s)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#const_missing-class_method" title="const_missing (class method)">.<strong>const_missing</strong>(name)  &#x21d2; Object </a>
     
 
     
@@ -525,6 +569,60 @@
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_b'>b</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ASCII-8BIT</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="const_missing-class_method">
+  
+    .<strong>const_missing</strong>(name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/version.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_const_missing'>const_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='symbol'>:VERSION</span>
+    <span class='kw'>unless</span> <span class='cvar'>@@warned</span>
+      <span class='kw'>if</span> <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:logger</span><span class='rparen'>)</span>
+        <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span><span class='lparen'>(</span><span class='const'>DEPRECATED_MESSAGE</span><span class='rparen'>)</span>
+        <span class='cvar'>@@warned</span> <span class='op'>=</span> <span class='kw'>true</span>
+      <span class='kw'>else</span>
+        <span class='const'>STDERR</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='const'>DEPRECATED_MESSAGE</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='kw'>return</span> <span class='const'>VERSION_INTERNAL</span>
+  <span class='kw'>else</span>
+    <span class='kw'>super</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1110,7 +1208,7 @@ ENV.delete &#39;GEM_PATH&#39;
 </span>  <span class='comment'>##
 </span>
   <span class='comment'># update version at the end
-</span>  <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/build.gradle</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>org\.embulk:embulk-(?:core|standards):([\d\.\+]+)?</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rparen'>)</span>
+</span>  <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/build.gradle</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>org\.embulk:embulk-(?:core|standards):([\d\.\+]+)?</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1260,11 +1358,11 @@ ENV.delete &#39;GEM_PATH&#39;
 </span>  <span class='kw'>if</span> <span class='id identifier rubyid_from_ver'>from_ver</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_version'>version</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.1.0</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='comment'># add add_development_dependency
 </span>    <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_insert_line'>insert_line</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/*.gemspec</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([ \t]*\w+)\.add_development_dependency</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='op'>|</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_m'>m</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>.add_development_dependency &#39;embulk&#39;, [&#39;&gt;= </span><span class='embexpr_beg'>#{</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;]</span><span class='tstring_end'>&quot;</span></span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_m'>m</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>.add_development_dependency &#39;embulk&#39;, [&#39;&gt;= </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;]</span><span class='tstring_end'>&quot;</span></span>
     <span class='rbrace'>}</span>
   <span class='kw'>else</span>
-    <span class='kw'>unless</span> <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/*.gemspec</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>add_(?:development_)?dependency\s+\W+embulk\W+\s*(\~\&gt;\s*[\d\.]+)\W+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt;= </span><span class='embexpr_beg'>#{</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/*.gemspec</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>add_(?:development_)?dependency\s+\W+embulk\W+\s*([\d\.]+)\W+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rparen'>)</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/*.gemspec</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>add_(?:development_)?dependency\s+\W+embulk\W+\s*(\~\&gt;\s*[\d\.]+)\W+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt;= </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_migrator'>migrator</span><span class='period'>.</span><span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/*.gemspec</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>add_(?:development_)?dependency\s+\W+embulk\W+\s*([\d\.]+)\W+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -1949,7 +2047,7 @@ ENV.delete &#39;GEM_PATH&#39;
   <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_find_index'>find_index</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_arg'>arg</span><span class='op'>|</span> <span class='id identifier rubyid_arg'>arg</span> <span class='op'>!~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\-</span><span class='regexp_end'>/</span></span> <span class='rbrace'>}</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_i'>i</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--version</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>embulk </span><span class='embexpr_beg'>#{</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>embulk </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
       <span class='id identifier rubyid_system_exit_success'>system_exit_success</span>
     <span class='kw'>end</span>
     <span class='id identifier rubyid_usage'>usage</span> <span class='kw'>nil</span>
@@ -1959,9 +2057,9 @@ ENV.delete &#39;GEM_PATH&#39;
   <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>java</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>optparse</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_op'>op</span> <span class='op'>=</span> <span class='const'>OptionParser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-  <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span>
+  <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span>
 
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y-%m-%d %H:%M:%S.%3N %z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>: Embulk v</span><span class='embexpr_beg'>#{</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y-%m-%d %H:%M:%S.%3N %z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>: Embulk v</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 
   <span class='id identifier rubyid_plugin_paths'>plugin_paths</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_load_paths'>load_paths</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -2352,7 +2450,8 @@ examples:
 79
 80
 81
-82</pre>
+82
+83</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_selfupdate.rb', line 2</span>
@@ -2387,7 +2486,7 @@ examples:
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Checking the latest version...</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_target_version'>target_version</span> <span class='op'>=</span> <span class='id identifier rubyid_check_latest_version'>check_latest_version</span>
 
-    <span class='id identifier rubyid_current_version'>current_version</span> <span class='op'>=</span> <span class='const'>Gem</span><span class='op'>::</span><span class='const'>Version</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_current_version'>current_version</span> <span class='op'>=</span> <span class='const'>Gem</span><span class='op'>::</span><span class='const'>Version</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkVersion</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rparen'>)</span>
     <span class='kw'>if</span> <span class='const'>Gem</span><span class='op'>::</span><span class='const'>Version</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_target_version'>target_version</span><span class='rparen'>)</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_current_version'>current_version</span>
       <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Already up-to-date. </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_current_version'>current_version</span><span class='embexpr_end'>}</span><span class='tstring_content'> is the latest version.</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>return</span>
@@ -2422,7 +2521,8 @@ examples:
         <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jar:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_io'>io</span><span class='period'>.</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_tmp'>tmp</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_toURI'>toURI</span><span class='period'>.</span><span class='id identifier rubyid_toURL'>toURL</span><span class='embexpr_end'>}</span><span class='tstring_content'>!/embulk/version.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
         <span class='id identifier rubyid_m'>m</span> <span class='op'>=</span> <span class='const'>Module</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
         <span class='id identifier rubyid_m'>m</span><span class='period'>.</span><span class='id identifier rubyid_module_eval'>module_eval</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
-        <span class='kw'>unless</span> <span class='id identifier rubyid_m'>m</span><span class='op'>::</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span> <span class='op'>==</span> <span class='id identifier rubyid_target_version'>target_version</span>
+        <span class='comment'># These Embulk::VERSION is kept for forward compatibility. They are reading downloaded jars.
+</span>        <span class='kw'>unless</span> <span class='id identifier rubyid_m'>m</span><span class='op'>::</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span> <span class='op'>==</span> <span class='id identifier rubyid_target_version'>target_version</span>
           <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Embulk::VERSION does not match with </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_target_version'>target_version</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
         <span class='kw'>end</span>
       <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
@@ -2520,7 +2620,7 @@ examples:
 </div>
 
       <div id="footer">
-  Generated on Wed Apr  5 08:58:24 2017 by
+  Generated on Mon Apr 10 04:50:21 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
