@@ -52,82 +52,82 @@
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#embulk-configuration-file-format" id="id34">Embulk configuration file format</a><ul>
-<li><a class="reference internal" href="#using-variables" id="id35">Using variables</a></li>
-<li><a class="reference internal" href="#including-files" id="id36">Including files</a></li>
+<li><a class="reference internal" href="#embulk-configuration-file-format" id="id33">Embulk configuration file format</a><ul>
+<li><a class="reference internal" href="#using-variables" id="id34">Using variables</a></li>
+<li><a class="reference internal" href="#including-files" id="id35">Including files</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#local-file-input-plugin" id="id37">Local file input plugin</a><ul>
-<li><a class="reference internal" href="#options" id="id38">Options</a></li>
-<li><a class="reference internal" href="#example" id="id39">Example</a></li>
+<li><a class="reference internal" href="#local-file-input-plugin" id="id36">Local file input plugin</a><ul>
+<li><a class="reference internal" href="#options" id="id37">Options</a></li>
+<li><a class="reference internal" href="#example" id="id38">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#csv-parser-plugin" id="id40">CSV parser plugin</a><ul>
-<li><a class="reference internal" href="#id3" id="id41">Options</a></li>
-<li><a class="reference internal" href="#id5" id="id42">Example</a></li>
+<li><a class="reference internal" href="#csv-parser-plugin" id="id39">CSV parser plugin</a><ul>
+<li><a class="reference internal" href="#id2" id="id40">Options</a></li>
+<li><a class="reference internal" href="#id4" id="id41">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#json-parser-plugin" id="id43">JSON parser plugin</a><ul>
-<li><a class="reference internal" href="#id6" id="id44">Options</a></li>
-<li><a class="reference internal" href="#id7" id="id45">Example</a></li>
+<li><a class="reference internal" href="#json-parser-plugin" id="id42">JSON parser plugin</a><ul>
+<li><a class="reference internal" href="#id5" id="id43">Options</a></li>
+<li><a class="reference internal" href="#id6" id="id44">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#gzip-decoder-plugin" id="id46">Gzip decoder plugin</a><ul>
-<li><a class="reference internal" href="#id8" id="id47">Options</a></li>
-<li><a class="reference internal" href="#id9" id="id48">Example</a></li>
+<li><a class="reference internal" href="#gzip-decoder-plugin" id="id45">Gzip decoder plugin</a><ul>
+<li><a class="reference internal" href="#id7" id="id46">Options</a></li>
+<li><a class="reference internal" href="#id8" id="id47">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bzip2-decoder-plugin" id="id49">BZip2 decoder plugin</a><ul>
-<li><a class="reference internal" href="#id10" id="id50">Options</a></li>
-<li><a class="reference internal" href="#id11" id="id51">Example</a></li>
+<li><a class="reference internal" href="#bzip2-decoder-plugin" id="id48">BZip2 decoder plugin</a><ul>
+<li><a class="reference internal" href="#id9" id="id49">Options</a></li>
+<li><a class="reference internal" href="#id10" id="id50">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#file-output-plugin" id="id52">File output plugin</a><ul>
-<li><a class="reference internal" href="#id12" id="id53">Options</a></li>
-<li><a class="reference internal" href="#id13" id="id54">Example</a></li>
+<li><a class="reference internal" href="#file-output-plugin" id="id51">File output plugin</a><ul>
+<li><a class="reference internal" href="#id11" id="id52">Options</a></li>
+<li><a class="reference internal" href="#id12" id="id53">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#csv-formatter-plugin" id="id55">CSV formatter plugin</a><ul>
-<li><a class="reference internal" href="#id14" id="id56">Options</a></li>
-<li><a class="reference internal" href="#id15" id="id57">Example</a></li>
+<li><a class="reference internal" href="#csv-formatter-plugin" id="id54">CSV formatter plugin</a><ul>
+<li><a class="reference internal" href="#id13" id="id55">Options</a></li>
+<li><a class="reference internal" href="#id14" id="id56">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#gzip-encoder-plugin" id="id58">Gzip encoder plugin</a><ul>
-<li><a class="reference internal" href="#id16" id="id59">Options</a></li>
-<li><a class="reference internal" href="#id17" id="id60">Example</a></li>
+<li><a class="reference internal" href="#gzip-encoder-plugin" id="id57">Gzip encoder plugin</a><ul>
+<li><a class="reference internal" href="#id15" id="id58">Options</a></li>
+<li><a class="reference internal" href="#id16" id="id59">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bzip2-encoder-plugin" id="id61">BZip2 encoder plugin</a><ul>
-<li><a class="reference internal" href="#id18" id="id62">Options</a></li>
-<li><a class="reference internal" href="#id19" id="id63">Example</a></li>
+<li><a class="reference internal" href="#bzip2-encoder-plugin" id="id60">BZip2 encoder plugin</a><ul>
+<li><a class="reference internal" href="#id17" id="id61">Options</a></li>
+<li><a class="reference internal" href="#id18" id="id62">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#rename-filter-plugin" id="id64">Rename filter plugin</a><ul>
-<li><a class="reference internal" href="#id20" id="id65">Options</a></li>
-<li><a class="reference internal" href="#renaming-rules" id="id66">Renaming rules</a></li>
-<li><a class="reference internal" href="#example-of-renaming-rules" id="id67">Example of renaming rules</a></li>
-<li><a class="reference internal" href="#columns-not-recommended" id="id68">Columns: not recommended</a></li>
+<li><a class="reference internal" href="#rename-filter-plugin" id="id63">Rename filter plugin</a><ul>
+<li><a class="reference internal" href="#id19" id="id64">Options</a></li>
+<li><a class="reference internal" href="#renaming-rules" id="id65">Renaming rules</a></li>
+<li><a class="reference internal" href="#example-of-renaming-rules" id="id66">Example of renaming rules</a></li>
+<li><a class="reference internal" href="#columns-not-recommended" id="id67">Columns: not recommended</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#remove-columns-filter-plugin" id="id69">Remove columns filter plugin</a><ul>
-<li><a class="reference internal" href="#id28" id="id70">Options</a></li>
-<li><a class="reference internal" href="#id29" id="id71">Example</a></li>
+<li><a class="reference internal" href="#remove-columns-filter-plugin" id="id68">Remove columns filter plugin</a><ul>
+<li><a class="reference internal" href="#id27" id="id69">Options</a></li>
+<li><a class="reference internal" href="#id28" id="id70">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#local-executor-plugin" id="id72">Local executor plugin</a><ul>
-<li><a class="reference internal" href="#id30" id="id73">Options</a></li>
-<li><a class="reference internal" href="#id31" id="id74">Example</a></li>
+<li><a class="reference internal" href="#local-executor-plugin" id="id71">Local executor plugin</a><ul>
+<li><a class="reference internal" href="#id29" id="id72">Options</a></li>
+<li><a class="reference internal" href="#id30" id="id73">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#guess-executor" id="id75">Guess executor</a><ul>
-<li><a class="reference internal" href="#id32" id="id76">Options</a></li>
-<li><a class="reference internal" href="#id33" id="id77">Example</a></li>
+<li><a class="reference internal" href="#guess-executor" id="id74">Guess executor</a><ul>
+<li><a class="reference internal" href="#id31" id="id75">Options</a></li>
+<li><a class="reference internal" href="#id32" id="id76">Example</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="embulk-configuration-file-format">
-<h2><a class="toc-backref" href="#id34">Embulk configuration file format</a><a class="headerlink" href="#embulk-configuration-file-format" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">Embulk configuration file format</a><a class="headerlink" href="#embulk-configuration-file-format" title="Permalink to this headline">¶</a></h2>
 <p>Embulk uses a YAML file to define a bulk data loading. Here is an example of the file:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
@@ -164,7 +164,7 @@
 </ul>
 </li>
 <li><strong>out:</strong> Output plugin options. An output plugin is either record-based (<a class="reference external" href="https://github.com/embulk/embulk-output-jdbc">Oracle</a>, <a class="reference external" href="https://github.com/muga/embulk-output-elasticsearch">Elasticsearch</a>, etc) or file-based (<a class="reference external" href="https://github.com/hakobera/embulk-output-gcs">Google Cloud Storage</a>, <a class="reference external" href="https://github.com/embulk/embulk-output-command">Command</a>, etc)<ul>
-<li><strong>formatter:</strong> If the output is file-based, formatter plugin formats a file format (such as built-in csv, <a class="reference external" href="https://github.com/takei-yuya/embulk-formatter-jsonl">JSON</a>)</li>
+<li><strong>formatter:</strong> If the output is file-based, formatter plugin formats a file format (such as built-in csv, <a class="reference external" href="https://github.com/takei-yuya/embulk-formatter-jsonl">jsonl</a>)</li>
 <li><strong>encoder:</strong> If the output is file-based, encoder plugin encodes compression or encryption (such as built-in gzip or bzip2)</li>
 </ul>
 </li>
@@ -173,7 +173,7 @@
 </ul>
 <p>In many cases, what you need to write is <strong>in:</strong>, <strong>out</strong>: and <strong>formatter</strong> sections only because <code class="docutils literal"><span class="pre">guess</span></code> command guesses <strong>parser</strong> and <strong>decoder</strong> options for you. See also the <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
 <div class="section" id="using-variables">
-<h3><a class="toc-backref" href="#id35">Using variables</a><a class="headerlink" href="#using-variables" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">Using variables</a><a class="headerlink" href="#using-variables" title="Permalink to this headline">¶</a></h3>
 <p>You can embed environment variables in configuration file using <a class="reference external" href="http://liquidmarkup.org/">Liquid template engine</a> (This is experimental feature. Behavior might change or be removed in future releases).</p>
 <p>To use template engine, configuration file name must end with <code class="docutils literal"><span class="pre">.yml.liquid</span></code>.</p>
 <p>Environment variables are set to <code class="docutils literal"><span class="pre">env</span></code> variable.</p>
@@ -197,11 +197,11 @@
 </div>
 </div>
 <div class="section" id="including-files">
-<h3><a class="toc-backref" href="#id36">Including files</a><a class="headerlink" href="#including-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">Including files</a><a class="headerlink" href="#including-files" title="Permalink to this headline">¶</a></h3>
 <p>Configuration file can include another configuration file. To use it, configuration file name must end with <code class="docutils literal"><span class="pre">.yml.liquid</span></code>.</p>
 <p>File will be searched from the relative path of the input configuration file. And file name will be <code class="docutils literal"><span class="pre">_&lt;name&gt;.yml.liquid</span></code>. For example, if you add <code class="docutils literal"><span class="pre">{%</span> <span class="pre">include</span> <span class="pre">'subdir/inc'</span> <span class="pre">%}</span></code> tag to <code class="docutils literal"><span class="pre">myconfig/config.yml.liquid</span></code> file, it includes <code class="docutils literal"><span class="pre">myconfig/subdir/_inc.yml.liquid</span></code> file.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span># config.yml.liquid
-{% include &#39;in_mysql&#39; %}
+<div class="highlight-liquid"><div class="highlight"><pre><span></span># config.yml.liquid
+<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="s1">&#39;in_mysql&#39;</span><span class="w"> </span><span class="p">%}</span>
 out:
   type: stdout
 </pre></div>
@@ -222,10 +222,10 @@ out:
 </div>
 </div>
 <div class="section" id="local-file-input-plugin">
-<h2><a class="toc-backref" href="#id37">Local file input plugin</a><a class="headerlink" href="#local-file-input-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id36">Local file input plugin</a><a class="headerlink" href="#local-file-input-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">file</span></code> input plugin reads files from local file system.</p>
 <div class="section" id="options">
-<h3><a class="toc-backref" href="#id38">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="19%" />
@@ -288,7 +288,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="example">
-<h3><a class="toc-backref" href="#id39">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id38">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
   <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/files/sample_</span>
@@ -301,10 +301,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="csv-parser-plugin">
-<h2><a class="toc-backref" href="#id40">CSV parser plugin</a><a class="headerlink" href="#csv-parser-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id39">CSV parser plugin</a><a class="headerlink" href="#csv-parser-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">csv</span></code> parser plugin parses CSV and TSV files.</p>
-<div class="section" id="id3">
-<h3><a class="toc-backref" href="#id41">Options</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id40">Options</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -497,8 +497,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </table>
 <p>You can use <code class="docutils literal"><span class="pre">guess</span></code> to automatically generate the column settings. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
 </div>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id42">Example</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id41">Example</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">parser</span><span class="p p-Indicator">:</span>
@@ -541,17 +541,17 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="json-parser-plugin">
-<h2><a class="toc-backref" href="#id43">JSON parser plugin</a><a class="headerlink" href="#json-parser-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id42">JSON parser plugin</a><a class="headerlink" href="#json-parser-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">json</span></code> parser plugin parses a JSON file that contains a sequence of JSON objects. Example:</p>
-<div class="highlight-json"><div class="highlight"><pre><span></span>{&quot;time&quot;:1455829282,&quot;ip&quot;:&quot;93.184.216.34&quot;,&quot;name&quot;:frsyuki}
-{&quot;time&quot;:1455829282,&quot;ip&quot;:&quot;172.36.8.109&quot;:sadayuki}
-{&quot;time&quot;:1455829284,&quot;ip&quot;:&quot;example.com&quot;,&quot;name&quot;:Treasure Data}
-{&quot;time&quot;:1455829282,&quot;ip&quot;:&quot;10.98.43.1&quot;,&quot;name&quot;:MessagePack}
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="mi">1455829282</span><span class="p">,</span><span class="s2">&quot;ip&quot;</span><span class="o">:</span><span class="s2">&quot;93.184.216.34&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="nx">frsyuki</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="mi">1455829282</span><span class="p">,</span><span class="s2">&quot;ip&quot;</span><span class="o">:</span><span class="s2">&quot;172.36.8.109&quot;</span><span class="o">:</span><span class="nx">sadayuki</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="mi">1455829284</span><span class="p">,</span><span class="s2">&quot;ip&quot;</span><span class="o">:</span><span class="s2">&quot;example.com&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="nx">Treasure</span> <span class="nx">Data</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="mi">1455829282</span><span class="p">,</span><span class="s2">&quot;ip&quot;</span><span class="o">:</span><span class="s2">&quot;10.98.43.1&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="nx">MessagePack</span><span class="p">}</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">json</span></code> parser plugin outputs a single record named &#8220;record&#8221; (type is json).</p>
-<div class="section" id="id6">
-<h3><a class="toc-backref" href="#id44">Options</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id43">Options</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -575,8 +575,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tbody>
 </table>
 </div>
-<div class="section" id="id7">
-<h3><a class="toc-backref" href="#id45">Example</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id44">Example</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">parser</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
@@ -585,14 +585,14 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="gzip-decoder-plugin">
-<h2><a class="toc-backref" href="#id46">Gzip decoder plugin</a><a class="headerlink" href="#gzip-decoder-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id45">Gzip decoder plugin</a><a class="headerlink" href="#gzip-decoder-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">gzip</span></code> decoder plugin decompresses gzip files before input plugins read them.</p>
-<div class="section" id="id8">
-<h3><a class="toc-backref" href="#id47">Options</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id46">Options</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>This plugin doesn&#8217;t have any options.</p>
 </div>
-<div class="section" id="id9">
-<h3><a class="toc-backref" href="#id48">Example</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id47">Example</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">decoders</span><span class="p p-Indicator">:</span>
@@ -602,14 +602,14 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="bzip2-decoder-plugin">
-<h2><a class="toc-backref" href="#id49">BZip2 decoder plugin</a><a class="headerlink" href="#bzip2-decoder-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id48">BZip2 decoder plugin</a><a class="headerlink" href="#bzip2-decoder-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">bzip2</span></code> decoder plugin decompresses bzip2 files before input plugins read them.</p>
-<div class="section" id="id10">
-<h3><a class="toc-backref" href="#id50">Options</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id49">Options</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>This plugin doesn&#8217;t have any options.</p>
 </div>
-<div class="section" id="id11">
-<h3><a class="toc-backref" href="#id51">Example</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id50">Example</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">decoders</span><span class="p p-Indicator">:</span>
@@ -619,10 +619,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="file-output-plugin">
-<h2><a class="toc-backref" href="#id52">File output plugin</a><a class="headerlink" href="#file-output-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id51">File output plugin</a><a class="headerlink" href="#file-output-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">file</span></code> output plugin writes records to local file system.</p>
-<div class="section" id="id12">
-<h3><a class="toc-backref" href="#id53">Options</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id52">Options</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -668,8 +668,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 <p><code class="docutils literal"><span class="pre">sequence_format</span></code> formats task index and sequence number in a task.</p>
 </div>
-<div class="section" id="id13">
-<h3><a class="toc-backref" href="#id54">Example</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id53">Example</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
   <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/output/sample_</span>
@@ -681,10 +681,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="csv-formatter-plugin">
-<h2><a class="toc-backref" href="#id55">CSV formatter plugin</a><a class="headerlink" href="#csv-formatter-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id54">CSV formatter plugin</a><a class="headerlink" href="#csv-formatter-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">csv</span></code> formatter plugin formats records using CSV or TSV format.</p>
-<div class="section" id="id14">
-<h3><a class="toc-backref" href="#id56">Options</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id55">Options</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="13%" />
@@ -810,8 +810,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tbody>
 </table>
 </div>
-<div class="section" id="id15">
-<h3><a class="toc-backref" href="#id57">Example</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#id56">Example</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">formatter</span><span class="p p-Indicator">:</span>
@@ -833,10 +833,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="gzip-encoder-plugin">
-<h2><a class="toc-backref" href="#id58">Gzip encoder plugin</a><a class="headerlink" href="#gzip-encoder-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id57">Gzip encoder plugin</a><a class="headerlink" href="#gzip-encoder-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">gzip</span></code> encoder plugin compresses output files using gzip.</p>
-<div class="section" id="id16">
-<h3><a class="toc-backref" href="#id59">Options</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id58">Options</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="8%" />
@@ -860,8 +860,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tbody>
 </table>
 </div>
-<div class="section" id="id17">
-<h3><a class="toc-backref" href="#id60">Example</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3><a class="toc-backref" href="#id59">Example</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">encoders</span><span class="p p-Indicator">:</span>
@@ -872,10 +872,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="bzip2-encoder-plugin">
-<h2><a class="toc-backref" href="#id61">BZip2 encoder plugin</a><a class="headerlink" href="#bzip2-encoder-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id60">BZip2 encoder plugin</a><a class="headerlink" href="#bzip2-encoder-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">bzip2</span></code> encoder plugin compresses output files using bzip2.</p>
-<div class="section" id="id18">
-<h3><a class="toc-backref" href="#id62">Options</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3><a class="toc-backref" href="#id61">Options</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="8%" />
@@ -899,8 +899,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tbody>
 </table>
 </div>
-<div class="section" id="id19">
-<h3><a class="toc-backref" href="#id63">Example</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3><a class="toc-backref" href="#id62">Example</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">encoders</span><span class="p p-Indicator">:</span>
@@ -911,10 +911,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="rename-filter-plugin">
-<h2><a class="toc-backref" href="#id64">Rename filter plugin</a><a class="headerlink" href="#rename-filter-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id63">Rename filter plugin</a><a class="headerlink" href="#rename-filter-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">rename</span></code> filter plugin changes column names. This plugin has no impact on performance.</p>
-<div class="section" id="id20">
-<h3><a class="toc-backref" href="#id65">Options</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3><a class="toc-backref" href="#id64">Options</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="8%" />
@@ -944,7 +944,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </table>
 </div>
 <div class="section" id="renaming-rules">
-<h3><a class="toc-backref" href="#id66">Renaming rules</a><a class="headerlink" href="#renaming-rules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id65">Renaming rules</a><a class="headerlink" href="#renaming-rules" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">rules</span></code> is an array of rules as below applied top-down for all the columns.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1010,8 +1010,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
-<div class="section" id="id21">
-<h5>Example<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id20">
+<h5>Example<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration replaces characters into &quot;_&quot; except for &quot;_&quot;, lower-case alphabets, and digits.</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1058,8 +1058,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
-<div class="section" id="id22">
-<h5>Example<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id21">
+<h5>Example<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration prefixes a column name with &quot;_&quot; unless the name starts from &quot;_&quot; or a lower-case alphabet.</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1076,8 +1076,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <div class="section" id="renaming-rule-lower-to-upper">
 <h4>Renaming rule: lower_to_upper<a class="headerlink" href="#renaming-rule-lower-to-upper" title="Permalink to this headline">¶</a></h4>
 <p>The rule <code class="docutils literal"><span class="pre">lower_to_upper</span></code> converts lower-case alphabets to upper-case.</p>
-<div class="section" id="id23">
-<h5>Example<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id22">
+<h5>Example<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration converts all lower-case alphabets to upper-case.</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1114,8 +1114,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
-<div class="section" id="id24">
-<h5>Example<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id23">
+<h5>Example<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration replaces all patterns</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1150,8 +1150,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 </tbody>
 </table>
-<div class="section" id="id25">
-<h5>Example<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id24">
+<h5>Example<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration drops all characters after the 20th character.</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1166,8 +1166,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <div class="section" id="renaming-rule-upper-to-lower">
 <h4>Renaming rule: upper_to_lower<a class="headerlink" href="#renaming-rule-upper-to-lower" title="Permalink to this headline">¶</a></h4>
 <p>The rule <code class="docutils literal"><span class="pre">upper_to_lower</span></code> converts upper-case alphabets to lower-case.</p>
-<div class="section" id="id26">
-<h5>Example<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id25">
+<h5>Example<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration converts all upper-case alphabets to lower-case.</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1231,8 +1231,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </li>
 </ol>
 </div>
-<div class="section" id="id27">
-<h5>Example<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id26">
+<h5>Example<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration suffixes numbers to duplicative column names. (Ex. [&quot;column&quot;, &quot;column&quot;, &quot;column&quot;] goes to [&quot;column&quot;, &quot;column_2&quot;, &quot;column_3&quot;].)</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1245,7 +1245,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="example-of-renaming-rules">
-<h3><a class="toc-backref" href="#id67">Example of renaming rules</a><a class="headerlink" href="#example-of-renaming-rules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id66">Example of renaming rules</a><a class="headerlink" href="#example-of-renaming-rules" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">- type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rename</span>
@@ -1259,7 +1259,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="columns-not-recommended">
-<h3><a class="toc-backref" href="#id68">Columns: not recommended</a><a class="headerlink" href="#columns-not-recommended" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id67">Columns: not recommended</a><a class="headerlink" href="#columns-not-recommended" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">columns</span></code> is not recommended to use anymore. Consider using <code class="docutils literal"><span class="pre">rules</span></code> instead.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1276,10 +1276,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="remove-columns-filter-plugin">
-<h2><a class="toc-backref" href="#id69">Remove columns filter plugin</a><a class="headerlink" href="#remove-columns-filter-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id68">Remove columns filter plugin</a><a class="headerlink" href="#remove-columns-filter-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">remove_columns</span></code> filter plugin removes columns from schema.</p>
-<div class="section" id="id28">
-<h3><a class="toc-backref" href="#id70">Options</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3><a class="toc-backref" href="#id69">Options</a><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
@@ -1314,8 +1314,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </table>
 <p>remove: and keep: options are not multi-select.</p>
 </div>
-<div class="section" id="id29">
-<h3><a class="toc-backref" href="#id71">Example</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id28">
+<h3><a class="toc-backref" href="#id70">Example</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># This configuration removes &quot;_c0&quot; and &quot;_c1&quot; named columns from schema.</span>
 <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1326,10 +1326,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="local-executor-plugin">
-<h2><a class="toc-backref" href="#id72">Local executor plugin</a><a class="headerlink" href="#local-executor-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id71">Local executor plugin</a><a class="headerlink" href="#local-executor-plugin" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">local</span></code> executor plugin runs tasks using local threads. This is the only built-in executor plugin.</p>
-<div class="section" id="id30">
-<h3><a class="toc-backref" href="#id73">Options</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h3><a class="toc-backref" href="#id72">Options</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="13%" />
@@ -1360,8 +1360,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <p>The <code class="docutils literal"><span class="pre">max_threads</span></code> option controls maximum concurrency. Setting smaller number here is useful if too many threads make the destination or source storage overloaded. Setting larger number here is useful if CPU utilization is too low due to high latency.</p>
 <p>The <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option enables &#8220;page scattering&#8221;. The feature is enabled if number of input tasks is less than <code class="docutils literal"><span class="pre">min_output_tasks</span></code>. It uses multiple filter &amp; output threads for each input task so that one input task can use multiple threads. Setting larger number here is useful if embulk doesn&#8217;t use multi-threading with enough concurrency due to too few number of input tasks. Setting 1 here disables page scattering completely.</p>
 </div>
-<div class="section" id="id31">
-<h3><a class="toc-backref" href="#id74">Example</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h3><a class="toc-backref" href="#id73">Example</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">exec</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">max_threads</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>         <span class="c1"># run at most 8 tasks concurrently</span>
   <span class="l l-Scalar l-Scalar-Plain">min_output_tasks</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>    <span class="c1"># disable page scattering</span>
@@ -1376,10 +1376,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </div>
 </div>
 <div class="section" id="guess-executor">
-<h2><a class="toc-backref" href="#id75">Guess executor</a><a class="headerlink" href="#guess-executor" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id74">Guess executor</a><a class="headerlink" href="#guess-executor" title="Permalink to this headline">¶</a></h2>
 <p>The guess executor is called by <code class="docutils literal"><span class="pre">guess</span></code> command. It executes default guess plugins in a sequential order and suggests Embulk config by appropriate guess plugin. The default guess plugins and the order are <code class="docutils literal"><span class="pre">gzip</span></code>, <code class="docutils literal"><span class="pre">'bzip2</span></code>, <code class="docutils literal"><span class="pre">json</span></code> and <code class="docutils literal"><span class="pre">csv</span></code>.</p>
-<div class="section" id="id32">
-<h3><a class="toc-backref" href="#id76">Options</a><a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id31">
+<h3><a class="toc-backref" href="#id75">Options</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -1411,8 +1411,8 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <p>The <code class="docutils literal"><span class="pre">exclude_guess_plugins</span></code> option exclude specified guess plugins from the list of default guess plugins that the guess executor uses.</p>
 <p>This example shows how to use <code class="docutils literal"><span class="pre">csv_all_strings</span></code> guess plugin, which suggests column types within CSV files as string types. It needs to be explicitly specified by users when it&#8217;s used instead of <code class="docutils literal"><span class="pre">csv</span></code> guess plugin because the plugin is not included in default guess plugins. We also can exclude default <code class="docutils literal"><span class="pre">csv</span></code> guess plugin.</p>
 </div>
-<div class="section" id="id33">
-<h3><a class="toc-backref" href="#id77">Example</a><a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id32">
+<h3><a class="toc-backref" href="#id76">Example</a><a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">exec</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">guess_plugins</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;csv_all_strings&#39;</span><span class="p p-Indicator">]</span>
   <span class="l l-Scalar l-Scalar-Plain">exclude_guess_plugins</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;csv&#39;</span><span class="p p-Indicator">]</span>
