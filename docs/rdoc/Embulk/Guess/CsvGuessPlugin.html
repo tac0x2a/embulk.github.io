@@ -406,7 +406,12 @@
 170
 171
 172
-173</pre>
+173
+174
+175
+176
+177
+178</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk/guess/csv.rb', line 35</span>
@@ -482,6 +487,11 @@
   <span class='kw'>end</span>
 
   <span class='id identifier rubyid_sample_records'>sample_records</span> <span class='op'>=</span> <span class='id identifier rubyid_split_lines'>split_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_parser_guessed'>parser_guessed</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='comma'>,</span> <span class='id identifier rubyid_delim'>delim</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+  <span class='comment'># It should fail if CSV parser cannot parse sample_lines.
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_sample_records'>sample_records</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_sample_records'>sample_records</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
 
   <span class='kw'>if</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>1</span>
     <span class='comment'># The file contains only 1 line. Assume that there are no header line.
@@ -570,16 +580,16 @@
       <pre class="lines">
 
 
-175
-176
-177
-178
-179
 180
-181</pre>
+181
+182
+183
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess/csv.rb', line 175</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess/csv.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_column'>new_column</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>SchemaGuess</span><span class='op'>::</span><span class='const'>TimestampTypeMatch</span><span class='rparen'>)</span>
@@ -598,7 +608,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Apr 18 05:26:43 2017 by
+  Generated on Fri Apr 21 19:41:48 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
