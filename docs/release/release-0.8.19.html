@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.8.18 &#8212; Embulk 0.8 documentation</title>
+    <title>Release 0.8.19 &#8212; Embulk 0.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,51 +26,57 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Release 0.8.17" href="release-0.8.17.html" />
-    <link rel="prev" title="Release 0.8.19" href="release-0.8.19.html" /> 
+    <link rel="next" title="Release 0.8.18" href="release-0.8.18.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.8.18</span></h2>
+        <h2 class="heading"><span>Release 0.8.19</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.19.html">Release 0.8.19</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.17.html">Release 0.8.17</a>&#160;&#160;»
+        <a href="release-0.8.18.html">Release 0.8.18</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-8-18">
-<h1>Release 0.8.18<a class="headerlink" href="#release-0-8-18" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-8-19">
+<h1>Release 0.8.19<a class="headerlink" href="#release-0-8-19" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed schema guess plugin and changed a condition to guess double type. [#554]</li>
-<li>Fixed guess plugin that doesn&#8217;t not use last line in sample_lines for schema guess. [#551]</li>
-<li>Fixed Json parser plugin that enables to parse non numeric numbers as floating number values. [#548]</li>
-<li>Updated msgpack-ruby v1.1.0 (&#64;hiroyuki-sato) [#539, #553]<ul>
-<li>ChangeLog: <a class="reference external" href="https://github.com/msgpack/msgpack-ruby/blob/master/ChangeLog">https://github.com/msgpack/msgpack-ruby/blob/master/ChangeLog</a></li>
-</ul>
-</li>
-<li>Downgraded netty-buffer 4.0.x for Embulk instead of 5.x. [#549]</li>
+<li>Fixed LocalFileInputPlugin to follow link if path prefix is symlink. (&#64;hiroyuki-sato) [#585]</li>
+<li>Fixed CsvParserPlugin to refresh the number of skipped header lines for each file. [#567]</li>
+<li>Fixed embulk/guess/csv.rb to finish immidiately if CSV parser could not parse sample_lines. [#556]</li>
+<li>Fixed PageBuilder to avoid saving unexpected string values saving to stringReferences. [#598]</li>
+<li>Fixed PreviewExecutor to avoid to call SamplingPageOutput#finish twice. [#571]</li>
+<li>Fixed TempFileSpace to change temporary filename format for Windows safe. (&#64;hiroyuki-sato) [#589]</li>
+<li>Added &#8216;preview_sample_buffer_bytes&#8217; option for &#8216;preview&#8217; command to make sampling buffer bytes configurable. [#572]</li>
+<li>Added &#8216;guess_sample_buffer_bytes&#8217; option for &#8216;guess&#8217; command to make sampling buffer bytes configurable. [#594]</li>
+<li>Updated snakeyaml from 1.14 to 1.18. (&#64;hiroyuki-sato) [#575]</li>
+<li>Updated liquid from 3.0.6 to 4.0.0. (&#64;hiroyuki-sato)  [#587]</li>
 <li>Minor fix:<ul>
-<li>Fixed typos in v0.7.8 release note. (&#64;yoshihara) [#552]</li>
-<li>Updated download link to be https. (&#64;cosmok) [#544]</li>
+<li>Removed lib/embulk/command/embulk_generate_bin.rb that is not called anywhere. [#578]</li>
+<li>Deprecated lib/embulk/version.rb &#8216;Embulk::VERSION&#8217;, and used the jar manifest (META-INF/MANIFEST.MF) to provide the Embulk version at runtime [#596, #597]</li>
+<li>Rewrote the &#8220;example&#8221; subcommand in Java. [#558]</li>
+<li>Rewrote the &#8220;selfupdate&#8221; subcommand in Java. [#563]</li>
+<li>Rewrote the &#8220;migrate&#8221; subcommand in Java. [#568]</li>
+<li>Rewrote the &#8220;new&#8221; subcommand in Java. [#569]</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2017-03-06</p>
+<p>2017-05-12</p>
 </div>
 </div>
 
@@ -79,11 +85,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.8.19.html">Release 0.8.19</a>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="release-0.8.17.html">Release 0.8.17</a>&#160;&#160;»
+        <a href="release-0.8.18.html">Release 0.8.18</a>&#160;&#160;»
         </p>
 
       </div>
