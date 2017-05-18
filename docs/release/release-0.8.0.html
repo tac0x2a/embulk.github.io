@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.7.11" href="release-0.7.11.html" />
     <link rel="prev" title="Release 0.8.1" href="release-0.8.1.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.8.0</span></h2>
@@ -55,7 +55,7 @@
 <p>Embulk v0.8.0 added JSON type support.</p>
 <ul class="simple">
 <li>A column with <code class="docutils literal"><span class="pre">json</span></code> type can represent nested values such as maps or arrays. This is useful when both input and output support dynamically-typed values.</li>
-<li><strong>IMPORTANT</strong>: If input plugin uses JSON type but output plugin is compiled with an old embulk (&lt; 0.8.0), a bulk load transaction fails with a confusing error message. To avoid this issue, please run <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">migrate</span> <span class="pre">/path/to/embulk-plugin-directory</span></code> to upgrade plugin code, and use the latest plugin. This problem doesn&#8217;t happen if input plugin doesn&#8217;t use json type.</li>
+<li><strong>IMPORTANT</strong>: If input plugin uses JSON type but output plugin is compiled with an old embulk (&lt; 0.8.0), a bulk load transaction fails with a confusing error message. To avoid this issue, please run <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">migrate</span> <span class="pre">/path/to/embulk-plugin-directory</span></code> to upgrade plugin code, and use the latest plugin. This problem doesn’t happen if input plugin doesn’t use json type.</li>
 <li>Filter plugins to process JSON types are not ready yet. Expected plugins are for example, flatten a json column into statically-typed columns with guess plugin, extracting a value from a json column using an expression (such as JSONPath) and set it to another column, or building a json column by copying values from other columns.</li>
 </ul>
 </div>
@@ -63,10 +63,10 @@
 <h2>Page scattering<a class="headerlink" href="#page-scattering" title="Permalink to this headline">¶</a></h2>
 <p>Local executor plugin (the default executor) runs multiple tasks even if there is only 1 input task. This improves performance a lot especially if input is a single huge file.</p>
 <ul class="simple">
-<li>Its mechanism is that the executor creates 2, 3, 4, or more number of output tasks for each input task. Page chunks from a input task is scattered to output tasks. All of the tasks run in parallel using threads. This feature is called &#8220;page scattering&#8221;.</li>
-<li>Added <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option at <code class="docutils literal"><span class="pre">exec:</span></code> section. Default is 1x of available CPU cores. Page scattering is enabled if number of input tasks is less than this <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option. Setting larger number here is useful if embulk doesn&#8217;t use multi-threading with enough concurrency due to too few number of input tasks.</li>
+<li>Its mechanism is that the executor creates 2, 3, 4, or more number of output tasks for each input task. Page chunks from a input task is scattered to output tasks. All of the tasks run in parallel using threads. This feature is called “page scattering”.</li>
+<li>Added <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option at <code class="docutils literal"><span class="pre">exec:</span></code> section. Default is 1x of available CPU cores. Page scattering is enabled if number of input tasks is less than this <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option. Setting larger number here is useful if embulk doesn’t use multi-threading with enough concurrency due to too few number of input tasks.</li>
 <li>Added <code class="docutils literal"><span class="pre">max_threads</span></code> option at <code class="docutils literal"><span class="pre">exec:</span></code> section. Default is 2x of availalbe CPU cores. This option controls maximum concurrency. Setting smaller number here is useful if too many threads make the destination or source storage overloaded. Setting larger number here is useful if CPU utilization is too low due to high latency.</li>
-<li>The results of output transaction will be deterministic. There&#8217;re no randomness that depends on timing. However, task assignment changes if <code class="docutils literal"><span class="pre">min_output_tasks</span></code> changes. If you need deterministic results regardless of machines that may have different number of CPU cores, please add <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option to <code class="docutils literal"><span class="pre">exec:</span></code> section. Setting 1 there will disable page scattering completely.</li>
+<li>The results of output transaction will be deterministic. There’re no randomness that depends on timing. However, task assignment changes if <code class="docutils literal"><span class="pre">min_output_tasks</span></code> changes. If you need deterministic results regardless of machines that may have different number of CPU cores, please add <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option to <code class="docutils literal"><span class="pre">exec:</span></code> section. Setting 1 there will disable page scattering completely.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
@@ -130,7 +130,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

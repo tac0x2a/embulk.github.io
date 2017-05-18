@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.4.10" href="release-0.4.10.html" />
     <link rel="prev" title="Release 0.5.1" href="release-0.5.1.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.5.0</span></h2>
@@ -79,7 +79,7 @@
 <span class="gp">$</span> embulk guess config.yml -o guessed.yml -g myparser
 </pre></div>
 </div>
-<p>On the other hand, if the plugin type is input, you don&#8217;t need additional command-line arguments. For example, if the input plugin name is <code class="docutils literal"><span class="pre">myinput</span></code>, you can use this configuration file:</p>
+<p>On the other hand, if the plugin type is input, you don’t need additional command-line arguments. For example, if the input plugin name is <code class="docutils literal"><span class="pre">myinput</span></code>, you can use this configuration file:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myinput</span>
 <span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
@@ -102,11 +102,11 @@
 <h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added <code class="docutils literal"><span class="pre">Embulk::InputPlugin.guess(config)</span></code> method for Ruby input plugins.<ul>
-<li>Backward compatibility: existent plugins don&#8217;t have to implement the method. The default behavior is raising <code class="docutils literal"><span class="pre">NotImplementedError</span></code>.</li>
+<li>Backward compatibility: existent plugins don’t have to implement the method. The default behavior is raising <code class="docutils literal"><span class="pre">NotImplementedError</span></code>.</li>
 </ul>
 </li>
 <li>Added <code class="docutils literal"><span class="pre">spi.InputPlugin#guess(ConfigSource</span> <span class="pre">config)</span></code> method for Java input plugins.<ul>
-<li>Backward compatibility: existent plugins don&#8217;t have to implement the method. Mehtod linkage errors are handled at embulk-core. The default behavior is raising <code class="docutils literal"><span class="pre">UnsupportedOperationException</span></code>.</li>
+<li>Backward compatibility: existent plugins don’t have to implement the method. Mehtod linkage errors are handled at embulk-core. The default behavior is raising <code class="docutils literal"><span class="pre">UnsupportedOperationException</span></code>.</li>
 </ul>
 </li>
 </ul>
@@ -124,7 +124,7 @@
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">spi.util.FileInputInputStream#skip</span></code> method never returns -1 to follow the Java API standard (&#64;hata++).</li>
-<li>Plugin template generator creates appropriate &#8220;Overview&#8221; section in README.md file depending on the plugin type.</li>
+<li>Plugin template generator creates appropriate “Overview” section in README.md file depending on the plugin type.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -149,7 +149,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

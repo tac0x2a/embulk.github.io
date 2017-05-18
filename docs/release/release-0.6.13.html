@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.6.12" href="release-0.6.12.html" />
     <link rel="prev" title="Release 0.6.14" href="release-0.6.14.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.13</span></h2>
@@ -54,20 +54,20 @@
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Aded spi.util.DynamicPageBuilder utility class. This is a wrapper of PageBuilder which converts types automatically.</li>
-<li><code class="docutils literal"><span class="pre">page_builder</span></code> used by Ruby plugins are now backed by DynamicPageBuilder. This means that Ruby plugins don&#8217;t need type conversion code such as to_i or to_s any more.</li>
+<li><code class="docutils literal"><span class="pre">page_builder</span></code> used by Ruby plugins are now backed by DynamicPageBuilder. This means that Ruby plugins don’t need type conversion code such as to_i or to_s any more.</li>
 </ul>
 </div>
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guesses <code class="docutils literal"><span class="pre">trim_if_not_quoted</span></code> option. This works well if a CSV file includes integers with extra spaces (such as CSV files exported by Excel).</li>
-<li>Fixed a problem where <code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guessed type of a column as &#8220;string&#8221; if it includes non-empty null_string.</li>
+<li>Fixed a problem where <code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guessed type of a column as “string” if it includes non-empty null_string.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>&#8220;-b&#8221; option installs bundler automatically if it is not installed rather shows &#8220;no such file to load &#8211; bundler&#8221; error message.</li>
+<li>“-b” option installs bundler automatically if it is not installed rather shows “no such file to load – bundler” error message.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -92,7 +92,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

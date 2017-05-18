@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release Notes" href="release.html" />
     <link rel="prev" title="Scheduled bulk data loading to Elasticsearch + Kibana 5 from CSV files" href="recipe/scheduled-csv-load-to-elasticsearch-kibana5.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Configuration</span></h2>
@@ -307,7 +307,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
     <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-<p>In most of cases, you&#8217;ll use guess to configure the parsers and decoders. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
+<p>In most of cases, you’ll use guess to configure the parsers and decoders. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
 </div>
 </div>
 <div class="section" id="csv-parser-plugin">
@@ -387,7 +387,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 <tr class="row-odd"><td>default_timezone</td>
 <td>string</td>
-<td>Time zone of timestamp columns if the value itself doesn&#8217;t include time zone description (eg. Asia/Tokyo)</td>
+<td>Time zone of timestamp columns if the value itself doesn’t include time zone description (eg. Asia/Tokyo)</td>
 <td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>default_date</td>
@@ -479,9 +479,9 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
 <th class="head">non-quoted empty string</th>
-<th class="head">quoted empty string (&#8220;&#8221;)</th>
+<th class="head">quoted empty string (“”)</th>
 <th class="head">non-quoted \N</th>
-<th class="head">quoted \N (&#8220;\N&#8221;)</th>
+<th class="head">quoted \N (“\N”)</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -532,7 +532,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>CSV parser supports <code class="docutils literal"><span class="pre">format:</span> <span class="pre">'%s'</span></code> to parse UNIX timestamp in seconds (e.g. 1470148959) as timestamp.</p>
-<p>However, CSV parser itself can&#8217;t parse UNIX timestamp in millisecond (e.g. 1470148959542) as timestamp. You can still parse the column as <code class="docutils literal"><span class="pre">long</span></code> type first, then apply <a class="reference external" href="https://github.com/sonots/embulk-filter-timestamp_format">timestamp_format</a> filter plugin to convert long to timestamp. Here is an example:</p>
+<p>However, CSV parser itself can’t parse UNIX timestamp in millisecond (e.g. 1470148959542) as timestamp. You can still parse the column as <code class="docutils literal"><span class="pre">long</span></code> type first, then apply <a class="reference external" href="https://github.com/sonots/embulk-filter-timestamp_format">timestamp_format</a> filter plugin to convert long to timestamp. Here is an example:</p>
 <div class="last highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
   <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/my_csv_files</span>
@@ -559,7 +559,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="mi">1455829282</span><span class="p">,</span><span class="s2">&quot;ip&quot;</span><span class="o">:</span><span class="s2">&quot;10.98.43.1&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="nx">MessagePack</span><span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">json</span></code> parser plugin outputs a single record named &#8220;record&#8221; (type is json).</p>
+<p><code class="docutils literal"><span class="pre">json</span></code> parser plugin outputs a single record named “record” (type is json).</p>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id45">Options</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -599,7 +599,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <p>The <code class="docutils literal"><span class="pre">gzip</span></code> decoder plugin decompresses gzip files before input plugins read them.</p>
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id48">Options</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>This plugin doesn&#8217;t have any options.</p>
+<p>This plugin doesn’t have any options.</p>
 </div>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id49">Example</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
@@ -616,7 +616,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <p>The <code class="docutils literal"><span class="pre">bzip2</span></code> decoder plugin decompresses bzip2 files before input plugins read them.</p>
 <div class="section" id="id9">
 <h3><a class="toc-backref" href="#id51">Options</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<p>This plugin doesn&#8217;t have any options.</p>
+<p>This plugin doesn’t have any options.</p>
 </div>
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id52">Example</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
@@ -1011,7 +1011,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td><code class="docutils literal"><span class="pre">&quot;&quot;</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>pass_types</td>
-<td>Sets of characters to be allowed. The array must consist of &#8220;a-z&#8221; (lower-case alphabets), &#8220;A-Z&#8221; (upper-case alphabets), or &#8220;0-9&#8221; (digits).</td>
+<td>Sets of characters to be allowed. The array must consist of “a-z” (lower-case alphabets), “A-Z” (upper-case alphabets), or “0-9” (digits).</td>
 <td><code class="docutils literal"><span class="pre">[]</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>replace</td>
@@ -1055,7 +1055,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td><code class="docutils literal"><span class="pre">&quot;&quot;</span></code> by default</td>
 </tr>
 <tr class="row-odd"><td>pass_types</td>
-<td>Sets of characters to be allowed. The array must consist of &#8220;a-z&#8221; (lower-case alphabets), &#8220;A-Z&#8221; (upper-case alphabets), or &#8220;0-9&#8221; (digits).</td>
+<td>Sets of characters to be allowed. The array must consist of “a-z” (lower-case alphabets), “A-Z” (upper-case alphabets), or “0-9” (digits).</td>
 <td><code class="docutils literal"><span class="pre">[]</span></code> by default</td>
 </tr>
 <tr class="row-even"><td>prefix</td>
@@ -1317,7 +1317,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 <tr class="row-even"><td>accept_unmatched_columns</td>
 <td>boolean</td>
-<td>If true, skip columns that aren&#8217;t included in schemas.</td>
+<td>If true, skip columns that aren’t included in schemas.</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
 </tbody>
@@ -1368,7 +1368,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tbody>
 </table>
 <p>The <code class="docutils literal"><span class="pre">max_threads</span></code> option controls maximum concurrency. Setting smaller number here is useful if too many threads make the destination or source storage overloaded. Setting larger number here is useful if CPU utilization is too low due to high latency.</p>
-<p>The <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option enables &#8220;page scattering&#8221;. The feature is enabled if number of input tasks is less than <code class="docutils literal"><span class="pre">min_output_tasks</span></code>. It uses multiple filter &amp; output threads for each input task so that one input task can use multiple threads. Setting larger number here is useful if embulk doesn&#8217;t use multi-threading with enough concurrency due to too few number of input tasks. Setting 1 here disables page scattering completely.</p>
+<p>The <code class="docutils literal"><span class="pre">min_output_tasks</span></code> option enables “page scattering”. The feature is enabled if number of input tasks is less than <code class="docutils literal"><span class="pre">min_output_tasks</span></code>. It uses multiple filter &amp; output threads for each input task so that one input task can use multiple threads. Setting larger number here is useful if embulk doesn’t use multi-threading with enough concurrency due to too few number of input tasks. Setting 1 here disables page scattering completely.</p>
 </div>
 <div class="section" id="id30">
 <h3><a class="toc-backref" href="#id75">Example</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
@@ -1415,7 +1415,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 </tr>
 <tr class="row-odd"><td>exclude_guess_plugins</td>
 <td colspan="2">array</td>
-<td colspan="2"><code class="docutils literal"><span class="pre">guess</span></code> command doesn&#8217;t use specified plugins.</td>
+<td colspan="2"><code class="docutils literal"><span class="pre">guess</span></code> command doesn’t use specified plugins.</td>
 <td colspan="2"><code class="docutils literal"><span class="pre">[]</span></code> by default</td>
 </tr>
 <tr class="row-even"><td colspan="7">guess_sample_buffer_bytes | int      | Bytes of sample buffer that it tries to read from input source.      | 32768 (32KB) by default</td>
@@ -1425,7 +1425,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <p>The <code class="docutils literal"><span class="pre">guess_plugins</span></code> option includes specified guess plugin in the bottom of the list of default guess plugins.</p>
 <p>The <code class="docutils literal"><span class="pre">exclude_guess_plugins</span></code> option exclude specified guess plugins from the list of default guess plugins that the guess executor uses.</p>
 <p>The <code class="docutils literal"><span class="pre">guess_sample_buffer_bytes</span></code> option controls the bytes of sample buffer that GuessExecutor tries to read from specified input source.</p>
-<p>This example shows how to use <code class="docutils literal"><span class="pre">csv_all_strings</span></code> guess plugin, which suggests column types within CSV files as string types. It needs to be explicitly specified by users when it&#8217;s used instead of <code class="docutils literal"><span class="pre">csv</span></code> guess plugin because the plugin is not included in default guess plugins. We also can exclude default <code class="docutils literal"><span class="pre">csv</span></code> guess plugin.</p>
+<p>This example shows how to use <code class="docutils literal"><span class="pre">csv_all_strings</span></code> guess plugin, which suggests column types within CSV files as string types. It needs to be explicitly specified by users when it’s used instead of <code class="docutils literal"><span class="pre">csv</span></code> guess plugin because the plugin is not included in default guess plugins. We also can exclude default <code class="docutils literal"><span class="pre">csv</span></code> guess plugin.</p>
 </div>
 <div class="section" id="id32">
 <h3><a class="toc-backref" href="#id78">Example</a><a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
@@ -1504,7 +1504,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

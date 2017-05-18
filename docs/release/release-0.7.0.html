@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.6.27" href="release-0.6.27.html" />
     <link rel="prev" title="Release 0.7.1" href="release-0.7.1.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.7.0</span></h2>
@@ -56,7 +56,7 @@
 <li>Upraded JRuby version to 9.0.0.0. Ruby scripting is compatible with Ruby 2.2 syntax.</li>
 <li>Added <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">migrate</span> <span class="pre">&lt;plugin</span> <span class="pre">directory&gt;</span></code> subcommand. This command modifies plugin code to use the latest Embulk API.</li>
 <li>Enambed Liquid template engine. If configuration file name ends with <code class="docutils literal"><span class="pre">.yml.liquid</span></code>, embulk embeds environment variables using Liquid template engine.</li>
-<li>Embulk gem package for JRuby doesn&#8217;t include JRuby itself any more. Size of a gem package is reduced from 38MB to 7.6MB.</li>
+<li>Embulk gem package for JRuby doesn’t include JRuby itself any more. Size of a gem package is reduced from 38MB to 7.6MB.</li>
 <li>Embulk gem is also released for CRuby. This enables us to install <code class="docutils literal"><span class="pre">embulk</span></code> command using <code class="docutils literal"><span class="pre">gem</span> <span class="pre">install</span> <span class="pre">embulk</span></code>.</li>
 <li><strong>IMPORTANT</strong>: <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span></code> command runs bundler. To create a new plugin bundle, use <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span> <span class="pre">new</span> <span class="pre">&lt;directory&gt;</span></code> command. To update gems, use <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span></code> command at the directory. Instructions are written at generated Gemfile file.</li>
 </ul>
@@ -94,7 +94,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>Constants defined at <code class="docutils literal"><span class="pre">Embulk::Java</span></code> are deprecated. They&#8217;re still kept for backward compatibility but will be removed at a future release.</li>
+<li>Constants defined at <code class="docutils literal"><span class="pre">Embulk::Java</span></code> are deprecated. They’re still kept for backward compatibility but will be removed at a future release.</li>
 <li>Added <code class="docutils literal"><span class="pre">Embulk::Java::Config</span></code> and <code class="docutils literal"><span class="pre">Embulk::SPI</span></code> namespaces to access Java classes.</li>
 </ul>
 </div>
@@ -126,7 +126,7 @@
 <ul class="simple">
 <li>Added <code class="docutils literal"><span class="pre">EmbulkEmbed.Bootstrap</span></code> class to build <code class="docutils literal"><span class="pre">EmbulkEmbed</span></code> instance.</li>
 <li>Added <code class="docutils literal"><span class="pre">ConfigLoader.fromJsonString(String)</span></code> and <code class="docutils literal"><span class="pre">ConfigLoader.fromYamlString(String)</span></code> methods.</li>
-<li>Added guess, preview, and run methods at <code class="docutils literal"><span class="pre">EmbulkEmbed</span></code> don&#8217;t need ExecSession instance any more.</li>
+<li>Added guess, preview, and run methods at <code class="docutils literal"><span class="pre">EmbulkEmbed</span></code> don’t need ExecSession instance any more.</li>
 <li>EmbulkService is now deprecated. Replacement is EmbulkEmbed.</li>
 </ul>
 </div>
@@ -152,7 +152,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

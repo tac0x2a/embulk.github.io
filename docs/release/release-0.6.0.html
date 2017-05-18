@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.5.5" href="release-0.5.5.html" />
     <link rel="prev" title="Release 0.6.1" href="release-0.6.1.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.0</span></h2>
@@ -59,7 +59,7 @@
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">exec.LocalExecutor</span></code> class is separated into <code class="docutils literal"><span class="pre">exec.BulkLoader</span></code> class for interface definition and <code class="docutils literal"><span class="pre">exec.LocalExecutorPlugin</span></code> for implementation. If you&#8217;re application is Embulk through <code class="docutils literal"><span class="pre">LocalExecutor</span></code> class, you need to replace it with <code class="docutils literal"><span class="pre">BulkLoader</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">exec.LocalExecutor</span></code> class is separated into <code class="docutils literal"><span class="pre">exec.BulkLoader</span></code> class for interface definition and <code class="docutils literal"><span class="pre">exec.LocalExecutorPlugin</span></code> for implementation. If you’re application is Embulk through <code class="docutils literal"><span class="pre">LocalExecutor</span></code> class, you need to replace it with <code class="docutils literal"><span class="pre">BulkLoader</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">spi.ExecAction#run</span></code> can throw <code class="docutils literal"><span class="pre">Exception</span></code> and <code class="docutils literal"><span class="pre">Exec.doWith(ExecSession,</span> <span class="pre">ExecAction&lt;T&gt;)</span></code> throws <code class="docutils literal"><span class="pre">ExecutionException</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">spi.Buffer</span></code> implements <code class="docutils literal"><span class="pre">#equals</span></code> and <code class="docutils literal"><span class="pre">hashCode</span></code> methods.</li>
 </ul>
@@ -99,7 +99,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

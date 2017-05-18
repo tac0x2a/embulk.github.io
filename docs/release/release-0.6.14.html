@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.6.13" href="release-0.6.13.html" />
     <link rel="prev" title="Release 0.6.15" href="release-0.6.15.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.14</span></h2>
@@ -54,7 +54,7 @@
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">formatter-csv</span></code> plugin supports <code class="docutils literal"><span class="pre">default_timezone</span></code> and <code class="docutils literal"><span class="pre">column_options</span></code> parameters so that we can set timestamp format for each columns individually.</li>
-<li><strong>IMPORTANT</strong>: <code class="docutils literal"><span class="pre">formatter-csv</span></code> does not use the same timestamp format with input timestamp columns. If you&#8217;re using <code class="docutils literal"><span class="pre">formatter:</span> <span class="pre">type:</span> <span class="pre">csv</span></code> with <code class="docutils literal"><span class="pre">parser:</span> <span class="pre">type:</span> <span class="pre">csv-</span></code>, you need to set <code class="docutils literal"><span class="pre">format</span></code> option for each columns to keep using current behavior. See <code class="docutils literal"><span class="pre">column_options</span></code> option of CSV formatter plugin described at <a class="reference internal" href="../built-in.html"><span class="doc">Configuration</span></a>.</li>
+<li><strong>IMPORTANT</strong>: <code class="docutils literal"><span class="pre">formatter-csv</span></code> does not use the same timestamp format with input timestamp columns. If you’re using <code class="docutils literal"><span class="pre">formatter:</span> <span class="pre">type:</span> <span class="pre">csv</span></code> with <code class="docutils literal"><span class="pre">parser:</span> <span class="pre">type:</span> <span class="pre">csv-</span></code>, you need to set <code class="docutils literal"><span class="pre">format</span></code> option for each columns to keep using current behavior. See <code class="docutils literal"><span class="pre">column_options</span></code> option of CSV formatter plugin described at <a class="reference internal" href="../built-in.html"><span class="doc">Configuration</span></a>.</li>
 <li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin keeps using <code class="docutils literal"><span class="pre">delimiter</span></code> option if already set rather than to overwrite it everytime.</li>
 </ul>
 </div>
@@ -113,7 +113,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>

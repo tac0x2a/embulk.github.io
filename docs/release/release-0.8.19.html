@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,7 +29,7 @@
     <link rel="next" title="Release 0.8.18" href="release-0.8.18.html" />
     <link rel="prev" title="Release 0.8.20" href="release-0.8.20.html" /> 
   </head>
-  <body role="document">
+  <body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.8.19</span></h2>
@@ -59,17 +59,17 @@
 <li>Fixed PageBuilder to avoid saving unexpected string values saving to stringReferences. [#598]</li>
 <li>Fixed PreviewExecutor to avoid to call SamplingPageOutput#finish twice. [#571]</li>
 <li>Fixed TempFileSpace to change temporary filename format for Windows safe. (&#64;hiroyuki-sato) [#589]</li>
-<li>Added &#8216;preview_sample_buffer_bytes&#8217; option for &#8216;preview&#8217; command to make sampling buffer bytes configurable. [#572]</li>
-<li>Added &#8216;guess_sample_buffer_bytes&#8217; option for &#8216;guess&#8217; command to make sampling buffer bytes configurable. [#594]</li>
+<li>Added ‘preview_sample_buffer_bytes’ option for ‘preview’ command to make sampling buffer bytes configurable. [#572]</li>
+<li>Added ‘guess_sample_buffer_bytes’ option for ‘guess’ command to make sampling buffer bytes configurable. [#594]</li>
 <li>Updated snakeyaml from 1.14 to 1.18. (&#64;hiroyuki-sato) [#575]</li>
 <li>Updated liquid from 3.0.6 to 4.0.0. (&#64;hiroyuki-sato)  [#587]</li>
 <li>Minor fix:<ul>
 <li>Removed lib/embulk/command/embulk_generate_bin.rb that is not called anywhere. [#578]</li>
-<li>Deprecated lib/embulk/version.rb &#8216;Embulk::VERSION&#8217;, and used the jar manifest (META-INF/MANIFEST.MF) to provide the Embulk version at runtime [#596, #597]</li>
-<li>Rewrote the &#8220;example&#8221; subcommand in Java. [#558]</li>
-<li>Rewrote the &#8220;selfupdate&#8221; subcommand in Java. [#563]</li>
-<li>Rewrote the &#8220;migrate&#8221; subcommand in Java. [#568]</li>
-<li>Rewrote the &#8220;new&#8221; subcommand in Java. [#569]</li>
+<li>Deprecated lib/embulk/version.rb ‘Embulk::VERSION’, and used the jar manifest (META-INF/MANIFEST.MF) to provide the Embulk version at runtime [#596, #597]</li>
+<li>Rewrote the “example” subcommand in Java. [#558]</li>
+<li>Rewrote the “selfupdate” subcommand in Java. [#563]</li>
+<li>Rewrote the “migrate” subcommand in Java. [#568]</li>
+<li>Rewrote the “new” subcommand in Java. [#569]</li>
 </ul>
 </li>
 </ul>
@@ -96,7 +96,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
     </div>
   </body>
 </html>
