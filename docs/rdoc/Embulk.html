@@ -587,10 +587,7 @@ href="https://github.com/embulk/embulk/issues/562">github.com/embulk/embulk/issu
 68
 69
 70
-71
-72
-73
-74</pre>
+71</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/embulk.rb', line 50</span>
@@ -611,14 +608,11 @@ href="https://github.com/embulk/embulk/issues/562">github.com/embulk/embulk/issu
 </span>
   <span class='id identifier rubyid_require_classpath'>require_classpath</span><span class='lparen'>(</span><span class='kw'>true</span><span class='rparen'>)</span>
 
-  <span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkSetup</span><span class='op'>::</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span>
-    <span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>ArrayList</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>HashMap</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_system_config'>system_config</span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>ArrayList</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>ArrayList</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>ArrayList</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span>
-    <span class='kw'>nil</span>
-  <span class='rparen'>)</span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>embulk/runner</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='comment'># see also embulk/java/bootstrap.rb loaded by JRubyScriptingModule
+</span>  <span class='id identifier rubyid_runner_java'>runner_java</span> <span class='op'>=</span> <span class='const'>EmbulkRunner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='const'>EmbulkSetup</span><span class='op'>::</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>HashMap</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_system_config'>system_config</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_const_set'>const_set</span> <span class='symbol'>:Runner</span><span class='comma'>,</span> <span class='id identifier rubyid_runner_java'>runner_java</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -630,7 +624,7 @@ href="https://github.com/embulk/embulk/issues/562">github.com/embulk/embulk/issu
 </div>
 
       <div id="footer">
-  Generated on Thu Sep  7 03:44:12 2017 by
+  Generated on Thu Sep  7 03:45:10 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
