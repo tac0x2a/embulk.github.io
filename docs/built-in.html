@@ -314,10 +314,10 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <h3><a class="toc-backref" href="#id45">Options</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="6%" />
-<col width="63%" />
-<col width="15%" />
+<col width="14%" />
+<col width="5%" />
+<col width="58%" />
+<col width="23%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">name</th>
@@ -357,55 +357,80 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 <td>If true, remove spaces of a value if the value is not surrounded by the quote character</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>comment_line_marker</td>
+<tr class="row-even"><td>quotes_in_quoted_fields</td>
+<td>enum</td>
+<td>Specify how to deal with irregular unescaped quote characters in quoted fields</td>
+<td><code class="docutils literal"><span class="pre">ACCEPT_ONLY_RFC4180_ESCAPED</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>comment_line_marker</td>
 <td>string</td>
 <td>Skip a line if the line begins with this string</td>
 <td>null by default</td>
 </tr>
-<tr class="row-odd"><td>allow_optional_columns</td>
+<tr class="row-even"><td>allow_optional_columns</td>
 <td>boolean</td>
 <td>If true, set null to insufficient columns. Otherwise, skip the row in case of insufficient number of columns</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>allow_extra_columns</td>
+<tr class="row-odd"><td>allow_extra_columns</td>
 <td>boolean</td>
 <td>If true, ignore too many columns. Otherwise, skip the row in case of too many columns</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>max_quoted_size_limit</td>
+<tr class="row-even"><td>max_quoted_size_limit</td>
 <td>integer</td>
 <td>Maximum number of bytes of a quoted value. If a value exceeds the limit, the row will be skipped</td>
 <td><code class="docutils literal"><span class="pre">131072</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>stop_on_invalid_record</td>
+<tr class="row-odd"><td>stop_on_invalid_record</td>
 <td>boolean</td>
 <td>Stop bulk load transaction if a file includes invalid record (such as invalid timestamp)</td>
 <td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>default_timezone</td>
+<tr class="row-even"><td>default_timezone</td>
 <td>string</td>
 <td>Time zone of timestamp columns if the value itself doesn’t include time zone description (eg. Asia/Tokyo)</td>
 <td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>default_date</td>
+<tr class="row-odd"><td>default_date</td>
 <td>string</td>
 <td>Set date part if the format doesn’t include date part.</td>
 <td><code class="docutils literal"><span class="pre">1970-01-01</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>newline</td>
+<tr class="row-even"><td>newline</td>
 <td>enum</td>
 <td>Newline character (CRLF, LF or CR)</td>
 <td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
 </tr>
-<tr class="row-even"><td>charset</td>
+<tr class="row-odd"><td>charset</td>
 <td>enum</td>
 <td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
 <td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
 </tr>
-<tr class="row-odd"><td>columns</td>
+<tr class="row-even"><td>columns</td>
 <td>hash</td>
 <td>Columns (see below)</td>
 <td>required</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal"><span class="pre">quotes_in_quoted_fields</span></code> option specifies how to deal with irregular non-escaped stray quote characters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ACCEPT_ONLY_RFC4180_ESCAPED</td>
+<td>Default. Accept only specified and RFC 4180-style escaped quote characters.</td>
+</tr>
+<tr class="row-odd"><td>ACCEPT_STRAY_QUOTES_ASSUMING_NO_DELIMITERS_IN_FIELDS</td>
+<td>Accept stray quotes as-is in the field. Instead, it behaves undefined if delimiters are in fields. <code class="docutils literal"><span class="pre">&quot;a&quot;b&quot;</span></code> goes <code class="docutils literal"><span class="pre">a&quot;b</span></code>. <code class="docutils literal"><span class="pre">&quot;a&quot;&quot;b&quot;</span></code> goes <code class="docutils literal"><span class="pre">a&quot;b</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1538,7 +1563,7 @@ For example, if you set <code class="docutils literal"><span class="pre">last_pa
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
     </div>
   </body>
 </html>
