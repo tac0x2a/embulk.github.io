@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::GuessPlugin
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html"></iframe>
+      <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::GuessPlugin
   
@@ -96,7 +94,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/guess_plugin.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/guess_plugin.rb</dd>
   </dl>
   
 </div>
@@ -236,10 +234,10 @@
 31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess_plugin.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
-  <span class='const'>JavaPlugin</span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'>ruby_adapter_class</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='const'>GuessPlugin</span><span class='comma'>,</span> <span class='const'>RubyAdapter</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="JavaPlugin.html" title="Embulk::JavaPlugin (class)">JavaPlugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'><span class='object_link'><a href="JavaPlugin.html#ruby_adapter_class-class_method" title="Embulk::JavaPlugin.ruby_adapter_class (method)">ruby_adapter_class</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="GuessPlugin/RubyAdapter.html" title="Embulk::GuessPlugin::RubyAdapter (module)">RubyAdapter</a></span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -266,10 +264,10 @@
 12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess_plugin.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
-  <span class='const'>JavaAdapter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="GuessPlugin/JavaAdapter.html" title="Embulk::GuessPlugin::JavaAdapter (class)">JavaAdapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="GuessPlugin/JavaAdapter.html#initialize-instance_method" title="Embulk::GuessPlugin::JavaAdapter#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -324,7 +322,7 @@
 8</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess_plugin.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GuessPlugin#guess(config, sample_buffer) must be implemented</span><span class='tstring_end'>&quot;</span></span>
@@ -339,9 +337,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Nov 28 08:52:25 2017 by
+  Generated on Thu Nov 30 08:28:19 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>

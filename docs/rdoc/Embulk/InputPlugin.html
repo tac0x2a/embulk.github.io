@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::InputPlugin
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html"></iframe>
+      <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::InputPlugin
   
@@ -96,15 +94,11 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/input_plugin.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/input_plugin.rb</dd>
   </dl>
   
 </div>
 
-<div id="subclasses">
-  <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="Input/ExampleInputPlugin.html" title="Embulk::Input::ExampleInputPlugin (class)">Embulk::Input::ExampleInputPlugin</a></span></p>
-</div>
 <h2>Defined Under Namespace</h2>
 <p class="children">
   
@@ -527,7 +521,7 @@
 30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='comma'>,</span> <span class='id identifier rubyid_page_builder'>page_builder</span><span class='rparen'>)</span>
   <span class='ivar'>@task</span> <span class='op'>=</span> <span class='id identifier rubyid_task'>task</span>
@@ -579,7 +573,7 @@
 34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
   <span class='ivar'>@index</span>
@@ -622,7 +616,7 @@
 34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_page_builder'>page_builder</span>
   <span class='ivar'>@page_builder</span>
@@ -665,7 +659,7 @@
 34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='ivar'>@schema</span>
@@ -708,7 +702,7 @@
 34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_task'>task</span>
   <span class='ivar'>@task</span>
@@ -745,7 +739,7 @@
 18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_count'>count</span><span class='comma'>,</span> <span class='id identifier rubyid_task_reports'>task_reports</span><span class='rparen'>)</span>
   <span class='comment'># do nothing by default
@@ -775,10 +769,10 @@
 39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_page_builder'>create_page_builder</span><span class='lparen'>(</span><span class='label'>task_source:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>schema:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>processor_index:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>java_page_output:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='const'>PageBuilder</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_java_page_output'>java_page_output</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="PageBuilder.html" title="Embulk::PageBuilder (class)">PageBuilder</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="PageBuilder.html#initialize-instance_method" title="Embulk::PageBuilder#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_java_page_output'>java_page_output</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -805,10 +799,10 @@
 117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
-  <span class='const'>JavaPlugin</span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'>ruby_adapter_class</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='const'>InputPlugin</span><span class='comma'>,</span> <span class='const'>RubyAdapter</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="JavaPlugin.html" title="Embulk::JavaPlugin (class)">JavaPlugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'><span class='object_link'><a href="JavaPlugin.html#ruby_adapter_class-class_method" title="Embulk::JavaPlugin.ruby_adapter_class (method)">ruby_adapter_class</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="" title="Embulk::InputPlugin (class)">InputPlugin</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="InputPlugin/RubyAdapter.html" title="Embulk::InputPlugin::RubyAdapter (module)">RubyAdapter</a></span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -857,7 +851,7 @@
 22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='embexpr_end'>}</span><span class='tstring_content'>.guess(config) is not implemented. This input plugin does not support guess.</span><span class='tstring_end'>&quot;</span></span>
@@ -887,10 +881,10 @@
 47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
-  <span class='const'>JavaAdapter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="InputPlugin/JavaAdapter.html" title="Embulk::InputPlugin::JavaAdapter (class)">JavaAdapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InputPlugin/JavaAdapter.html#initialize-instance_method" title="Embulk::InputPlugin::JavaAdapter#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -939,7 +933,7 @@
 14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='comma'>,</span> <span class='id identifier rubyid_columns'>columns</span><span class='comma'>,</span> <span class='id identifier rubyid_count'>count</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_control'>control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='embexpr_end'>}</span><span class='tstring_content'>.resume(task, columns, count, &amp;control) is not implemented. This plugin is not resumable</span><span class='tstring_end'>&quot;</span></span>
@@ -991,7 +985,7 @@
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_control'>control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>InputPlugin.transaction(config, &amp;control) must be implemented</span><span class='tstring_end'>&quot;</span></span>
@@ -1026,7 +1020,7 @@
 35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init'>init</span>
 <span class='kw'>end</span></pre>
@@ -1077,7 +1071,7 @@
 43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/input_plugin.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>InputPlugin#run must be implemented</span><span class='tstring_end'>&quot;</span></span>
@@ -1092,9 +1086,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Nov 28 08:52:25 2017 by
+  Generated on Thu Nov 30 08:28:19 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>
