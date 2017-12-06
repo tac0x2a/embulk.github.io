@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::FileInput
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.5
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <iframe id="nav" src="../class_list.html"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,6 +58,8 @@
 </div>
         <div class="clear"></div>
       </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::FileInput
   
@@ -94,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>embulk-core/src/main/ruby/embulk/file_input.rb</dd>
+    <dd>lib/embulk/file_input.rb</dd>
   </dl>
   
 </div>
@@ -288,7 +290,7 @@
 9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/file_input.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/file_input.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_java_file_input'>java_file_input</span><span class='rparen'>)</span>
   <span class='ivar'>@java_file_input</span> <span class='op'>=</span> <span class='id identifier rubyid_java_file_input'>java_file_input</span>
@@ -326,7 +328,7 @@
 81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/file_input.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/file_input.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span>
   <span class='ivar'>@java_file_input</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
@@ -365,7 +367,7 @@
 30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/file_input.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/file_input.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@buffer</span>
@@ -374,7 +376,7 @@
   <span class='kw'>end</span>
 
   <span class='kw'>while</span> <span class='id identifier rubyid_java_buffer'>java_buffer</span> <span class='op'>=</span> <span class='ivar'>@java_file_input</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span>
-    <span class='id identifier rubyid_buffer'>buffer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_java'><span class='object_link'><a href="Buffer.html#from_java-class_method" title="Embulk::Buffer.from_java (method)">from_java</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_buffer'>buffer</span> <span class='op'>=</span> <span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='period'>.</span><span class='id identifier rubyid_release'>release</span>
     <span class='kw'>yield</span> <span class='id identifier rubyid_buffer'>buffer</span>
   <span class='kw'>end</span>
@@ -408,7 +410,7 @@
 17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/file_input.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/file_input.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_next_file'>next_file</span>
   <span class='kw'>if</span> <span class='ivar'>@java_file_input</span><span class='period'>.</span><span class='id identifier rubyid_nextFile'>nextFile</span>
@@ -485,13 +487,13 @@
 77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/file_input.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/file_input.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_count'>count</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_dest'>dest</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_count'>count</span> <span class='op'>==</span> <span class='kw'>nil</span>
-    <span class='ivar'>@buffer</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='ivar'>@buffer</span> <span class='op'>||=</span> <span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
     <span class='kw'>while</span> <span class='id identifier rubyid_java_buffer'>java_buffer</span> <span class='op'>=</span> <span class='ivar'>@java_file_input</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span>
-      <span class='ivar'>@buffer</span> <span class='op'>&lt;&lt;</span> <span class='const'><span class='object_link'><a href="Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_java'><span class='object_link'><a href="Buffer.html#from_java-class_method" title="Embulk::Buffer.from_java (method)">from_java</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='rparen'>)</span>
+      <span class='ivar'>@buffer</span> <span class='op'>&lt;&lt;</span> <span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='period'>.</span><span class='id identifier rubyid_release'>release</span>
     <span class='kw'>end</span>
 
@@ -505,11 +507,11 @@
     <span class='ivar'>@buffer</span> <span class='op'>=</span> <span class='kw'>nil</span>
 
   <span class='kw'>else</span>
-    <span class='ivar'>@buffer</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='ivar'>@buffer</span> <span class='op'>||=</span> <span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
     <span class='kw'>until</span> <span class='ivar'>@buffer</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_count'>count</span>
       <span class='id identifier rubyid_java_buffer'>java_buffer</span> <span class='op'>=</span> <span class='ivar'>@java_file_input</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span>
       <span class='kw'>break</span> <span class='kw'>unless</span> <span class='id identifier rubyid_java_buffer'>java_buffer</span>
-      <span class='ivar'>@buffer</span> <span class='op'>&lt;&lt;</span> <span class='const'><span class='object_link'><a href="Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_java'><span class='object_link'><a href="Buffer.html#from_java-class_method" title="Embulk::Buffer.from_java (method)">from_java</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='rparen'>)</span>
+      <span class='ivar'>@buffer</span> <span class='op'>&lt;&lt;</span> <span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_java_buffer'>java_buffer</span><span class='period'>.</span><span class='id identifier rubyid_release'>release</span>
     <span class='kw'>end</span>
 
@@ -558,7 +560,7 @@
 85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/file_input.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/file_input.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='ivar'>@java_file_input</span>
@@ -573,9 +575,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 09:52:21 2017 by
+  Generated on Wed Dec  6 11:37:40 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.3.3).
+  0.9.5 (ruby-2.2.2).
 </div>
 
     </div>
