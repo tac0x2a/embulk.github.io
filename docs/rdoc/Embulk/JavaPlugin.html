@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::JavaPlugin
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.5
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <iframe id="nav" src="../class_list.html"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,6 +58,8 @@
 </div>
         <div class="clear"></div>
       </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::JavaPlugin
   
@@ -94,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>embulk-core/src/main/ruby/embulk/java_plugin.rb</dd>
+    <dd>lib/embulk/java_plugin.rb</dd>
   </dl>
   
 </div>
@@ -388,12 +390,12 @@
 11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_dir'>dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_jars'>jars</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dir'>dir</span><span class='embexpr_end'>}</span><span class='tstring_content'>/**/*.jar</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_urls'>urls</span> <span class='op'>=</span> <span class='id identifier rubyid_jars'>jars</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_jar'>jar</span><span class='op'>|</span> <span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_io'>io</span><span class='period'>.</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='id identifier rubyid_jar'>jar</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_toURI'>toURI</span><span class='period'>.</span><span class='id identifier rubyid_toURL'>toURL</span> <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_factory'>factory</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Java.html" title="Embulk::Java (module)">Java</a></span></span><span class='period'>.</span><span class='id identifier rubyid_injector'><span class='object_link'><a href="Java.html#injector-class_method" title="Embulk::Java.injector (method)">injector</a></span></span><span class='period'>.</span><span class='id identifier rubyid_getInstance'>getInstance</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Java.html" title="Embulk::Java (module)">Java</a></span></span><span class='op'>::</span><span class='const'>PluginClassLoaderFactory</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_factory'>factory</span> <span class='op'>=</span> <span class='const'>Java</span><span class='period'>.</span><span class='id identifier rubyid_injector'>injector</span><span class='period'>.</span><span class='id identifier rubyid_getInstance'>getInstance</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>PluginClassLoaderFactory</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_factory'>factory</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_urls'>urls</span><span class='comma'>,</span> <span class='const'>JRuby</span><span class='period'>.</span><span class='id identifier rubyid_runtime'>runtime</span><span class='period'>.</span><span class='id identifier rubyid_getJRubyClassLoader'>getJRubyClassLoader</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -422,11 +424,11 @@
 41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_decoder'>register_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_decoder'>register_java_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_decoder'>register_java_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -454,11 +456,11 @@
 46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_encoder'>register_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_encoder'>register_java_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_encoder'>register_java_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -486,11 +488,11 @@
 56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_executor'>register_executor</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_executor'>register_java_executor</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_executor'>register_java_executor</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -518,11 +520,11 @@
 26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_filter'>register_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_filter'>register_java_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_filter'>register_java_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -550,11 +552,11 @@
 36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_formatter'>register_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_formatter'>register_java_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_formatter'>register_java_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -582,11 +584,11 @@
 51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_guess'>register_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_guess'>register_java_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_guess'>register_java_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -614,11 +616,11 @@
 16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_input'>register_input</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>  <span class='comment'># TODO handle class not found error
-</span>  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_input'>register_java_input</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+</span>  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_input'>register_java_input</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -646,11 +648,11 @@
 21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_output'>register_output</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_output'>register_java_output</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_output'>register_java_output</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -678,11 +680,11 @@
 31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_register_parser'>register_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='comma'>,</span> <span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_java_class'>java_class</span> <span class='op'>=</span> <span class='id identifier rubyid_classloader'>classloader</span><span class='lparen'>(</span><span class='id identifier rubyid_jar_dir'>jar_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_loadClass'>loadClass</span><span class='lparen'>(</span><span class='id identifier rubyid_class_fqdn'>class_fqdn</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_java_parser'>register_java_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
+  <span class='const'>Plugin</span><span class='period'>.</span><span class='id identifier rubyid_register_java_parser'>register_java_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -737,7 +739,7 @@
 88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/java_plugin.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/java_plugin.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'>ruby_adapter_class</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_base_class'>ruby_base_class</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_module'>ruby_module</span><span class='rparen'>)</span>
   <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_base_class'>ruby_base_class</span><span class='rparen'>)</span> <span class='kw'>do</span>
@@ -765,7 +767,7 @@
 </span>    <span class='comment'>#      ruby_module::ClassMethods includes other modules.
 </span>    <span class='kw'>unless</span> <span class='id identifier rubyid_ruby_module'>ruby_module</span><span class='op'>::</span><span class='const'>ClassMethods</span><span class='period'>.</span><span class='id identifier rubyid_method_defined?'>method_defined?</span><span class='lparen'>(</span><span class='symbol'>:new_java</span><span class='rparen'>)</span>
       <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
-        <span class='const'><span class='object_link'><a href="Java.html" title="Embulk::Java (module)">Java</a></span></span><span class='period'>.</span><span class='id identifier rubyid_injector'><span class='object_link'><a href="Java.html#injector-class_method" title="Embulk::Java.injector (method)">injector</a></span></span><span class='period'>.</span><span class='id identifier rubyid_getInstance'>getInstance</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin_java_class'>plugin_java_class</span><span class='rparen'>)</span>
+        <span class='const'>Java</span><span class='period'>.</span><span class='id identifier rubyid_injector'>injector</span><span class='period'>.</span><span class='id identifier rubyid_getInstance'>getInstance</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin_java_class'>plugin_java_class</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
@@ -780,9 +782,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:00:22 2017 by
+  Generated on Tue Dec 26 14:08:25 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.3.3).
+  0.9.5 (ruby-2.2.2).
 </div>
 
     </div>
