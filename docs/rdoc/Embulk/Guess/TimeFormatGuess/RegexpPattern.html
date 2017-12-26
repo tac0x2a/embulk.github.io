@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::Guess::TimeFormatGuess::RegexpPattern
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.5
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <iframe id="nav" src="../../../class_list.html"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,6 +58,8 @@
 </div>
         <div class="clear"></div>
       </div>
+
+      <iframe id="search_frame" src="../../../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::Guess::TimeFormatGuess::RegexpPattern
   
@@ -94,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>embulk-core/src/main/ruby/embulk/guess/time_format_guess.rb</dd>
+    <dd>lib/embulk/guess/time_format_guess.rb</dd>
   </dl>
   
 </div>
@@ -200,11 +202,11 @@
 366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess/time_format_guess.rb', line 363</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess/time_format_guess.rb', line 363</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_regexp'>regexp</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
   <span class='ivar'>@regexp</span> <span class='op'>=</span> <span class='id identifier rubyid_regexp'>regexp</span>
-  <span class='ivar'>@match</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SimpleMatch.html" title="Embulk::Guess::TimeFormatGuess::SimpleMatch (class)">SimpleMatch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SimpleMatch.html#initialize-instance_method" title="Embulk::Guess::TimeFormatGuess::SimpleMatch#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
+  <span class='ivar'>@match</span> <span class='op'>=</span> <span class='const'>SimpleMatch</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -242,7 +244,7 @@
 374</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess/time_format_guess.rb', line 368</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess/time_format_guess.rb', line 368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@regexp</span> <span class='op'>=~</span> <span class='id identifier rubyid_text'>text</span>
@@ -261,9 +263,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:19:13 2017 by
+  Generated on Tue Dec 26 14:20:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.3.3).
+  0.9.5 (ruby-2.2.2).
 </div>
 
     </div>
