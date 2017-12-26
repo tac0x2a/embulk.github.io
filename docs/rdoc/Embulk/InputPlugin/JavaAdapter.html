@@ -290,12 +290,12 @@
       <pre class="lines">
 
 
-48
-49
-50</pre>
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_class'>ruby_class</span><span class='rparen'>)</span>
   <span class='ivar'>@ruby_class</span> <span class='op'>=</span> <span class='id identifier rubyid_ruby_class'>ruby_class</span>
@@ -327,16 +327,16 @@
       <pre class="lines">
 
 
-81
-82
-83
-84
 85
 86
-87</pre>
+87
+88
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_task_reports'>java_task_reports</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
@@ -365,14 +365,14 @@
       <pre class="lines">
 
 
-89
-90
-91
-92
-93</pre>
+93
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
@@ -399,10 +399,6 @@
       <pre class="lines">
 
 
-66
-67
-68
-69
 70
 71
 72
@@ -412,10 +408,14 @@
 76
 77
 78
-79</pre>
+79
+80
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 70</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
@@ -451,25 +451,31 @@
       <pre class="lines">
 
 
-95
-96
-97
-98
 99
 100
 101
 102
 103
 104
-105</pre>
+105
+106
+107
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_index'>processor_index</span><span class='comma'>,</span> <span class='id identifier rubyid_java_output'>java_output</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_schema'>schema</span> <span class='op'>=</span> <span class='const'>Schema</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_schema'>java_schema</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_page_builder'>page_builder</span> <span class='op'>=</span> <span class='const'>PageBuilder</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_java_output'>java_output</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_page_builder'>page_builder</span> <span class='op'>=</span> <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_create_page_builder'>create_page_builder</span><span class='lparen'>(</span><span class='label'>task_source:</span> <span class='id identifier rubyid_task_source'>task_source</span><span class='comma'>,</span>
+                                                 <span class='label'>schema:</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span>
+                                                 <span class='label'>processor_index:</span> <span class='id identifier rubyid_processor_index'>processor_index</span><span class='comma'>,</span>
+                                                 <span class='label'>java_page_output:</span> <span class='id identifier rubyid_java_output'>java_output</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
     <span class='id identifier rubyid_task_report_hash'>task_report_hash</span> <span class='op'>=</span> <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source'>task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_index'>processor_index</span><span class='comma'>,</span> <span class='id identifier rubyid_page_builder'>page_builder</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
     <span class='kw'>return</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_ruby_hash'>from_ruby_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_task_report_hash'>task_report_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
@@ -497,10 +503,6 @@
       <pre class="lines">
 
 
-52
-53
-54
-55
 56
 57
 58
@@ -509,10 +511,14 @@
 61
 62
 63
-64</pre>
+64
+65
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
@@ -537,7 +543,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:23:21 2017 by
+  Generated on Tue Dec 26 14:30:20 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.2).
 </div>
