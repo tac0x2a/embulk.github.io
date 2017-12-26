@@ -1,4 +1,6 @@
 org.embulk
+org.embulk.cli
+org.embulk.cli.parse
 org.embulk.command
 org.embulk.config
 org.embulk.exec
