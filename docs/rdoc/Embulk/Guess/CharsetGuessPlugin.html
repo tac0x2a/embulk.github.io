@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::Guess::CharsetGuessPlugin
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../../class_list.html"></iframe>
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::Guess::CharsetGuessPlugin
   
@@ -98,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/guess/charset.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/guess/charset.rb</dd>
   </dl>
   
 </div>
@@ -208,30 +206,14 @@
 29
 30
 31
-32
-33
-34
-35
-36
-37
-38
-39
-40</pre>
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess/charset.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess/charset.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
-  <span class='comment'># ICU4J
-</span>  <span class='kw'>begin</span>
-    <span class='id identifier rubyid_detector_class'>detector_class</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span>
-  <span class='kw'>rescue</span> <span class='const'>NameError</span>
-    <span class='comment'># icu4j is removed from embulk.gem package explicitly at embulk.gemspec
-</span>    <span class='comment'># if gem is packaged for JRuby to reduce binary size. Instead, if it&#39;s
-</span>    <span class='comment'># packaged for JRuby, embulk.gemspec adds rjack-icu to its dependency.
-</span>    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rjack-icu</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_detector_class'>detector_class</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span>
-  <span class='kw'>end</span>
+  <span class='comment'># ICU4J is always there as embulk.gem is no longer supported. rjack-icu is not required.
+</span>  <span class='id identifier rubyid_detector_class'>detector_class</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span>
   <span class='id identifier rubyid_detector'>detector</span> <span class='op'>=</span> <span class='id identifier rubyid_detector_class'>detector_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_detector'>detector</span><span class='period'>.</span><span class='id identifier rubyid_setText'>setText</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='period'>.</span><span class='id identifier rubyid_to_java_bytes'>to_java_bytes</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_best_match'>best_match</span> <span class='op'>=</span> <span class='id identifier rubyid_detector'>detector</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span>
@@ -239,7 +221,7 @@
     <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_best_match'>best_match</span><span class='period'>.</span><span class='id identifier rubyid_getName'>getName</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_mapped_name'>mapped_name</span> <span class='op'>=</span> <span class='const'>STATIC_MAPPING</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_mapped_name'>mapped_name</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#STATIC_MAPPING-constant" title="Embulk::Guess::CharsetGuessPlugin::STATIC_MAPPING (constant)">STATIC_MAPPING</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
       <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_mapped_name'>mapped_name</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
@@ -255,9 +237,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:57:49 2017 by
+  Generated on Tue Dec 26 15:01:27 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>

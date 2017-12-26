@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::FilterPlugin
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html"></iframe>
+      <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::FilterPlugin
   
@@ -96,7 +94,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/filter_plugin.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/filter_plugin.rb</dd>
   </dl>
   
 </div>
@@ -479,7 +477,7 @@
 20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='comma'>,</span> <span class='id identifier rubyid_in_schema'>in_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_out_schema'>out_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_page_builder'>page_builder</span><span class='rparen'>)</span>
   <span class='ivar'>@task</span> <span class='op'>=</span> <span class='id identifier rubyid_task'>task</span>
@@ -531,7 +529,7 @@
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_in_schema'>in_schema</span>
   <span class='ivar'>@in_schema</span>
@@ -574,7 +572,7 @@
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_out_schema'>out_schema</span>
   <span class='ivar'>@out_schema</span>
@@ -617,7 +615,7 @@
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_page_builder'>page_builder</span>
   <span class='ivar'>@page_builder</span>
@@ -660,7 +658,7 @@
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_task'>task</span>
   <span class='ivar'>@task</span>
@@ -697,10 +695,10 @@
 95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='rparen'>)</span>
-  <span class='const'>JavaPlugin</span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'>ruby_adapter_class</span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='const'>FilterPlugin</span><span class='comma'>,</span> <span class='const'>RubyAdapter</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="JavaPlugin.html" title="Embulk::JavaPlugin (class)">JavaPlugin</a></span></span><span class='period'>.</span><span class='id identifier rubyid_ruby_adapter_class'><span class='object_link'><a href="JavaPlugin.html#ruby_adapter_class-class_method" title="Embulk::JavaPlugin.ruby_adapter_class (method)">ruby_adapter_class</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_class'>java_class</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="" title="Embulk::FilterPlugin (class)">FilterPlugin</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="FilterPlugin/RubyAdapter.html" title="Embulk::FilterPlugin::RubyAdapter (module)">RubyAdapter</a></span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -727,10 +725,10 @@
 39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
-  <span class='const'>JavaAdapter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="FilterPlugin/JavaAdapter.html" title="Embulk::FilterPlugin::JavaAdapter (class)">JavaAdapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="FilterPlugin/JavaAdapter.html#initialize-instance_method" title="Embulk::FilterPlugin::JavaAdapter#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -780,7 +778,7 @@
 12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_in_schema'>in_schema</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_control'>control</span><span class='rparen'>)</span>
   <span class='kw'>yield</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
@@ -839,7 +837,7 @@
 29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_page'>page</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>FilterPlugin#add(page) must be implemented</span><span class='tstring_end'>&quot;</span></span>
@@ -868,7 +866,7 @@
 35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span>
 <span class='kw'>end</span></pre>
@@ -896,7 +894,7 @@
 32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_finish'>finish</span>
 <span class='kw'>end</span></pre>
@@ -924,7 +922,7 @@
 25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/filter_plugin.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/filter_plugin.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init'>init</span>
 <span class='kw'>end</span></pre>
@@ -938,9 +936,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:57:48 2017 by
+  Generated on Tue Dec 26 15:01:27 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>

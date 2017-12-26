@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::GuessPlugin::JavaAdapter
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../../class_list.html"></iframe>
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::GuessPlugin::JavaAdapter
   
@@ -101,7 +99,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/guess_plugin.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/guess_plugin.rb</dd>
   </dl>
   
 </div>
@@ -207,7 +205,7 @@
 19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess_plugin.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_guess'>ruby_guess</span><span class='rparen'>)</span>
   <span class='ivar'>@ruby_guess</span> <span class='op'>=</span> <span class='id identifier rubyid_ruby_guess'>ruby_guess</span>
@@ -247,13 +245,13 @@
 26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/guess_plugin.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='comma'>,</span> <span class='id identifier rubyid_java_sample'>java_sample</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_sample'>sample</span> <span class='op'>=</span> <span class='const'>Buffer</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_sample'>java_sample</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../DataSource.html" title="Embulk::DataSource (class)">DataSource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_java'><span class='object_link'><a href="../DataSource.html#from_java-class_method" title="Embulk::DataSource.from_java (method)">from_java</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sample'>sample</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_java'><span class='object_link'><a href="../Buffer.html#from_java-class_method" title="Embulk::Buffer.from_java (method)">from_java</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_java_sample'>java_sample</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span> <span class='op'>=</span> <span class='ivar'>@ruby_guess</span><span class='period'>.</span><span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample'>sample</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_ruby_hash'>from_ruby_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="../DataSource.html" title="Embulk::DataSource (class)">DataSource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_ruby_hash'><span class='object_link'><a href="../DataSource.html#from_ruby_hash-class_method" title="Embulk::DataSource.from_ruby_hash (method)">from_ruby_hash</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -265,9 +263,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:57:47 2017 by
+  Generated on Tue Dec 26 15:01:26 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>

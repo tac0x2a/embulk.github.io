@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::Page
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html"></iframe>
+      <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::Page
   
@@ -101,7 +99,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/page.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/page.rb</dd>
   </dl>
   
 </div>
@@ -253,7 +251,7 @@
 12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/page.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_java_page'>java_page</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='rparen'>)</span>
   <span class='ivar'>@java_page</span> <span class='op'>=</span> <span class='id identifier rubyid_java_page'>java_page</span>
@@ -302,7 +300,7 @@
 16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/page.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='ivar'>@schema</span>
@@ -348,11 +346,11 @@
 27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/page.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/page.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span>
   <span class='id identifier rubyid_schema'>schema</span> <span class='op'>=</span> <span class='ivar'>@schema</span>
-  <span class='id identifier rubyid_reader'>reader</span> <span class='op'>=</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>PageReader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_reader'>reader</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Java.html" title="Embulk::Java (module)">Java</a></span></span><span class='op'>::</span><span class='const'>PageReader</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
     <span class='id identifier rubyid_reader'>reader</span><span class='period'>.</span><span class='id identifier rubyid_setPage'>setPage</span><span class='lparen'>(</span><span class='ivar'>@java_page</span><span class='rparen'>)</span>
     <span class='kw'>while</span> <span class='id identifier rubyid_reader'>reader</span><span class='period'>.</span><span class='id identifier rubyid_nextRecord'>nextRecord</span>
@@ -372,9 +370,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:57:45 2017 by
+  Generated on Tue Dec 26 15:01:23 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>
