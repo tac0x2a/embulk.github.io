@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="class_list.html"></iframe>
+      <iframe id="nav" src="class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -57,10 +57,8 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="class_list.html"></iframe>
-
       <div id="content"><div id='filecontents'>
-<h1 id="label-What%27s+Embulk%3F">What&#39;s Embulk?</h1>
+<h1 id="label-What-27s+Embulk-3F">What&#39;s Embulk?</h1>
 
 <p>Embulk is a parallel bulk data loader that <strong>helps data transfer
 between various storages, databases, NoSQL and cloud services</strong>.</p>
@@ -92,7 +90,7 @@ releases</strong>, <strong>compatibility information</strong>, and
 
 <h2 id="label-Quick+Start">Quick Start</h2>
 
-<h3 id="label-Linux+%26+Mac+%26+BSD">Linux &amp; Mac &amp; BSD</h3>
+<h3 id="label-Linux+-26+Mac+-26+BSD">Linux &amp; Mac &amp; BSD</h3>
 
 <p>Embulk is a Java application. Please make sure that <a
 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>
@@ -146,7 +144,8 @@ plugin. It executes an external command to output the records.</p>
 &lt;name&gt;</code> command:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_embulk'>embulk</span><span class='op'>-</span><span class='id identifier rubyid_output'>output</span><span class='op'>-</span><span class='id identifier rubyid_command'>command</span>
-<span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_list'>list</span></code></pre>
+<span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_list'>list</span>
+</code></pre>
 
 <p>Embulk bundles some built-in plugins such as
 <code>embulk-encoder-gzip</code> or <code>embulk-formatter-csv</code>. You
@@ -201,8 +200,8 @@ embulk run   -b ./embulk_bundle ...</code></pre>
 <h2 id="label-Use+cases">Use cases</h2>
 <ul><li>
 <p><a
-href="http://www.embulk.org/docs/recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled
-bulk data loading to Elasticsearch + Kibana 4 from CSV files</a></p>
+href="http://www.embulk.org/docs/recipe/scheduled-csv-load-to-elasticsearch-kibana5.html">Scheduled
+bulk data loading to Elasticsearch + Kibana 5 from CSV files</a></p>
 </li></ul>
 
 <p>For further details, visit <a href="http://www.embulk.org/docs/">Embulk
@@ -212,11 +211,13 @@ documentation</a>.</p>
 
 <p>Following command updates embulk itself to the latest released version.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_selfupdate'>selfupdate</span></code></pre>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_selfupdate'>selfupdate</span>
+</code></pre>
 
 <p>Following command updates embulk itself to the specific released version.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_selfupdate'>selfupdate</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span></code></pre>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_selfupdate'>selfupdate</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span>
+</code></pre>
 
 <p>Older versions are available at <a
 href="http://dl.embulk.org">dl.embulk.org</a>.</p>
@@ -225,8 +226,7 @@ href="http://dl.embulk.org">dl.embulk.org</a>.</p>
 
 <h3 id="label-Build">Build</h3>
 
-<pre class="code ruby"><code class="ruby">./gradlew cli  # creates pkg/embulk-VERSION.jar
-./gradlew gem  # creates pkg/embulk-VERSION.gem</code></pre>
+<pre class="code ruby"><code class="ruby">./gradlew cli  # creates pkg/embulk-VERSION.jar</code></pre>
 
 <p>You can see JaCoCo&#39;s test coverage report at
 <code>${project}/build/reports/tests/index.html</code> You can see
@@ -268,9 +268,9 @@ generation.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_brew'>brew</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_python'>python</span>
 <span class='id identifier rubyid_pip'>pip</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_sphinx'>sphinx</span>
-<span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_yard'>yard</span>
 <span class='period'>.</span><span class='op'>/</span><span class='id identifier rubyid_gradlew'>gradlew</span> <span class='id identifier rubyid_site'>site</span>
-<span class='comment'># documents are: embulk-docs/build/html</span></code></pre>
+<span class='comment'># documents are: embulk-docs/build/html
+</span></code></pre>
 
 <h3 id="label-Release">Release</h3>
 
@@ -278,14 +278,15 @@ generation.</p>
 ~/.gradle/gradle.properties</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_bintray_user'>bintray_user</span><span class='op'>=</span><span class='lparen'>(</span><span class='id identifier rubyid_bintray'>bintray</span> <span class='id identifier rubyid_user'>user</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_bintray_api_key'>bintray_api_key</span><span class='op'>=</span><span class='lparen'>(</span><span class='id identifier rubyid_bintray'>bintray</span> <span class='id identifier rubyid_api'>api</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_bintray_api_key'>bintray_api_key</span><span class='op'>=</span><span class='lparen'>(</span><span class='id identifier rubyid_bintray'>bintray</span> <span class='id identifier rubyid_api'>api</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+</code></pre>
 
 <p>Run following commands and follow its instruction:</p>
 
 <pre class="code ruby"><code class="ruby">./gradlew setVersion -Pto=$VERSION</code></pre>
 
 <pre class="code ruby"><code class="ruby">./gradlew releaseCheck
-./gradlew clean cli gem &amp;&amp; ./gradlew release
+./gradlew clean cli &amp;&amp; ./gradlew release
 git commit -am v$VERSION
 git tag v$VERSION</code></pre>
 
@@ -295,9 +296,9 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:15:15 2017 by
+  Generated on Tue Dec 26 14:18:49 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>

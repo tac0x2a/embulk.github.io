@@ -6,7 +6,7 @@
 <title>
   Class: Embulk::Slf4jAdapter
   
-    &mdash; Documentation by YARD 0.9.5
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html"></iframe>
+      <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -58,8 +58,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Embulk::Slf4jAdapter
   
@@ -101,7 +99,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/embulk/logger.rb</dd>
+    <dd>embulk-core/src/main/ruby/embulk/logger.rb</dd>
   </dl>
   
 </div>
@@ -410,7 +408,7 @@
 71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_logger'>logger</span><span class='rparen'>)</span>
   <span class='ivar'>@logger</span> <span class='op'>=</span> <span class='id identifier rubyid_logger'>logger</span>
@@ -453,7 +451,7 @@
 111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -511,7 +509,7 @@
 137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_debug?'>debug?</span>
   <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_isDebugEnabled'>isDebugEnabled</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -547,7 +545,7 @@
 81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_error'>error</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -605,7 +603,7 @@
 129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_error?'>error?</span>
   <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_isErrorEnabled'>isErrorEnabled</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -657,7 +655,7 @@
 125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 123</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fatal?'>fatal?</span>
   <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_isErrorEnabled'>isErrorEnabled</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -693,7 +691,7 @@
 101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -735,7 +733,7 @@
 121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trace'>trace</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -793,7 +791,7 @@
 141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trace?'>trace?</span>
   <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_isTraceEnabled'>isTraceEnabled</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -829,7 +827,7 @@
 91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_warn'>warn</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -887,7 +885,7 @@
 133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/logger.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'embulk-core/src/main/ruby/embulk/logger.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_warn?'>warn?</span>
   <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_isWarnEnabled'>isWarnEnabled</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -902,9 +900,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 26 14:15:19 2017 by
+  Generated on Tue Dec 26 14:19:02 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.12 (ruby-2.3.3).
 </div>
 
     </div>
