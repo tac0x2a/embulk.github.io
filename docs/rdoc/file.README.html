@@ -257,11 +257,8 @@ project:</p>
 
 <h3 id="label-Update+JRuby">Update JRuby</h3>
 
-<p>Task <code>updateJRuby</code> updates JRuby version of embulk-core project.</p>
-
-<p>This is an example to update JRuby to <code>9.1.13.0</code>.</p>
-
-<pre class="code ruby"><code class="ruby">./gradlew updateJRuby -Pto=9.1.13.0</code></pre>
+<p>Modify <code>jrubyVersion</code> in <code>build.gradle</code> to update
+JRuby of Embulk.</p>
 
 <h3 id="label-Documents">Documents</h3>
 
@@ -283,14 +280,15 @@ generation.</p>
 <span class='id identifier rubyid_bintray_api_key'>bintray_api_key</span><span class='op'>=</span><span class='lparen'>(</span><span class='id identifier rubyid_bintray'>bintray</span> <span class='id identifier rubyid_api'>api</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
 </code></pre>
 
-<p>Run following commands and follow its instruction:</p>
+<p>Modify <code>version</code> in <code>build.gradle</code> at a detached
+commit to bump Embulk version up.</p>
 
-<pre class="code ruby"><code class="ruby">./gradlew setVersion -Pto=$VERSION</code></pre>
-
-<pre class="code ruby"><code class="ruby">./gradlew releaseCheck
-./gradlew clean cli &amp;&amp; ./gradlew release
-git commit -am v$VERSION
-git tag v$VERSION</code></pre>
+<pre class="code ruby"><code class="ruby">git checkout --detach master
+(Edit build.gradle)
+git commit -a
+./gradlew clean &amp;&amp; ./gradlew release
+git tag &lt;VERSION&gt;
+git push -u origin &lt;VERSION&gt;</code></pre>
 
 <p>See also: * <a href="https://bintray.com">Bintray</a> * <a
 href="https://bintray.com/docs/usermanual/interacting/interacting_editingyouruserprofile.html#anchorAPIKEY">How
@@ -298,7 +296,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Jan 25 08:30:32 2018 by
+  Generated on Thu Jan 25 08:41:19 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.3.3).
 </div>
