@@ -1,0 +1,157 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Release 0.9.0 &#8212; Embulk 0.8 documentation</title>
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release 0.8.39" href="release-0.8.39.html" />
+    <link rel="prev" title="Release Notes" href="../release.html" /> 
+  </head>
+  <body>
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.8 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.9.0</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.8.39.html">Release 0.8.39</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-9-0">
+<h1>Release 0.9.0<a class="headerlink" href="#release-0-9-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="java-8">
+<h2>Java 8<a class="headerlink" href="#java-8" title="Permalink to this headline">¶</a></h2>
+<p>Embulk v0.9.0 is Java 8-based.</p>
+<ul class="simple">
+<li>Embulk v0.9 assumes Java 8, and drops Java 7-compatibility.</li>
+<li>All tests run on Java 8 in CI.</li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.Timestamp</span></code> uses <code class="docutils literal"><span class="pre">java.time</span></code> classes which are added in Java 8.</li>
+</ul>
+</div>
+<div class="section" id="no-more-gem-based-releases">
+<h2>No more gem-based releases<a class="headerlink" href="#no-more-gem-based-releases" title="Permalink to this headline">¶</a></h2>
+<p><cite>Gem packages of Embulk core &lt;https://rubygems.org/gems/embulk&gt;</cite> are no longer released since v0.9.0. Embulk v0.8.39’s Gem is the last Gem release.</p>
+<ul class="simple">
+<li>The structure of JAR packages has changed to run Bundler with Embulk v0.9.0. Embulk’s Ruby code and its dependencies are contained in the JAR packages with Gem structures. The <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">bundle</span></code> subcommand and the <code class="docutils literal"><span class="pre">-b</span></code> option do not need Gem packages of Embulk core installed.</li>
+<li>Users need to change their Gemfile for Bundler not to describe Embulk’s explicit version. Users may have to uninstall older Gem packages of Embulk core.</li>
+<li>Ruby <code class="docutils literal"><span class="pre">embulk/runner.rb</span></code> has been removed.</li>
+</ul>
+</div>
+<div class="section" id="removals">
+<h2>Removals<a class="headerlink" href="#removals" title="Permalink to this headline">¶</a></h2>
+<p>Some deprecated methods and classes have been eliminated in v0.9.0.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.json.RubyValueApi</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.Timestamp#getRubyTime</span></code> and <code class="docutils literal"><span class="pre">org.embulk.spi.time.Timestamp#fromRubyTime</span></code></li>
+<li>Related to <code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormatter</span></code><ul>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormat#newFormatter</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormatter.FormatterTask</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormatter.Task#getJRuby</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormatter</span></code> ‘s constructor <code class="docutils literal"><span class="pre">TimestampFormatter(String,</span> <span class="pre">FormatterTask)</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormatter</span></code> ‘s constructor <code class="docutils literal"><span class="pre">TimestampFormatter(ScriptingContainer,</span> <span class="pre">String,</span> <span class="pre">org.joda.time.DateTimeZone)</span></code></li>
+</ul>
+</li>
+<li>Related to <code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampParser</span></code><ul>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampFormat#newParser</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampParser.ParserTask</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampParser.Task#getJRuby</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampParser</span></code> ‘s constructor <code class="docutils literal"><span class="pre">TimestampParser(String,</span> <span class="pre">ParserTask)</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampParser</span></code> ‘s constructor <code class="docutils literal"><span class="pre">TimestampParser(ScriptingContainer,</span> <span class="pre">String,</span> <span class="pre">org.joda.time.DateTimeZone)</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.time.TimestampParser</span></code> ‘s constructor <code class="docutils literal"><span class="pre">TimestampParser(ScriptingContainer,</span> <span class="pre">String,</span> <span class="pre">org.joda.time.DateTimeZone,</span> <span class="pre">String)</span></code></li>
+</ul>
+</li>
+<li>Related to <code class="docutils literal"><span class="pre">org.embulk.spi.util.DynamicPageBuilder</span></code><ul>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.util.DynamicPageBuilder.BuilderTask#getJRuby</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.util.DynamicPageBuilder</span></code> ‘s constructor <code class="docutils literal"><span class="pre">DynamicPageBuilder(BuilderTask,</span> <span class="pre">BufferAllocator,</span> <span class="pre">Schema,</span> <span class="pre">PageOutput)</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.util.dynamic.AbstractDynamicColumnSetter#setRubyObject</span></code></li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.util.dynamic.SkipColumnSetter#setRubyObject</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.util.PagePrinter</span></code> ‘s constructor <code class="docutils literal"><span class="pre">PagePrinter(Schema,</span> <span class="pre">TimestampFormatter.FormatterTask)</span></code></li>
+</ul>
+</div>
+<div class="section" id="deprecation">
+<h2>Deprecation<a class="headerlink" href="#deprecation" title="Permalink to this headline">¶</a></h2>
+<p>The following method has been newly deprecated since v0.9.0. They are to be removed by v0.10 (or possibly earlier).</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">org.embulk.spi.ExecSession#newTimestampFormatter(String,</span> <span class="pre">org.joda.time.DateTimeZone)</span></code></li>
+</ul>
+</div>
+<div class="section" id="packaging">
+<h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">embulk-jruby-strptime</span></code> has been merged into <code class="docutils literal"><span class="pre">embulk-core</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">embulk-cli</span></code> has been merged into <code class="docutils literal"><span class="pre">embulk-core</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Embedded Bundler has been upgraded to 1.16.0.</li>
+<li>Embedded JRuby has been upgraded to 9.1.15.0.</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The default Gem plugin directory has been moved to <code class="docutils literal"><span class="pre">~/.embulk/lib/gem</span></code>.</li>
+<li>The default JAR plugin directory has been moved to <code class="docutils literal"><span class="pre">~/.embulk/lib/m2/repository</span></code>.</li>
+<li>Guess plugins for standard plugins has been moved to <code class="docutils literal"><span class="pre">embulk-standards</span></code>.</li>
+<li>New <code class="docutils literal"><span class="pre">ruby:</span></code> prefixed timestamp format is added.</li>
+<li>New <code class="docutils literal"><span class="pre">java:</span></code> prefixed timestamp format is added as experimental.</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2018-01-30</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="../release.html">Release Notes</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.8.39.html">Release 0.8.39</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>
