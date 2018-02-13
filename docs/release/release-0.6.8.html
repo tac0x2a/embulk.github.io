@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.6.8 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.6.7" href="release-0.6.7.html" />
     <link rel="prev" title="Release 0.6.9" href="release-0.6.9.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.8</span></h2>
@@ -50,15 +41,15 @@
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added utility class <code class="docutils literal"><span class="pre">spi.util.ResumableInputStream</span></code></li>
-<li>Added utility class <code class="docutils literal"><span class="pre">spi.util.RetryExecutor</span></code></li>
+<li>Added utility class <code class="docutils literal notranslate"><span class="pre">spi.util.ResumableInputStream</span></code></li>
+<li>Added utility class <code class="docutils literal notranslate"><span class="pre">spi.util.RetryExecutor</span></code></li>
 </ul>
 </div>
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">parser-csv</span></code> rejects rows if one includes too many columns by default. Setting <code class="docutils literal"><span class="pre">allow</span> <span class="pre">extra_columns</span></code> option to <code class="docutils literal"><span class="pre">true</span></code> will make the behavior same with before.</li>
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> guesses <code class="docutils literal"><span class="pre">columns</span></code> option every time.</li>
+<li><code class="docutils literal notranslate"><span class="pre">parser-csv</span></code> rejects rows if one includes too many columns by default. Setting <code class="docutils literal notranslate"><span class="pre">allow</span> <span class="pre">extra_columns</span></code> option to <code class="docutils literal notranslate"><span class="pre">true</span></code> will make the behavior same with before.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guess-csv</span></code> guesses <code class="docutils literal notranslate"><span class="pre">columns</span></code> option every time.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
@@ -90,7 +81,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

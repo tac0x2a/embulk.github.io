@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.6.16 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.6.15" href="release-0.6.15.html" />
     <link rel="prev" title="Release 0.6.17" href="release-0.6.17.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.16</span></h2>
@@ -51,14 +42,14 @@
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Class loader of plugins lookup classes from plugin’s class loader first. This change solves the problem where a plugin uses newer (or older) version of jar library which conflicts with a jar library used by applications embedding embulk.</li>
-<li>Added <code class="docutils literal"><span class="pre">ExecSession#cleanup()</span></code> method. Applications embedding embulk as a library needs to call this method at the end of bulk load transaction.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">ExecSession#cleanup()</span></code> method. Applications embedding embulk as a library needs to call this method at the end of bulk load transaction.</li>
 </ul>
 </div>
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">spi.util.TempFileSpace</span></code> and <code class="docutils literal"><span class="pre">spi.Exec.getTempFileSpace</span></code>. This utility allows plugins to create temporary files. Because the behavior of cleaning files up is not completely defined yet, it is recommended to test the behavior before deploying code using this API to production.</li>
-<li>Added <code class="docutils literal"><span class="pre">spi.unit.LocalFile</span></code> class. Plugins can use this class as a mapped value of configuration file when it needs a path to a local file. This class solves a problem that plugins don’t work with distributed executor plugins (such as embulk-executor-mapreduce) if the plugins use <code class="docutils literal"><span class="pre">String</span></code> to get a local file path. Using this class, users can also embed contents of the file in the configuration file instead of setting path to a file.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.util.TempFileSpace</span></code> and <code class="docutils literal notranslate"><span class="pre">spi.Exec.getTempFileSpace</span></code>. This utility allows plugins to create temporary files. Because the behavior of cleaning files up is not completely defined yet, it is recommended to test the behavior before deploying code using this API to production.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.unit.LocalFile</span></code> class. Plugins can use this class as a mapped value of configuration file when it needs a path to a local file. This class solves a problem that plugins don’t work with distributed executor plugins (such as embulk-executor-mapreduce) if the plugins use <code class="docutils literal notranslate"><span class="pre">String</span></code> to get a local file path. Using this class, users can also embed contents of the file in the configuration file instead of setting path to a file.</li>
 </ul>
 </div>
 <div class="section" id="note">
@@ -89,7 +80,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

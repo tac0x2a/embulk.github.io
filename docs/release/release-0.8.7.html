@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.8.7 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.8.6" href="release-0.8.6.html" />
     <link rel="prev" title="Release 0.8.8" href="release-0.8.8.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.8.7</span></h2>
@@ -51,7 +42,7 @@
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>LineDecoder skips UTF-8 BOM appropriately.</li>
-<li>Timestamp guess uses <code class="docutils literal"><span class="pre">%z</span></code> instead of <code class="docutils literal"><span class="pre">%Z</span></code>. Parsing behavior doesn’t change but formatting behavior changes if output plugins use guessed configuration to format timestamp (this is unlikely because guessed configuration is most likely used by input plugins to parse timestamp).</li>
+<li>Timestamp guess uses <code class="docutils literal notranslate"><span class="pre">%z</span></code> instead of <code class="docutils literal notranslate"><span class="pre">%Z</span></code>. Parsing behavior doesn’t change but formatting behavior changes if output plugins use guessed configuration to format timestamp (this is unlikely because guessed configuration is most likely used by input plugins to parse timestamp).</li>
 <li>Fix uninitialized constant MessagePack (&#64;sonots++)</li>
 <li>Fixed a possible busy loop at TaskDeserializer.</li>
 </ul>
@@ -78,7 +69,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

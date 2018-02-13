@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.6.0 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.5.5" href="release-0.5.5.html" />
     <link rel="prev" title="Release 0.6.1" href="release-0.6.1.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.0</span></h2>
@@ -50,22 +41,22 @@
 <div class="section" id="executor-plugin-mechanism">
 <h2>Executor Plugin Mechanism<a class="headerlink" href="#executor-plugin-mechanism" title="Permalink to this headline">¶</a></h2>
 <p>Now executor of Embulk is fully extensible using plugins. Executor plugins get input, filter and output plugins from the Embulk framework and runs them using multiple threads, processes, or servers. While input, filter and output plugins are response for data processing, executor plugins are responsible for scheduling the processing tasks and managing parallelism for performance.</p>
-<p>The built-in executor plugin is <code class="docutils literal"><span class="pre">LocalExecutorPlugin</span></code> that runs tasks using multiple threads. It has a shared thread pool and schedules tasks at most <code class="docutils literal"><span class="pre">(number</span> <span class="pre">of</span> <span class="pre">available</span> <span class="pre">CPU</span> <span class="pre">cores)</span> <span class="pre">*</span> <span class="pre">2</span></code> tasks in parallel. Number of threads is configurable using <code class="docutils literal"><span class="pre">max_threads</span></code> system parameter.</p>
+<p>The built-in executor plugin is <code class="docutils literal notranslate"><span class="pre">LocalExecutorPlugin</span></code> that runs tasks using multiple threads. It has a shared thread pool and schedules tasks at most <code class="docutils literal notranslate"><span class="pre">(number</span> <span class="pre">of</span> <span class="pre">available</span> <span class="pre">CPU</span> <span class="pre">cores)</span> <span class="pre">*</span> <span class="pre">2</span></code> tasks in parallel. Number of threads is configurable using <code class="docutils literal notranslate"><span class="pre">max_threads</span></code> system parameter.</p>
 <p>Another available executor is <a class="reference external" href="https://github.com/embulk/embulk-executor-mapreduce">embulk-executor-mapreduce</a> plugin. This executor plugin runs tasks on Hadoop, a distributed computing environment. It is suitable for processing TBs of data. An unique functionality is that it supports partitioning data by a certain column before passing them to output plugins. An example use case is that the MapReduce executor partitions data by time so that files on destination storage are partitioned for each day.</p>
 </div>
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">exec.LocalExecutor</span></code> class is separated into <code class="docutils literal"><span class="pre">exec.BulkLoader</span></code> class for interface definition and <code class="docutils literal"><span class="pre">exec.LocalExecutorPlugin</span></code> for implementation. If you’re application is Embulk through <code class="docutils literal"><span class="pre">LocalExecutor</span></code> class, you need to replace it with <code class="docutils literal"><span class="pre">BulkLoader</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">spi.ExecAction#run</span></code> can throw <code class="docutils literal"><span class="pre">Exception</span></code> and <code class="docutils literal"><span class="pre">Exec.doWith(ExecSession,</span> <span class="pre">ExecAction&lt;T&gt;)</span></code> throws <code class="docutils literal"><span class="pre">ExecutionException</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">spi.Buffer</span></code> implements <code class="docutils literal"><span class="pre">#equals</span></code> and <code class="docutils literal"><span class="pre">hashCode</span></code> methods.</li>
+<li><code class="docutils literal notranslate"><span class="pre">exec.LocalExecutor</span></code> class is separated into <code class="docutils literal notranslate"><span class="pre">exec.BulkLoader</span></code> class for interface definition and <code class="docutils literal notranslate"><span class="pre">exec.LocalExecutorPlugin</span></code> for implementation. If you’re application is Embulk through <code class="docutils literal notranslate"><span class="pre">LocalExecutor</span></code> class, you need to replace it with <code class="docutils literal notranslate"><span class="pre">BulkLoader</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.ExecAction#run</span></code> can throw <code class="docutils literal notranslate"><span class="pre">Exception</span></code> and <code class="docutils literal notranslate"><span class="pre">Exec.doWith(ExecSession,</span> <span class="pre">ExecAction&lt;T&gt;)</span></code> throws <code class="docutils literal notranslate"><span class="pre">ExecutionException</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.Buffer</span></code> implements <code class="docutils literal notranslate"><span class="pre">#equals</span></code> and <code class="docutils literal notranslate"><span class="pre">hashCode</span></code> methods.</li>
 </ul>
 </div>
 <div class="section" id="plugin-spi">
 <h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">spi.ExecutorPlugin</span></code> interface.</li>
-<li>Added <code class="docutils literal"><span class="pre">Embulk::ExecutorPlugin</span></code> class.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.ExecutorPlugin</span></code> interface.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">Embulk::ExecutorPlugin</span></code> class.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
@@ -96,7 +87,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

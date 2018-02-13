@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.5.2 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.5.1" href="release-0.5.1.html" />
     <link rel="prev" title="Release 0.5.3" href="release-0.5.3.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.5.2</span></h2>
@@ -50,22 +41,22 @@
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">parser-csv</span></code> plugin supports <code class="docutils literal"><span class="pre">skip_header_lines</span></code> parameter to skip first some lines.<ul>
-<li><code class="docutils literal"><span class="pre">header_line</span></code> parameter is obsoleted. Although the parameter still works for backward compatibility, setting both <code class="docutils literal"><span class="pre">header_line</span></code> and <code class="docutils literal"><span class="pre">skip_header_lines</span></code> becomes configuration error.</li>
+<li><code class="docutils literal notranslate"><span class="pre">parser-csv</span></code> plugin supports <code class="docutils literal notranslate"><span class="pre">skip_header_lines</span></code> parameter to skip first some lines.<ul>
+<li><code class="docutils literal notranslate"><span class="pre">header_line</span></code> parameter is obsoleted. Although the parameter still works for backward compatibility, setting both <code class="docutils literal notranslate"><span class="pre">header_line</span></code> and <code class="docutils literal notranslate"><span class="pre">skip_header_lines</span></code> becomes configuration error.</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guesses first ignorable lines and sets <code class="docutils literal"><span class="pre">skip_header_lines</span></code> parameter automatically.</li>
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin guesses quoted column names correctly.</li>
-<li><code class="docutils literal"><span class="pre">formatter-csv</span></code> pugin supports <code class="docutils literal"><span class="pre">delimiter</span></code> parameter (&#64;hiroyuki-sato++).</li>
-<li><code class="docutils literal"><span class="pre">output-stdout</span></code> fixed warning messages due to double-release of buffers.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guess-csv</span></code> plugin guesses first ignorable lines and sets <code class="docutils literal notranslate"><span class="pre">skip_header_lines</span></code> parameter automatically.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guess-csv</span></code> plugin guesses quoted column names correctly.</li>
+<li><code class="docutils literal notranslate"><span class="pre">formatter-csv</span></code> pugin supports <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> parameter (&#64;hiroyuki-sato++).</li>
+<li><code class="docutils literal notranslate"><span class="pre">output-stdout</span></code> fixed warning messages due to double-release of buffers.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Improved error message when double-release of a <code class="docutils literal"><span class="pre">spi.Buffer</span></code> is detected.</li>
-<li>Fixed <code class="docutils literal"><span class="pre">preview</span></code> when a filter plugin changes schema (&#64;llibra++).</li>
-<li>Fixed infinite loop at <code class="docutils literal"><span class="pre">Embulk::FileOutput#flush</span></code> (&#64;goronao++). It happened if a formatter plugin written in Ruby writes more than 32KB of data.</li>
+<li>Improved error message when double-release of a <code class="docutils literal notranslate"><span class="pre">spi.Buffer</span></code> is detected.</li>
+<li>Fixed <code class="docutils literal notranslate"><span class="pre">preview</span></code> when a filter plugin changes schema (&#64;llibra++).</li>
+<li>Fixed infinite loop at <code class="docutils literal notranslate"><span class="pre">Embulk::FileOutput#flush</span></code> (&#64;goronao++). It happened if a formatter plugin written in Ruby writes more than 32KB of data.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -90,7 +81,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

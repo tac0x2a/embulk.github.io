@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.6.9 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.6.8" href="release-0.6.8.html" />
     <link rel="prev" title="Release 0.6.10" href="release-0.6.10.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.9</span></h2>
@@ -50,19 +41,19 @@
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">formatter-csv</span></code> supports <code class="docutils literal"><span class="pre">quote</span></code>, <code class="docutils literal"><span class="pre">quote_policy</span></code>, <code class="docutils literal"><span class="pre">escape</span></code>, <code class="docutils literal"><span class="pre">newline_in_field</span></code>, and <code class="docutils literal"><span class="pre">null_string</span></code> options (&#64;sakama++)<ul>
-<li><code class="docutils literal"><span class="pre">quote_policy</span></code> controls how to quote values. It can be either of <code class="docutils literal"><span class="pre">ALL</span></code> (quote all values), <code class="docutils literal"><span class="pre">MINIMAL</span></code> (quote if a value includes delimiter or quote character), or <code class="docutils literal"><span class="pre">NONE</span></code> (never quotes).</li>
-<li><code class="docutils literal"><span class="pre">escape</span></code> controls how to escape quote character in a quoted string. The default is <code class="docutils literal"><span class="pre">&quot;</span></code> (<code class="docutils literal"><span class="pre">&quot;</span></code> will be <code class="docutils literal"><span class="pre">&quot;&quot;</span></code>). Some applications may set it to <code class="docutils literal"><span class="pre">\</span></code> (<code class="docutils literal"><span class="pre">&quot;</span></code> will be <code class="docutils literal"><span class="pre">\&quot;</span></code>)</li>
-<li><code class="docutils literal"><span class="pre">null_string</span></code> controls how to write NULL values. The default is <code class="docutils literal"><span class="pre">&quot;&quot;</span></code> (empty string). You can use any strings such as <code class="docutils literal"><span class="pre">\N</span></code> or <code class="docutils literal"><span class="pre">#N/A</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">formatter-csv</span></code> supports <code class="docutils literal notranslate"><span class="pre">quote</span></code>, <code class="docutils literal notranslate"><span class="pre">quote_policy</span></code>, <code class="docutils literal notranslate"><span class="pre">escape</span></code>, <code class="docutils literal notranslate"><span class="pre">newline_in_field</span></code>, and <code class="docutils literal notranslate"><span class="pre">null_string</span></code> options (&#64;sakama++)<ul>
+<li><code class="docutils literal notranslate"><span class="pre">quote_policy</span></code> controls how to quote values. It can be either of <code class="docutils literal notranslate"><span class="pre">ALL</span></code> (quote all values), <code class="docutils literal notranslate"><span class="pre">MINIMAL</span></code> (quote if a value includes delimiter or quote character), or <code class="docutils literal notranslate"><span class="pre">NONE</span></code> (never quotes).</li>
+<li><code class="docutils literal notranslate"><span class="pre">escape</span></code> controls how to escape quote character in a quoted string. The default is <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code> will be <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>). Some applications may set it to <code class="docutils literal notranslate"><span class="pre">\</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code> will be <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">null_string</span></code> controls how to write NULL values. The default is <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (empty string). You can use any strings such as <code class="docutils literal notranslate"><span class="pre">\N</span></code> or <code class="docutils literal notranslate"><span class="pre">#N/A</span></code>.</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> guesses columns which contain only 0 and 1 in first 32KB as long type rather than boolean type.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guess-csv</span></code> guesses columns which contain only 0 and 1 in first 32KB as long type rather than boolean type.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">spi.util.LineEncoder</span></code> uses buffered writer. This improves performance of <code class="docutils literal"><span class="pre">formatter-csv</span></code> upto 10%.</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.util.LineEncoder</span></code> uses buffered writer. This improves performance of <code class="docutils literal notranslate"><span class="pre">formatter-csv</span></code> upto 10%.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -87,7 +78,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

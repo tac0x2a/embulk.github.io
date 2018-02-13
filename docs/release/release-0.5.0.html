@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.5.0 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.4.10" href="release-0.4.10.html" />
     <link rel="prev" title="Release 0.5.1" href="release-0.5.1.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.5.0</span></h2>
@@ -52,39 +43,39 @@
 <p>Embulk v0.5.0 supports dynamically loadable guess plugins.</p>
 <ul class="simple">
 <li>For parser and decoder plugins:<ul>
-<li>CLI subcommand <code class="docutils literal"><span class="pre">guess</span></code> accepts new <code class="docutils literal"><span class="pre">-g,</span> <span class="pre">--guess</span> <span class="pre">NAMES</span></code> argument to load parser and decoder guess plugins.</li>
+<li>CLI subcommand <code class="docutils literal notranslate"><span class="pre">guess</span></code> accepts new <code class="docutils literal notranslate"><span class="pre">-g,</span> <span class="pre">--guess</span> <span class="pre">NAMES</span></code> argument to load parser and decoder guess plugins.</li>
 <li>Plugin template generator creates stub code of guess plugin for parser and decoder plugins.</li>
 </ul>
 </li>
 <li>For input plugins:<ul>
-<li>Added <code class="docutils literal"><span class="pre">Embulk::InputPlugin.guess(config)</span></code> and <code class="docutils literal"><span class="pre">spi.InputPlugin#guess(config)</span></code> methods for Ruby and Java plugins.</li>
-<li><code class="docutils literal"><span class="pre">guess</span></code> subcommand executes the new guess method and takes the return value of the method.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">Embulk::InputPlugin.guess(config)</span></code> and <code class="docutils literal notranslate"><span class="pre">spi.InputPlugin#guess(config)</span></code> methods for Ruby and Java plugins.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guess</span></code> subcommand executes the new guess method and takes the return value of the method.</li>
 </ul>
 </li>
 </ul>
-<p>Plugins can use new <code class="docutils literal"><span class="pre">Guess::SchemaGuess</span></code> utility class for ease of implementation.</p>
-<p>For example, if you write a parser plugin named <code class="docutils literal"><span class="pre">myparser</span></code>, you can use this configuration file first:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
+<p>Plugins can use new <code class="docutils literal notranslate"><span class="pre">Guess::SchemaGuess</span></code> utility class for ease of implementation.</p>
+<p>For example, if you write a parser plugin named <code class="docutils literal notranslate"><span class="pre">myparser</span></code>, you can use this configuration file first:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
   <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">path/to/myfiles</span>
 <span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">stdout</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">guess</span></code> command with <code class="docutils literal"><span class="pre">-g</span> <span class="pre">myparser</span></code> argument calls the guess plugin bundled in the plugin:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk gem install embulk-parser-myparser
+<p>The <code class="docutils literal notranslate"><span class="pre">embulk</span> <span class="pre">guess</span></code> command with <code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">myparser</span></code> argument calls the guess plugin bundled in the plugin:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk gem install embulk-parser-myparser
 <span class="gp">$</span> embulk guess config.yml -o guessed.yml -g myparser
 </pre></div>
 </div>
-<p>On the other hand, if the plugin type is input, you don’t need additional command-line arguments. For example, if the input plugin name is <code class="docutils literal"><span class="pre">myinput</span></code>, you can use this configuration file:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
+<p>On the other hand, if the plugin type is input, you don’t need additional command-line arguments. For example, if the input plugin name is <code class="docutils literal notranslate"><span class="pre">myinput</span></code>, you can use this configuration file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myinput</span>
 <span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">stdout</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">guess</span></code> command finds the <code class="docutils literal"><span class="pre">InputPlugin.guess</span></code> of the input plugin and calls it:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk gem install embulk-input-myinput
+<p>The <code class="docutils literal notranslate"><span class="pre">embulk</span> <span class="pre">guess</span></code> command finds the <code class="docutils literal notranslate"><span class="pre">InputPlugin.guess</span></code> of the input plugin and calls it:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk gem install embulk-input-myinput
 <span class="gp">$</span> embulk guess config.yml -o guessed.yml
 </pre></div>
 </div>
@@ -92,18 +83,18 @@
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">Guess::SchemaGuess</span></code> class. This utility class inputs array of hash objects or array of array objects and returns schema.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">Guess::SchemaGuess</span></code> class. This utility class inputs array of hash objects or array of array objects and returns schema.</li>
 </ul>
 </div>
 <div class="section" id="plugin-spi">
 <h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">Embulk::InputPlugin.guess(config)</span></code> method for Ruby input plugins.<ul>
-<li>Backward compatibility: existent plugins don’t have to implement the method. The default behavior is raising <code class="docutils literal"><span class="pre">NotImplementedError</span></code>.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">Embulk::InputPlugin.guess(config)</span></code> method for Ruby input plugins.<ul>
+<li>Backward compatibility: existent plugins don’t have to implement the method. The default behavior is raising <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code>.</li>
 </ul>
 </li>
-<li>Added <code class="docutils literal"><span class="pre">spi.InputPlugin#guess(ConfigSource</span> <span class="pre">config)</span></code> method for Java input plugins.<ul>
-<li>Backward compatibility: existent plugins don’t have to implement the method. Mehtod linkage errors are handled at embulk-core. The default behavior is raising <code class="docutils literal"><span class="pre">UnsupportedOperationException</span></code>.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.InputPlugin#guess(ConfigSource</span> <span class="pre">config)</span></code> method for Java input plugins.<ul>
+<li>Backward compatibility: existent plugins don’t have to implement the method. Mehtod linkage errors are handled at embulk-core. The default behavior is raising <code class="docutils literal notranslate"><span class="pre">UnsupportedOperationException</span></code>.</li>
 </ul>
 </li>
 </ul>
@@ -111,7 +102,7 @@
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">csv</span></code> parser plugin implements <code class="docutils literal"><span class="pre">max_quoted_size_limit</span></code> option. Default value is 131072 (128KB).<ul>
+<li><code class="docutils literal notranslate"><span class="pre">csv</span></code> parser plugin implements <code class="docutils literal notranslate"><span class="pre">max_quoted_size_limit</span></code> option. Default value is 131072 (128KB).<ul>
 <li>This option is useful when a column value includes a quote character accidentally. If the plugin detects those values, it skips the line and continues parsing from the next line.</li>
 </ul>
 </li>
@@ -120,7 +111,7 @@
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">spi.util.FileInputInputStream#skip</span></code> method never returns -1 to follow the Java API standard (&#64;hata++).</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.util.FileInputInputStream#skip</span></code> method never returns -1 to follow the Java API standard (&#64;hata++).</li>
 <li>Plugin template generator creates appropriate “Overview” section in README.md file depending on the plugin type.</li>
 </ul>
 </div>
@@ -146,7 +137,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.6.14 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.6.13" href="release-0.6.13.html" />
     <link rel="prev" title="Release 0.6.15" href="release-0.6.15.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.6.14</span></h2>
@@ -50,36 +41,36 @@
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">formatter-csv</span></code> plugin supports <code class="docutils literal"><span class="pre">default_timezone</span></code> and <code class="docutils literal"><span class="pre">column_options</span></code> parameters so that we can set timestamp format for each columns individually.</li>
-<li><strong>IMPORTANT</strong>: <code class="docutils literal"><span class="pre">formatter-csv</span></code> does not use the same timestamp format with input timestamp columns. If you’re using <code class="docutils literal"><span class="pre">formatter:</span> <span class="pre">type:</span> <span class="pre">csv</span></code> with <code class="docutils literal"><span class="pre">parser:</span> <span class="pre">type:</span> <span class="pre">csv-</span></code>, you need to set <code class="docutils literal"><span class="pre">format</span></code> option for each columns to keep using current behavior. See <code class="docutils literal"><span class="pre">column_options</span></code> option of CSV formatter plugin described at <a class="reference internal" href="../built-in.html"><span class="doc">Configuration</span></a>.</li>
-<li><code class="docutils literal"><span class="pre">guess-csv</span></code> plugin keeps using <code class="docutils literal"><span class="pre">delimiter</span></code> option if already set rather than to overwrite it everytime.</li>
+<li><code class="docutils literal notranslate"><span class="pre">formatter-csv</span></code> plugin supports <code class="docutils literal notranslate"><span class="pre">default_timezone</span></code> and <code class="docutils literal notranslate"><span class="pre">column_options</span></code> parameters so that we can set timestamp format for each columns individually.</li>
+<li><strong>IMPORTANT</strong>: <code class="docutils literal notranslate"><span class="pre">formatter-csv</span></code> does not use the same timestamp format with input timestamp columns. If you’re using <code class="docutils literal notranslate"><span class="pre">formatter:</span> <span class="pre">type:</span> <span class="pre">csv</span></code> with <code class="docutils literal notranslate"><span class="pre">parser:</span> <span class="pre">type:</span> <span class="pre">csv-</span></code>, you need to set <code class="docutils literal notranslate"><span class="pre">format</span></code> option for each columns to keep using current behavior. See <code class="docutils literal notranslate"><span class="pre">column_options</span></code> option of CSV formatter plugin described at <a class="reference internal" href="../built-in.html"><span class="doc">Configuration</span></a>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guess-csv</span></code> plugin keeps using <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> option if already set rather than to overwrite it everytime.</li>
 </ul>
 </div>
 <div class="section" id="plugin-api">
 <h2>Plugin API<a class="headerlink" href="#plugin-api" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">config.DataSource#remove(String)</span></code> method.</li>
-<li>Added <code class="docutils literal"><span class="pre">spi.ColumnConfig.getOption().</span></code><ul>
-<li><code class="docutils literal"><span class="pre">spi.type.TimestampType.getFormat()</span></code> is deprecated.</li>
-<li><code class="docutils literal"><span class="pre">spi.ColumnConfig.getFormat()</span></code> is deprecated.</li>
-<li><code class="docutils literal"><span class="pre">spi.ProcessTask</span></code> does not serialize <code class="docutils literal"><span class="pre">TimestampType.format</span></code> any more.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">config.DataSource#remove(String)</span></code> method.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.ColumnConfig.getOption().</span></code><ul>
+<li><code class="docutils literal notranslate"><span class="pre">spi.type.TimestampType.getFormat()</span></code> is deprecated.</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.ColumnConfig.getFormat()</span></code> is deprecated.</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.ProcessTask</span></code> does not serialize <code class="docutils literal notranslate"><span class="pre">TimestampType.format</span></code> any more.</li>
 </ul>
 </li>
-<li>Added utility methods for <code class="docutils literal"><span class="pre">spi.Schema</span></code> and <code class="docutils literal"><span class="pre">spi.SchemaConfig</span></code>.<ul>
-<li>Added <code class="docutils literal"><span class="pre">Schema.Builder</span></code> class and <code class="docutils literal"><span class="pre">Schema.builder()</span></code> method.</li>
-<li>Added <code class="docutils literal"><span class="pre">Schema#lookupColumn(String)</span></code>.</li>
-<li>Added utility methods to <code class="docutils literal"><span class="pre">SchemaConfig</span></code>.</li>
+<li>Added utility methods for <code class="docutils literal notranslate"><span class="pre">spi.Schema</span></code> and <code class="docutils literal notranslate"><span class="pre">spi.SchemaConfig</span></code>.<ul>
+<li>Added <code class="docutils literal notranslate"><span class="pre">Schema.Builder</span></code> class and <code class="docutils literal notranslate"><span class="pre">Schema.builder()</span></code> method.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">Schema#lookupColumn(String)</span></code>.</li>
+<li>Added utility methods to <code class="docutils literal notranslate"><span class="pre">SchemaConfig</span></code>.</li>
 </ul>
 </li>
-<li>Added <code class="docutils literal"><span class="pre">spi.time.TimestampFormatter.Task</span></code> and TimestampColumnOption<ul>
-<li><code class="docutils literal"><span class="pre">TimestampFormatter.FormatterTask</span></code> is deprecated</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.time.TimestampFormatter.Task</span></code> and TimestampColumnOption<ul>
+<li><code class="docutils literal notranslate"><span class="pre">TimestampFormatter.FormatterTask</span></code> is deprecated</li>
 </ul>
 </li>
-<li>Added <code class="docutils literal"><span class="pre">spi.time.TimestampParser.Task</span></code> and TimestampColumnOption<ul>
-<li><code class="docutils literal"><span class="pre">TimestampParser.ParserTask</span></code> is deprecated</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">spi.time.TimestampParser.Task</span></code> and TimestampColumnOption<ul>
+<li><code class="docutils literal notranslate"><span class="pre">TimestampParser.ParserTask</span></code> is deprecated</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">spi.time.TimestampFormat</span></code> is deprecated</li>
+<li><code class="docutils literal notranslate"><span class="pre">spi.time.TimestampFormat</span></code> is deprecated</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
@@ -110,7 +101,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

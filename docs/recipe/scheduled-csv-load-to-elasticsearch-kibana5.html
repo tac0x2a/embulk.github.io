@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Scheduled bulk data loading to Elasticsearch + Kibana 5 from CSV files &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Configuration" href="../built-in.html" />
     <link rel="prev" title="Recipes" href="../recipe.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Scheduled bulk data loading to Elasticsearch + Kibana 5 from CSV files</span></h2>
@@ -76,7 +67,7 @@
 <h3><a class="toc-backref" href="#id2">Step 1. Download and start Elasticsearch.</a><a class="headerlink" href="#step-1-download-and-start-elasticsearch" title="Permalink to this headline">¶</a></h3>
 <p>You can find releases from the <a class="reference external" href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch website</a>.
 For the smallest setup, you can unzip the package and run <cite>./bin/elasticsearch</cite> command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.3.0.zip
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.3.0.zip
 <span class="gp">$</span> unzip elasticsearch-5.3.0.zip
 <span class="gp">$</span> <span class="nb">cd</span> elasticsearch-5.3.0
 <span class="gp">$</span> ./bin/elasticsearch
@@ -86,7 +77,7 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 <div class="section" id="step-2-download-and-unzip-kibana">
 <h3><a class="toc-backref" href="#id3">Step 2. Download and unzip Kibana:</a><a class="headerlink" href="#step-2-download-and-unzip-kibana" title="Permalink to this headline">¶</a></h3>
 <p>You can find releases from the <a class="reference external" href="https://www.elastic.co/downloads/kibana">Kibana website</a>. Open a new console and run following commands:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://artifacts.elastic.co/downloads/kibana/kibana-5.3.0-linux-x86_64.tar.gz
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> wget https://artifacts.elastic.co/downloads/kibana/kibana-5.3.0-linux-x86_64.tar.gz
 <span class="gp">$</span> tar zxvf kibana-5.3.0-linux-x86_64.tar.gz
 <span class="gp">$</span> <span class="nb">cd</span> kibana-5.3.0-linux-x86_64
 <span class="gp">$</span> ./bin/kibana
@@ -101,7 +92,7 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 <div class="section" id="step-1-download-embulk-binary">
 <h3><a class="toc-backref" href="#id5">Step 1. Download Embulk binary:</a><a class="headerlink" href="#step-1-download-embulk-binary" title="Permalink to this headline">¶</a></h3>
 <p>You can find the latest embulk binary from the <a class="reference external" href="https://bintray.com/embulk/maven/embulk/view#files">releases</a>. Because Embulk is a single executable binary, you can simply download it to ~/.embulk/bin directory and set executable flag as following:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> curl --create-dirs -o ~/.embulk/bin/embulk -L <span class="s2">&quot;https://dl.embulk.org/embulk-latest.jar&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> curl --create-dirs -o ~/.embulk/bin/embulk -L <span class="s2">&quot;https://dl.embulk.org/embulk-latest.jar&quot;</span>
 <span class="gp">$</span> chmod +x ~/.embulk/bin/embulk
 <span class="gp">$</span> <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc
 <span class="gp">$</span> <span class="nb">source</span> ~/.bashrc
@@ -111,7 +102,7 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 <div class="section" id="step-2-install-elasticsearch-plugin">
 <h3><a class="toc-backref" href="#id6">Step 2. Install Elasticsearch plugin</a><a class="headerlink" href="#step-2-install-elasticsearch-plugin" title="Permalink to this headline">¶</a></h3>
 <p>You also need Elasticsearch plugin for Embulk. You can install the plugin with this command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk gem install embulk-output-elasticsearch
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk gem install embulk-output-elasticsearch
 </pre></div>
 </div>
 <p>Embulk includes CSV file reader in itself. Now everything is ready to use.</p>
@@ -119,9 +110,9 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 </div>
 <div class="section" id="loading-a-csv-file">
 <h2><a class="toc-backref" href="#id7">Loading a CSV file</a><a class="headerlink" href="#loading-a-csv-file" title="Permalink to this headline">¶</a></h2>
-<p>Assuming you have a CSV files at <code class="docutils literal"><span class="pre">./mydata/csv/</span></code> directory. If you don’t have CSV files, you can create ones using <code class="docutils literal"><span class="pre">embulk</span> <span class="pre">example</span> <span class="pre">./mydata</span></code> command.</p>
-<p>Create this configuration file and save as <code class="docutils literal"><span class="pre">seed.yml</span></code>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
+<p>Assuming you have a CSV files at <code class="docutils literal notranslate"><span class="pre">./mydata/csv/</span></code> directory. If you don’t have CSV files, you can create ones using <code class="docutils literal notranslate"><span class="pre">embulk</span> <span class="pre">example</span> <span class="pre">./mydata</span></code> command.</p>
+<p>Create this configuration file and save as <code class="docutils literal notranslate"><span class="pre">seed.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
   <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./mydata/csv/</span>
 <span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span>
@@ -133,11 +124,11 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 </pre></div>
 </div>
 <p>In fact, this configuration lacks some important information. However, embulk guesses the other information. So, next step is to order embulk to guess them:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk guess ./mydata/seed.yml -o config.yml
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk guess ./mydata/seed.yml -o config.yml
 </pre></div>
 </div>
 <p>The generated config.yml file should include complete information as following:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file</span>
   <span class="l l-Scalar l-Scalar-Plain">path_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./mydata/csv/</span>
   <span class="l l-Scalar l-Scalar-Plain">decoders</span><span class="p p-Indicator">:</span>
@@ -166,26 +157,26 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 </pre></div>
 </div>
 <p>Note: If the CSV file contains timestamp in local time zone, set default_timezone parameter to parser config as following (since time zone is assumed as UTC by default).</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">parser</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">parser</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">default_timezone</span><span class="p p-Indicator">:</span> <span class="s">&#39;Asia/Tokyo&#39;</span>
 </pre></div>
 </div>
 <p>Now, you can run the bulk loading:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk run config.yml -c diff.yml
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> embulk run config.yml -c diff.yml
 </pre></div>
 </div>
 </div>
 <div class="section" id="scheduling-loading-by-cron">
 <h2><a class="toc-backref" href="#id8">Scheduling loading by cron</a><a class="headerlink" href="#scheduling-loading-by-cron" title="Permalink to this headline">¶</a></h2>
-<p>At the last step, you ran embulk command with <code class="docutils literal"><span class="pre">-c</span> <span class="pre">diff.yml</span></code> file. The <code class="docutils literal"><span class="pre">diff.yml</span></code> file should include a parameter named <code class="docutils literal"><span class="pre">last_path</span></code>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{</span><span class="nv">last_path</span><span class="p p-Indicator">:</span> <span class="nv">mydata/csv/sample_01.csv.gz</span><span class="p p-Indicator">}</span>
+<p>At the last step, you ran embulk command with <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">diff.yml</span></code> file. The <code class="docutils literal notranslate"><span class="pre">diff.yml</span></code> file should include a parameter named <code class="docutils literal notranslate"><span class="pre">last_path</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{</span><span class="nv">last_path</span><span class="p p-Indicator">:</span> <span class="nv">mydata/csv/sample_01.csv.gz</span><span class="p p-Indicator">}</span>
 <span class="l l-Scalar l-Scalar-Plain">out</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{}</span>
 </pre></div>
 </div>
 <p>With this configuration, embulk loads the files newer than this file in alphabetical order.</p>
-<p>For example, if you create <code class="docutils literal"><span class="pre">./mydata/csv/sample_02.csv.gz</span></code> file, embulk skips <code class="docutils literal"><span class="pre">sample_01.csv.gz</span></code> file and loads <code class="docutils literal"><span class="pre">sample_02.csv.gz</span></code> only next time. And the next <code class="docutils literal"><span class="pre">diff.yml</span></code> file has <code class="docutils literal"><span class="pre">last_path:</span> <span class="pre">mydata/csv/sample_02.csv.gz</span></code> for the next next execution.</p>
+<p>For example, if you create <code class="docutils literal notranslate"><span class="pre">./mydata/csv/sample_02.csv.gz</span></code> file, embulk skips <code class="docutils literal notranslate"><span class="pre">sample_01.csv.gz</span></code> file and loads <code class="docutils literal notranslate"><span class="pre">sample_02.csv.gz</span></code> only next time. And the next <code class="docutils literal notranslate"><span class="pre">diff.yml</span></code> file has <code class="docutils literal notranslate"><span class="pre">last_path:</span> <span class="pre">mydata/csv/sample_02.csv.gz</span></code> for the next next execution.</p>
 <p>So, if you want to loads newly created files every day, you can setup this cron schedule:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>0 * * * * embulk run /path/to/config.yml -c /path/to/diff.yml
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 * * * * embulk run /path/to/config.yml -c /path/to/diff.yml
 </pre></div>
 </div>
 </div>
@@ -207,7 +198,7 @@ For the smallest setup, you can unzip the package and run <cite>./bin/elasticsea
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>

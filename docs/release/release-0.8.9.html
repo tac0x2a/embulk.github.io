@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Release 0.8.9 &#8212; Embulk 0.8 documentation</title>
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.8',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release 0.8.8" href="release-0.8.8.html" />
     <link rel="prev" title="Release 0.8.10" href="release-0.8.10.html" /> 
-  </head>
-  <body>
+  </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.8 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.8.9</span></h2>
@@ -50,7 +41,7 @@
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">date:</span></code> option to timestamp parser. If format doesn’t include date part, date option is used as the default date. For example, parsing text “02:46:29” with <code class="docutils literal"><span class="pre">format:</span> <span class="pre">%H:%M:%S</span></code> and <code class="docutils literal"><span class="pre">date:</span> <span class="pre">2016-02-03</span></code> options returns “2016-02-03 02:46:29”.</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">date:</span></code> option to timestamp parser. If format doesn’t include date part, date option is used as the default date. For example, parsing text “02:46:29” with <code class="docutils literal notranslate"><span class="pre">format:</span> <span class="pre">%H:%M:%S</span></code> and <code class="docutils literal notranslate"><span class="pre">date:</span> <span class="pre">2016-02-03</span></code> options returns “2016-02-03 02:46:29”.</li>
 <li>Upgraded msgpack-core version from 0.8.6 to 0.8.7. Release notes of msgpack-java: <a class="reference external" href="https://github.com/msgpack/msgpack-java/blob/develop/RELEASE_NOTES.md">https://github.com/msgpack/msgpack-java/blob/develop/RELEASE_NOTES.md</a></li>
 </ul>
 </div>
@@ -76,7 +67,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
     </div>
   </body>
 </html>
