@@ -458,7 +458,7 @@
 </span>        <span class='comment'># Java::org.jruby.RubyTime is converted to Ruby&#39;s Time by gmtime() as a result.
 </span>        <span class='comment'># TODO: Replace to Ruby&#39;s Time.at(seconds, nanoseconds, :nsec) available from Ruby 2.5.0.
 </span>        <span class='comment'># http://ruby-doc.org/core-2.5.0/Time.html#method-c-at
-</span>        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; (java_timestamp = reader.getTimestamp(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>); Java::org.jruby.RubyTime.newTime(JRuby.runtime, Java::org.joda.time.DateTime.new(java_timestamp.getEpochSecond() * 1000), java_timestamp.getNano()).gmtime())</span><span class='tstring_end'>&quot;</span></span>
+</span>        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; (java_timestamp = reader.getTimestamp(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>); Java::org.jruby.RubyTime.newTime(JRuby.runtime, Java::org.joda.time.DateTime.new((java_timestamp.getEpochSecond() * 1000) + (java_timestamp.getNano() / 1000000)), (java_timestamp.getNano() % 1000000)).gmtime())</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>when</span> <span class='symbol'>:json</span>
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record &lt;&lt; MessagePack.unpack(String.from_java_bytes((::Java::org.msgpack.core.MessagePack.newDefaultBufferPacker()).packValue(reader.getJson(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_idx'>idx</span><span class='embexpr_end'>}</span><span class='tstring_content'>)).toMessageBuffer().toByteArray()))</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>else</span>
@@ -743,7 +743,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr  2 07:51:06 2018 by
+  Generated on Tue Apr 10 01:19:37 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.3.3).
 </div>
